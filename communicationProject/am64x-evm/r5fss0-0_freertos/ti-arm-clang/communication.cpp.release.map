@@ -1,0 +1,1873 @@
+******************************************************************************
+            TI ARM Clang Linker Unix v2.1.2                    
+******************************************************************************
+>> Linked Tue Jun  6 18:15:12 2023
+
+OUTPUT FILE NAME:   <communication.cpp.release.out>
+ENTRY POINT SYMBOL: "_vectors"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  R5F_VECS              00000000   00000040  00000040  00000000  RWIX
+  R5F_TCMA              00000040   00007fc0  00000008  00007fb8  RWIX
+  R5F_TCMB0             41010000   00008000  00000000  00008000  RWIX
+  FLASH                 60100000   00080000  00000000  00080000  RWIX
+  NON_CACHE_MEM         70060000   00008000  00000000  00008000  RWIX
+  MSRAM                 70080000   00040000  00023b68  0001c498  RWIX
+  USER_SHM_MEM          701d0000   00000080  00000000  00000080  RWIX
+  LOG_SHM_MEM           701d0080   00003f80  00003800  00000780  RWIX
+  RTOS_NORTOS_IPC_SHM_M 701d4000   0000c000  000099c0  00002640  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000048   00000048    r-x
+  00000000    00000000    00000040   00000040    r-x .vectors
+  00000040    00000040    00000008   00000008    r-- .ARM.exidx
+70080000    70080000    00014da0   00000000    rw-
+  70080000    70080000    00008da0   00000000    rw- .bss
+  70088da0    70088da0    00008000   00000000    rw- .sysmem
+  70090da0    70090da0    00004000   00000000    rw- .stack
+70094da0    70094da0    0000d368   0000d368    r-x
+  70094da0    70094da0    0000a000   0000a000    r-x .text
+  7009eda0    7009eda0    000022d0   000022d0    r-- .rodata
+  700a1070    700a1070    000008d0   000008d0    r-x .text.hwi
+  700a1940    700a1940    00000450   00000450    r-x .text.cache
+  700a1d90    700a1d90    00000240   00000240    r-x .text.mpu
+  700a1fd0    700a1fd0    00000130   00000130    r-x .text.boot
+  700a2100    700a2100    00000008   00000008    r-x .text:abort
+700a2108    700a2108    00000660   00000660    rw-
+  700a2108    700a2108    00000660   00000660    rw- .data
+700a2768    700a2768    00001400   00000000    r--
+  700a2768    700a2768    00000100   00000000    r-- .irqstack
+  700a2868    700a2868    00000100   00000000    r-- .fiqstack
+  700a2968    700a2968    00001000   00000000    r-- .svcstack
+  700a3968    700a3968    00000100   00000000    r-- .abortstack
+  700a3a68    700a3a68    00000100   00000000    r-- .undefinedstack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.vectors   0    00000000    00000040     
+                  00000000    00000040     freertos.am64x.r5f.ti-arm-clang.release.lib : HwiP_armv7r_vectors_freertos_asm.obj (.vectors)
+
+.init_array 
+*          0    00000048    00000000     UNINITIALIZED
+
+.fini_array 
+*          0    00000048    00000000     UNINITIALIZED
+
+.bss       0    70080000    00008da0     UNINITIALIZED
+                  70080000    00004000     main.obj (.bss.gMainTaskStack)
+                  70084000    00001008     (.common:gHwiCtrl)
+                  70085008    00000014     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.bss.xActiveTimerList1)
+                  7008501c    00000004                                                 : DebugP_shmLogReader_freertos.obj (.bss.gDebugShmLogReaderTask)
+                  70085020    00001000                                                 : DebugP_shmLogReader_freertos.obj (.bss.gDebugShmLogReaderTaskStack)
+                  70086020    00001000                                                 : port.obj (.bss.uxIdleTaskStack)
+                  70087020    00000b2c     (.common:gIpcRpmsgCtrl)
+                  70087b4c    00000400                                                 : port.obj (.bss.uxTimerTaskStack)
+                  70087f4c    00000280     ti_drivers_config.obj (.bss.gUartObjects)
+                  700881cc    00000280     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.bss.pxReadyTasksLists)
+                  7008844c    00000120     libsysbm.a : trgmsg.c.obj (.bss:_CIOBUF_)
+                  7008856c    00000100     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.bss.prvCheckForValidListAndQueue.ucStaticTimerQueueStorage)
+                  7008866c    00000100     (.common:xQueueRegistry)
+                  7008876c    000000a8     (.common:gIpcNotifyCtrl)
+                  70088814    000000a0     (.common:__TI_tmpnams)
+                  700888b4    00000004     main.obj (.bss.gMainTask)
+                  700888b8    000000a0     (.common:gTaskP_ctrl)
+                  70088958    00000098     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_freertos.obj (.bss.gDebugLogLockObj)
+                  700889f0    00000094     (.common:gDebugShmLogReaderCtrl)
+                  70088a84    0000008c                                                 : DebugP_shmLogReader_freertos.obj (.bss.gDebugShmLogReaderTaskObj)
+                  70088b10    0000008c                                                 : port.obj (.bss.xIdleTaskTCB)
+                  70088b9c    0000008c                                                 : port.obj (.bss.xTimerTaskTCB)
+                  70088c28    00000050                                                 : timers.obj (.bss.prvCheckForValidListAndQueue.xStaticTimerQueue)
+                  70088c78    00000050     (.common:gRovDummyQueue)
+                  70088cc8    00000038     (.common:gClockCtrl)
+                  70088d00    00000014                                                 : timers.obj (.bss.xActiveTimerList2)
+                  70088d14    00000014                                                 : tasks.obj (.bss.xDelayedTaskList1)
+                  70088d28    00000014                                                 : tasks.obj (.bss.xDelayedTaskList2)
+                  70088d3c    00000014                                                 : tasks.obj (.bss.xPendingReadyList)
+                  70088d50    00000014                                                 : tasks.obj (.bss.xSuspendedTaskList)
+                  70088d64    00000014                                                 : tasks.obj (.bss.xTasksWaitingTermination)
+                  70088d78    00000008     (.common:parmbuf)
+                  70088d80    00000004                                                 : HwiP_armv7r_handlers_freertos.obj (.bss.gdummy)
+                  70088d84    00000004                                                 : HwiP_armv7r_vim.obj (.bss.gdummy)
+                  70088d88    00000004                                                 : timers.obj (.bss.pxCurrentTimerList)
+                  70088d8c    00000004                                                 : tasks.obj (.bss.pxDelayedTaskList)
+                  70088d90    00000004                                                 : tasks.obj (.bss.pxOverflowDelayedTaskList)
+                  70088d94    00000004                                                 : timers.obj (.bss.pxOverflowTimerList)
+                  70088d98    00000004     libc.a : memory.c.obj (.bss.sys_free)
+                  70088d9c    00000004     (.common:gUartHandle)
+
+.sysmem    0    70088da0    00008000     UNINITIALIZED
+                  70088da0    00000010     libc.a : memory.c.obj (.sysmem)
+                  70088db0    00007ff0     --HOLE--
+
+.stack     0    70090da0    00004000     UNINITIALIZED
+                  70090da0    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : boot_armv7r_asm.obj (.stack)
+                  70090da4    00003ffc     --HOLE--
+
+.text      0    70094da0    0000a000     
+                  70094da0    00000596     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._vsnprintf)
+                  70095336    00000002     --HOLE-- [fill = 0]
+                  70095338    00000004     libc.a : _lock.c.obj (.text._nop)
+                  7009533c    00000004            : fprintf.c.obj (.text._outc)
+                  70095340    000004e8     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_open)
+                  70095828    00000004     libc.a : fprintf.c.obj (.text._outs)
+                  7009582c    00000004            : fseek.c.obj (.text.fseek)
+                  70095830    000004cc     libc++.a : string.cpp.obj (.text._ZNSt3__112_GLOBAL__N_117as_integer_helperIlNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPFlPKcPPciEEET_RKS7_RKT0_PjiT1_)
+                  70095cfc    000003e4     libc.a : _printfi.c.obj (.text:__TI_printfi_minimal)
+                  700960e0    00000388     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._ftoa)
+                  70096468    00000004     libsysbm.a : remove.c.obj (.text.remove)
+                  7009646c    00000004     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text)
+                  70096470    0000037e     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient.obj (.text.Sciclient_service)
+                  700967ee    00000002     --HOLE-- [fill = 0]
+                  700967f0    00000372                                                : ipc_notify_v0.obj (.text.IpcNotify_init)
+                  70096b62    00000002     --HOLE-- [fill = 0]
+                  70096b64    0000000c     libc.a : aeabi_portable.c.obj (.text.__aeabi_errno_addr)
+                  70096b70    00000310     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._etoa)
+                  70096e80    0000021e                                                 : timers.obj (.text.prvTimerTask)
+                  7009709e    00000002     --HOLE-- [fill = 0]
+                  700970a0    0000021a     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_masterIsr)
+                  700972ba    00000002     --HOLE-- [fill = 0]
+                  700972bc    00000208     libc.a : strtol.c.obj (.text.strtol)
+                  700974c4    0000000c            : memory.c.obj (.text.malloc)
+                  700974d0    000001fe     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_write)
+                  700976ce    00000002     --HOLE-- [fill = 0]
+                  700976d0    000001d0     libclang_rt.builtins.a : udivsi3.S.obj (.text)
+                  700978a0    000001cc     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.xQueueSemaphoreTake)
+                  70097a6c    00000004     --HOLE-- [fill = 0]
+                  70097a70    000001c0                                                 : TimerP.obj (.text.TimerP_setup)
+                  70097c30    000001b8     libc.a : memory.c.obj (.text.aligned_alloc)
+                  70097de8    000001b8            : memory.c.obj (.text.free)
+                  70097fa0    000001ae     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.xQueueGenericSend)
+                  7009814e    00000002     --HOLE-- [fill = 0]
+                  70098150    000001a4     libc.a : fputs.c.obj (.text.fputs)
+                  700982f4    00000008     libc++abi.a : stdlib_new_delete.cpp.obj (.tramp._ZdlPv.1)
+                  700982fc    00000004     --HOLE-- [fill = 0]
+                  70098300    00000184     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.xQueueReceive)
+                  70098484    00000180     libsysbm.a : memcpy32.S.obj (.text:memcpy)
+                  70098604    00000008     freertos.am64x.r5f.ti-arm-clang.release.lib : HwiP_armv7r_asm.obj (.tramp.HwiP_enable.1)
+                  7009860c    00000004     --HOLE-- [fill = 0]
+                  70098610    0000015e                                                 : tasks.obj (.text.xTaskIncrementTick)
+                  7009876e    00000002     --HOLE-- [fill = 0]
+                  70098770    00000146     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_close)
+                  700988b6    00000002     --HOLE-- [fill = 0]
+                  700988b8    00000144     libc.a : setvbuf.c.obj (.text.setvbuf)
+                  700989fc    00000004     --HOLE-- [fill = 0]
+                  70098a00    00000140     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.xTaskResumeAll)
+                  70098b40    00000136                                                 : ClockP_freertos_r5.obj (.text.ClockP_init)
+                  70098c76    00000002     --HOLE-- [fill = 0]
+                  70098c78    00000008                                                 : PmuP_armv7r_asm.obj (.tramp.PmuP_enableCounters.1)
+                  70098c80    00000136     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_recv)
+                  70098db6    0000000a     --HOLE-- [fill = 0]
+                  70098dc0    00000132     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_format)
+                  70098ef2    0000000e     --HOLE-- [fill = 0]
+                  70098f00    0000012a     drivers.am64x.r5f.ti-arm-clang.release.lib : soc.obj (.text.SOC_moduleSetClockFrequency)
+                  7009902a    00000006     --HOLE-- [fill = 0]
+                  70099030    00000128     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskSwitchContext)
+                  70099158    00000008     --HOLE-- [fill = 0]
+                  70099160    00000126                                                 : queue.obj (.text.xQueueGenericSendFromISR)
+                  70099286    00000002     --HOLE-- [fill = 0]
+                  70099288    00000118     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  700993a0    00000112     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.prvAddNewTaskToReadyList)
+                  700994b2    0000000e     --HOLE-- [fill = 0]
+                  700994c0    0000010c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_recvHandler)
+                  700995cc    00000004     --HOLE-- [fill = 0]
+                  700995d0    00000106     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.xQueueGiveFromISR)
+                  700996d6    0000000a     --HOLE-- [fill = 0]
+                  700996e0    00000100     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_send)
+                  700997e0    000000fc     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.xQueueGenericCreateStatic)
+                  700998dc    00000004     --HOLE-- [fill = 0]
+                  700998e0    000000fa                                                 : queue.obj (.text.xQueueReceiveFromISR)
+                  700999da    00000006     --HOLE-- [fill = 0]
+                  700999e0    000000f8     ti_drivers_config.obj (.text.System_init)
+                  70099ad8    00000008     --HOLE-- [fill = 0]
+                  70099ae0    000000ee     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskDelete)
+                  70099bce    00000002     --HOLE-- [fill = 0]
+                  70099bd0    000000e8     libc.a : fputc.c.obj (.text.fputc)
+                  70099cb8    00000008     --HOLE-- [fill = 0]
+                  70099cc0    000000e6     utils_communication.obj (.text._Z13str_to_coreIdPc)
+                  70099da6    0000000a     --HOLE-- [fill = 0]
+                  70099db0    000000e2     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_init)
+                  70099e92    0000000e     --HOLE-- [fill = 0]
+                  70099ea0    000000d8     utils_communication.obj (.text._Z9str_splitPcc)
+                  70099f78    00000008     --HOLE-- [fill = 0]
+                  70099f80    000000ce     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskPriorityDisinheritAfterTimeout)
+                  7009a04e    00000002     --HOLE-- [fill = 0]
+                  7009a050    000000cc                                                 : timers.obj (.text.prvSampleTimeNow)
+                  7009a11c    00000004     --HOLE-- [fill = 0]
+                  7009a120    000000c8     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_sendMsg)
+                  7009a1e8    000000c8     libc.a : getdevice.c.obj (.text.getdevice)
+                  7009a2b0    000000c6     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_isr)
+                  7009a376    0000000a     --HOLE-- [fill = 0]
+                  7009a380    000000c6     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.prvInitialiseNewTask)
+                  7009a446    0000000a     --HOLE-- [fill = 0]
+                  7009a450    000000c6                                                 : tasks.obj (.text.xTaskCreateStatic)
+                  7009a516    0000000a     --HOLE-- [fill = 0]
+                  7009a520    000000c0                                                 : tasks.obj (.text.xTaskCheckForTimeOut)
+                  7009a5e0    000000be     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringReset)
+                  7009a69e    00000002     --HOLE-- [fill = 0]
+                  7009a6a0    000000bc                                                : pinmux.obj (.text.Pinmux_config)
+                  7009a75c    00000004     --HOLE-- [fill = 0]
+                  7009a760    000000ba     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskStartScheduler)
+                  7009a81a    00000006     --HOLE-- [fill = 0]
+                  7009a820    000000b8     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_divisorLatchWrite)
+                  7009a8d8    000000b4     libc.a : fclose.c.obj (.text.__TI_closefile)
+                  7009a98c    000000b4            : fseek.c.obj (.text.fseeko)
+                  7009aa40    000000b2     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_flushTxFifo)
+                  7009aaf2    0000000e     --HOLE-- [fill = 0]
+                  7009ab00    000000b2     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.eTaskGetState)
+                  7009abb2    0000000e     --HOLE-- [fill = 0]
+                  7009abc0    000000b0                                                 : printf.obj (.text._ntoa_long_long)
+                  7009ac70    000000ae                                                 : TaskP_freertos.obj (.text.TaskP_loadUpdateAll)
+                  7009ad1e    00000002     --HOLE-- [fill = 0]
+                  7009ad20    000000ae                                                 : tasks.obj (.text.xTaskPriorityDisinherit)
+                  7009adce    00000002     --HOLE-- [fill = 0]
+                  7009add0    000000aa     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetFullRxBuf)
+                  7009ae7a    00000006     --HOLE-- [fill = 0]
+                  7009ae80    000000aa                                                : uart_v0.obj (.text.UART_procLineStatusErr)
+                  7009af2a    00000002     --HOLE-- [fill = 0]
+                  7009af2c    000000a8     libc.a : fflush.c.obj (.text.fflush)
+                  7009afd4    0000000c     --HOLE-- [fill = 0]
+                  7009afe0    000000a6     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._out_rev)
+                  7009b086    0000000a     --HOLE-- [fill = 0]
+                  7009b090    000000a4     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmQueryModuleClkFreq)
+                  7009b134    000000a4     libc.a : memory.c.obj (.text.split)
+                  7009b1d8    00000008     --HOLE-- [fill = 0]
+                  7009b1e0    000000a2     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.xTaskRemoveFromEventList)
+                  7009b282    0000000e     --HOLE-- [fill = 0]
+                  7009b290    000000a0                                                 : DebugP_shmLogReader.obj (.text.DebugP_shmLogReaderGetString)
+                  7009b330    000000a0     libsysbm.a : hostrename.c.obj (.text.HOSTrename)
+                  7009b3d0    000000a0                : memset32.S.obj (.text:memset)
+                  7009b470    0000009e     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringPutEmptyRxBuf)
+                  7009b50e    00000002     --HOLE-- [fill = 0]
+                  7009b510    0000009c     libc.a : _io_perm.c.obj (.text.__TI_wrt_ok)
+                  7009b5ac    00000004     --HOLE-- [fill = 0]
+                  7009b5b0    0000009a     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_shmLogReader.obj (.text.DebugP_shmLogReaderTaskMain)
+                  7009b64a    00000006     --HOLE-- [fill = 0]
+                  7009b650    0000009a     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient.obj (.text.Sciclient_init)
+                  7009b6ea    00000006     --HOLE-- [fill = 0]
+                  7009b6f0    0000009a                                                : sciclient.obj (.text.Sciclient_sendMessage)
+                  7009b78a    00000002     --HOLE-- [fill = 0]
+                  7009b78c    00000098     libsysbm.a : hostlseek.c.obj (.text.HOSTlseek)
+                  7009b824    0000000c     --HOLE-- [fill = 0]
+                  7009b830    00000098     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_coreInit)
+                  7009b8c8    00000098     libc.a : fprintf.c.obj (.text.fprintf)
+                  7009b960    00000096     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskGetInfo)
+                  7009b9f6    00000002     --HOLE-- [fill = 0]
+                  7009b9f8    00000094     libsysbm.a : hostopen.c.obj (.text.HOSTopen)
+                  7009ba8c    00000004     --HOLE-- [fill = 0]
+                  7009ba90    00000094     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_init)
+                  7009bb24    0000000c     --HOLE-- [fill = 0]
+                  7009bb30    00000092                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetEmptyTxBuf)
+                  7009bbc2    0000000e     --HOLE-- [fill = 0]
+                  7009bbd0    00000092                                                : sciclient_pm.obj (.text.Sciclient_pmSetModuleClkFreq)
+                  7009bc62    0000000e     --HOLE-- [fill = 0]
+                  7009bc70    00000090     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.xTaskPriorityInherit)
+                  7009bd00    0000008e                                                 : port.obj (.text.pxPortInitialiseStack)
+                  7009bd8e    00000002     --HOLE-- [fill = 0]
+                  7009bd90    0000008c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringResetInternal)
+                  7009be1c    00000004     --HOLE-- [fill = 0]
+                  7009be20    0000008c     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_long)
+                  7009beac    0000008c     libsysbm.a : close.c.obj (.text.close)
+                  7009bf38    00000088     libc.a : fflush.c.obj (.text.__TI_doflush)
+                  7009bfc0    00000086     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.text.xTimerCreateTimerTask)
+                  7009c046    00000002     --HOLE-- [fill = 0]
+                  7009c048    00000084     libsysbm.a : hostread.c.obj (.text.HOSTread)
+                  7009c0cc    00000084                : hostwrite.c.obj (.text.HOSTwrite)
+                  7009c150    00000084     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.prvAddCurrentTaskToDelayedList)
+                  7009c1d4    0000000c     --HOLE-- [fill = 0]
+                  7009c1e0    00000080     main.obj (.text.main)
+                  7009c260    00000080     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.prvCopyDataToQueue)
+                  7009c2e0    00000080                                                 : queue.obj (.text.xQueueGenericReset)
+                  7009c360    0000007c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_construct)
+                  7009c3dc    00000004     --HOLE-- [fill = 0]
+                  7009c3e0    0000007a                                                : sciclient_pm.obj (.text.Sciclient_pmGetModuleClkNumParent)
+                  7009c45a    00000006     --HOLE-- [fill = 0]
+                  7009c460    0000007a     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.text.prvCheckForValidListAndQueue)
+                  7009c4da    00000006     --HOLE-- [fill = 0]
+                  7009c4e0    0000007a                                                 : tasks.obj (.text.prvIdleTask)
+                  7009c55a    00000002     --HOLE-- [fill = 0]
+                  7009c55c    00000078     libc.a : strtok.c.obj (.text.strtok)
+                  7009c5d4    0000000c     --HOLE-- [fill = 0]
+                  7009c5e0    00000076     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_freertos.obj (.text._DebugP_logZone)
+                  7009c656    0000000a     --HOLE-- [fill = 0]
+                  7009c660    00000076                                                 : timers.obj (.text.xTimerGenericCommand)
+                  7009c6d6    0000000a     --HOLE-- [fill = 0]
+                  7009c6e0    00000074     IPC_Communication.obj (.text._ZN17IPC_CommunicationC2EPc)
+                  7009c754    0000000c     --HOLE-- [fill = 0]
+                  7009c760    00000072     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.prvUnlockQueue)
+                  7009c7d2    0000000e     --HOLE-- [fill = 0]
+                  7009c7e0    00000070                                                 : SemaphoreP_freertos.obj (.text.SemaphoreP_constructBinary)
+                  7009c850    0000006e     drivers.am64x.r5f.ti-arm-clang.release.lib : soc.obj (.text.SOC_moduleClockEnable)
+                  7009c8be    00000002     --HOLE-- [fill = 0]
+                  7009c8c0    0000006e                                                : sciclient_pm.obj (.text.Sciclient_pmGetModuleState)
+                  7009c92e    00000002     --HOLE-- [fill = 0]
+                  7009c930    0000006c     libsysbm.a : hostunlink.c.obj (.text.HOSTunlink)
+                  7009c99c    0000006c     libc.a : aeabi_portable.c.obj (.text.__aeabi_assert)
+                  7009ca08    0000006c            : getdevice.c.obj (.text.finddevice)
+                  7009ca74    0000000c     --HOLE-- [fill = 0]
+                  7009ca80    00000068     freertos.am64x.r5f.ti-arm-clang.release.lib : AddrTranslateP.obj (.text.AddrTranslateP_getLocalAddr)
+                  7009cae8    00000008     --HOLE-- [fill = 0]
+                  7009caf0    00000068     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_writeCancelNoCB)
+                  7009cb58    00000008     --HOLE-- [fill = 0]
+                  7009cb60    00000066                                                : ipc_rpmsg.obj (.text.RPMessage_getEndPtMsg)
+                  7009cbc6    0000000a     --HOLE-- [fill = 0]
+                  7009cbd0    00000066                                                : sciclient_pm.obj (.text.Sciclient_pmGetModuleClkFreq)
+                  7009cc36    0000000a     --HOLE-- [fill = 0]
+                  7009cc40    00000066                                                : sciclient_pm.obj (.text.Sciclient_pmGetModuleClkParent)
+                  7009cca6    0000000a     --HOLE-- [fill = 0]
+                  7009ccb0    00000066     IPC_Communication.obj (.text._ZN17IPC_Communication4readEv)
+                  7009cd16    0000000a     --HOLE-- [fill = 0]
+                  7009cd20    00000064     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmModuleGetClkStatus)
+                  7009cd84    0000000c     --HOLE-- [fill = 0]
+                  7009cd90    00000064     freertos.am64x.r5f.ti-arm-clang.release.lib : PmuP_armv7r.obj (.text.pmu)
+                  7009cdf4    0000000c     --HOLE-- [fill = 0]
+                  7009ce00    00000064                                                 : queue.obj (.text.vQueueDelete)
+                  7009ce64    0000000c     --HOLE-- [fill = 0]
+                  7009ce70    00000062     IPC_Communication.obj (.text._ZN17IPC_Communication5writeEPc)
+                  7009ced2    00000002     --HOLE-- [fill = 0]
+                  7009ced4    00000060     libsysbm.a : hostclose.c.obj (.text.HOSTclose)
+                  7009cf34    0000000c     --HOLE-- [fill = 0]
+                  7009cf40    00000060     communication.obj (.text._Z7m4_codev)
+                  7009cfa0    0000005e     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringPutFullTxBuf)
+                  7009cffe    00000002     --HOLE-- [fill = 0]
+                  7009d000    0000005e                                                : sciclient_pm.obj (.text.Sciclient_pmModuleClkRequest)
+                  7009d05e    00000002     --HOLE-- [fill = 0]
+                  7009d060    0000005e                                                : sciclient_pm.obj (.text.Sciclient_pmSetModuleClkParent)
+                  7009d0be    00000002     --HOLE-- [fill = 0]
+                  7009d0c0    0000005c     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_log.obj (.text._DebugP_assert)
+                  7009d11c    00000004     --HOLE-- [fill = 0]
+                  7009d120    0000005a     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringIsFullRxBuf)
+                  7009d17a    00000006     --HOLE-- [fill = 0]
+                  7009d180    00000058     freertos.am64x.r5f.ti-arm-clang.release.lib : SemaphoreP_freertos.obj (.text.SemaphoreP_pend)
+                  7009d1d8    00000008     --HOLE-- [fill = 0]
+                  7009d1e0    00000058     SystemManager.obj (.text._ZN20CommunicationFactory28init_RPMessage_communicationEt)
+                  7009d238    00000058     libc.a : fopen.c.obj (.text.__TI_cleanup)
+                  7009d290    00000058     libsysbm.a : trgmsg.c.obj (.text.__TI_readmsg)
+                  7009d2e8    00000058                : trgmsg.c.obj (.text.__TI_writemsg)
+                  7009d340    00000058     libc.a : sprintf.c.obj (.text.sprintf)
+                  7009d398    00000008     --HOLE-- [fill = 0]
+                  7009d3a0    00000058     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskPlaceOnEventListRestricted)
+                  7009d3f8    00000008     --HOLE-- [fill = 0]
+                  7009d400    00000056     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_dma.obj (.text.UART_dmaDisableChannel)
+                  7009d456    0000000a     --HOLE-- [fill = 0]
+                  7009d460    00000056     utils_communication.obj (.text._ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc)
+                  7009d4b6    0000000a     --HOLE-- [fill = 0]
+                  7009d4c0    00000056     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskDelay)
+                  7009d516    0000000a     --HOLE-- [fill = 0]
+                  7009d520    00000054     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_notifyCallback)
+                  7009d574    0000000c     --HOLE-- [fill = 0]
+                  7009d580    00000054                                                : uart_dma.obj (.text.UART_dmaClose)
+                  7009d5d4    00000054     libc.a : exit.c.obj (.text.exit)
+                  7009d628    00000008     --HOLE-- [fill = 0]
+                  7009d630    00000052     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmSetModuleState)
+                  7009d682    0000000e     --HOLE-- [fill = 0]
+                  7009d690    00000052     freertos.am64x.r5f.ti-arm-clang.release.lib : SemaphoreP_freertos.obj (.text.SemaphoreP_constructMutex)
+                  7009d6e2    0000000e     --HOLE-- [fill = 0]
+                  7009d6f0    00000052                                                 : SemaphoreP_freertos.obj (.text.SemaphoreP_post)
+                  7009d742    0000000e     --HOLE-- [fill = 0]
+                  7009d750    00000052     communication.obj (.text._Z11r5_0_1_codev)
+                  7009d7a2    0000000e     --HOLE-- [fill = 0]
+                  7009d7b0    00000052     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.xQueueGiveMutexRecursive)
+                  7009d802    0000000e     --HOLE-- [fill = 0]
+                  7009d810    00000050                                                 : DebugP_shmLogReader_freertos.obj (.text.DebugP_shmLogReaderTaskCreate)
+                  7009d860    00000050     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_soc_priv.obj (.text.Sciclient_getContext)
+                  7009d8b0    00000050     communication.obj (.text._Z18communication_mainPv)
+                  7009d900    00000050     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.prvDeleteTCB)
+                  7009d950    00000050     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  7009d9a0    0000004e     ti_dpl_config.obj (.text.Dpl_init)
+                  7009d9ee    00000002     --HOLE-- [fill = 0]
+                  7009d9f0    0000004e     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskPlaceOnEventList)
+                  7009da3e    00000002     --HOLE-- [fill = 0]
+                  7009da40    0000004e                                                 : queue.obj (.text.xQueueTakeMutexRecursive)
+                  7009da8e    00000002     --HOLE-- [fill = 0]
+                  7009da90    0000004c                                                 : ClockP_freertos.obj (.text.ClockP_getTimeUsec)
+                  7009dadc    00000004     --HOLE-- [fill = 0]
+                  7009dae0    0000004c     ti_drivers_open_close.obj (.text.Drivers_uartOpen)
+                  7009db2c    00000004     --HOLE-- [fill = 0]
+                  7009db30    0000004c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_allocEndPtMsg)
+                  7009db7c    00000004     --HOLE-- [fill = 0]
+                  7009db80    0000004c     communication.obj (.text._Z11r5_0_0_codev)
+                  7009dbcc    00000004     --HOLE-- [fill = 0]
+                  7009dbd0    0000004c     SystemManager.obj (.text._ZN20CommunicationFactory4openE17CommunicationTypePc)
+                  7009dc1c    00000004     --HOLE-- [fill = 0]
+                  7009dc20    00000048     libc++abi.a : stdlib_new_delete.cpp.obj (.text._Znwj)
+                  7009dc68    00000048     libc.a : memccpy.c.obj (.text.memccpy)
+                  7009dcb0    00000048            : strcspn.c.obj (.text.strcspn)
+                  7009dcf8    00000048     libsysbm.a : unlink.c.obj (.text.unlink)
+                  7009dd40    00000046     freertos.am64x.r5f.ti-arm-clang.release.lib : queue.obj (.text.vQueueWaitForMessageRestricted)
+                  7009dd86    0000000a     --HOLE-- [fill = 0]
+                  7009dd90    00000044     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmSetModuleRst)
+                  7009ddd4    00000044     libc.a : strspn.c.obj (.text.strspn)
+                  7009de18    00000008     --HOLE-- [fill = 0]
+                  7009de20    00000040     libc++.a : string.cpp.obj (.text._ZNSt3__14stoiERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPji)
+                  7009de60    00000040     libc.a : memory.c.obj (.text.free_list_insert)
+                  7009dea0    00000040     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.text.prvInsertTimerInActiveList)
+                  7009dee0    00000040     libc.a : strdup.c.obj (.text.strdup)
+                  7009df20    0000003e     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_registerClient)
+                  7009df5e    00000002     --HOLE-- [fill = 0]
+                  7009df60    0000003e                                                : soc.obj (.text.SOC_controlModuleUnlockMMR)
+                  7009df9e    00000002     --HOLE-- [fill = 0]
+                  7009dfa0    0000003c     freertos.am64x.r5f.ti-arm-clang.release.lib : TaskP_freertos.obj (.text.vApplicationLoadHook)
+                  7009dfdc    00000004     --HOLE-- [fill = 0]
+                  7009dfe0    0000003c                                                 : tasks.obj (.text.xTaskGetIdleTaskHandle)
+                  7009e01c    00000004     --HOLE-- [fill = 0]
+                  7009e020    0000003a                                                 : DebugP_uartLogWriter.obj (.text.DebugP_uartLogWriterPutChar)
+                  7009e05a    00000006     --HOLE-- [fill = 0]
+                  7009e060    0000003a     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_dma.obj (.text.UART_dmaOpen)
+                  7009e09a    00000006     --HOLE-- [fill = 0]
+                  7009e0a0    0000003a     freertos.am64x.r5f.ti-arm-clang.release.lib : list.obj (.text.vListInsert)
+                  7009e0da    00000006     --HOLE-- [fill = 0]
+                  7009e0e0    00000038     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringCheckEmptyTxBuf)
+                  7009e118    00000008     --HOLE-- [fill = 0]
+                  7009e120    00000038                                                : sciclient.obj (.text.Sciclient_getCurrentContext)
+                  7009e158    00000008     --HOLE-- [fill = 0]
+                  7009e160    00000036     freertos.am64x.r5f.ti-arm-clang.release.lib : ClockP_freertos.obj (.text.ClockP_usleep)
+                  7009e196    0000000a     --HOLE-- [fill = 0]
+                  7009e1a0    00000036     ti_power_clock_config.obj (.text.Module_clockSetFrequency)
+                  7009e1d6    00000002     --HOLE-- [fill = 0]
+                  7009e1d8    00000034     libc.a : memory.c.obj (.text.free_list_remove)
+                  7009e20c    00000034     libsysbm.a : lseek.c.obj (.text.lseek)
+                  7009e240    00000034                : write.c.obj (.text.write)
+                  7009e274    0000000c     --HOLE-- [fill = 0]
+                  7009e280    00000034     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.xTaskGetTickCount)
+                  7009e2b4    0000000c     --HOLE-- [fill = 0]
+                  7009e2c0    00000032                                                 : queue.obj (.text.xQueueCreateMutexStatic)
+                  7009e2f2    0000000e     --HOLE-- [fill = 0]
+                  7009e300    00000030                                                 : DebugP_shmLogReader.obj (.text.DebugP_shmLogReaderInit)
+                  7009e330    00000030                                                 : PmuP_armv7r_asm.obj (.text.pmu)
+                  7009e360    00000030                                                 : port.obj (.text.vApplicationStackOverflowHook)
+                  7009e390    0000002e                                                 : ClockP_freertos.obj (.text.ClockP_timerTickIsr)
+                  7009e3be    00000002     --HOLE-- [fill = 0]
+                  7009e3c0    0000002e     ti_power_clock_config.obj (.text.Module_clockEnable)
+                  7009e3ee    00000002     --HOLE-- [fill = 0]
+                  7009e3f0    0000002e     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.text.UART_getHandle)
+                  7009e41e    00000002     --HOLE-- [fill = 0]
+                  7009e420    0000002e     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskExitCritical)
+                  7009e44e    00000002     --HOLE-- [fill = 0]
+                  7009e450    0000002c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_controlEndPtHandler)
+                  7009e47c    0000002c     libc.a : sprintf.c.obj (.text._outs)
+                  7009e4a8    00000008     --HOLE-- [fill = 0]
+                  7009e4b0    0000002a     drivers.am64x.r5f.ti-arm-clang.release.lib : soc.obj (.text.SOC_controlModuleLockMMR)
+                  7009e4da    00000006     --HOLE-- [fill = 0]
+                  7009e4e0    0000002a     utils_communication.obj (.text._Z14str_to_int16_tPc)
+                  7009e50a    00000006     --HOLE-- [fill = 0]
+                  7009e510    00000028     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_Params_init)
+                  7009e538    00000008     --HOLE-- [fill = 0]
+                  7009e540    00000028     IPC_Communication.obj (.text._ZN17IPC_CommunicationD0Ev)
+                  7009e568    00000008     --HOLE-- [fill = 0]
+                  7009e570    00000026     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_isLinuxCore)
+                  7009e596    0000000a     --HOLE-- [fill = 0]
+                  7009e5a0    00000026     freertos.am64x.r5f.ti-arm-clang.release.lib : port.obj (.text.vPortTimerTickHandler)
+                  7009e5c6    0000000a     --HOLE-- [fill = 0]
+                  7009e5d0    00000026                                                 : queue.obj (.text.vQueueAddToRegistry)
+                  7009e5f6    0000000a     --HOLE-- [fill = 0]
+                  7009e600    00000024                                                 : list.obj (.text.uxListRemove)
+                  7009e624    0000000c     --HOLE-- [fill = 0]
+                  7009e630    00000024                                                 : printf.obj (.text.vprintf_)
+                  7009e654    0000000c     --HOLE-- [fill = 0]
+                  7009e660    00000024                                                 : tasks.obj (.text.xTaskGetSchedulerState)
+                  7009e684    00000024     libclang_rt.builtins.a : aeabi_uldivmod.S.obj (.text)
+                  7009e6a8    00000008     --HOLE-- [fill = 0]
+                  7009e6b0    00000022     ti_pinmux_config.obj (.text.Pinmux_init)
+                  7009e6d2    0000000e     --HOLE-- [fill = 0]
+                  7009e6e0    00000022     IPC_Communication.obj (.text._ZN17IPC_CommunicationD2Ev)
+                  7009e702    0000000e     --HOLE-- [fill = 0]
+                  7009e710    00000022     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskEnterCritical)
+                  7009e732    0000000e     --HOLE-- [fill = 0]
+                  7009e740    00000020                                                 : DebugP_log.obj (.text.DebugP_logZoneEnable)
+                  7009e760    00000020     drivers.am64x.r5f.ti-arm-clang.release.lib : soc.obj (.text.SOC_getSelfCpuClk)
+                  7009e780    00000020     freertos.am64x.r5f.ti-arm-clang.release.lib : TimerP.obj (.text.TimerP_Params_init)
+                  7009e7a0    00000020     libc.a : assert.c.obj (.text._abort_msg)
+                  7009e7c0    0000001e     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_syncCallback)
+                  7009e7de    00000002     --HOLE-- [fill = 0]
+                  7009e7e0    0000001e     freertos.am64x.r5f.ti-arm-clang.release.lib : port.obj (.text.vApplicationGetIdleTaskMemory)
+                  7009e7fe    00000002     --HOLE-- [fill = 0]
+                  7009e800    0000001e                                                 : port.obj (.text.vApplicationGetTimerTaskMemory)
+                  7009e81e    00000002     --HOLE-- [fill = 0]
+                  7009e820    0000001c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetTxBufLen)
+                  7009e83c    00000004     --HOLE-- [fill = 0]
+                  7009e840    0000001c     freertos.am64x.r5f.ti-arm-clang.release.lib : boot_armv7r.obj (.text._system_pre_init)
+                  7009e85c    0000001c     libc.a : _printfi.c.obj (.text.strlen)
+                  7009e878    0000001c            : aeabi_portable.c.obj (.text.strlen)
+                  7009e894    0000001c            : strlen.c.obj (.text.strlen)
+                  7009e8b0    0000001c     libsysbm.a : hostrename.c.obj (.text.strlen)
+                  7009e8cc    00000004     --HOLE-- [fill = 0]
+                  7009e8d0    0000001c     freertos.am64x.r5f.ti-arm-clang.release.lib : list.obj (.text.vListInsertEnd)
+                  7009e8ec    0000001c     libclang_rt.builtins.a : aeabi_memset.S.obj (.text)
+                  7009e908    00000008     --HOLE-- [fill = 0]
+                  7009e910    0000001a     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_Params_init)
+                  7009e92a    00000006     --HOLE-- [fill = 0]
+                  7009e930    0000001a                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetRxBufAddr)
+                  7009e94a    00000006     --HOLE-- [fill = 0]
+                  7009e950    0000001a                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetTxBufAddr)
+                  7009e96a    00000006     --HOLE-- [fill = 0]
+                  7009e970    0000001a                                                : uart_dma.obj (.text.UART_writeInterruptDma)
+                  7009e98a    00000006     --HOLE-- [fill = 0]
+                  7009e990    0000001a     freertos.am64x.r5f.ti-arm-clang.release.lib : heap_3.obj (.text.vPortFree)
+                  7009e9aa    00000006     --HOLE-- [fill = 0]
+                  7009e9b0    0000001a                                                 : tasks.obj (.text.vTaskInternalSetTimeOutState)
+                  7009e9ca    00000006     --HOLE-- [fill = 0]
+                  7009e9d0    00000018     ti_drivers_open_close.obj (.text.Drivers_close)
+                  7009e9e8    00000008     --HOLE-- [fill = 0]
+                  7009e9f0    00000018     ti_drivers_config.obj (.text.IpcNotify_getConfig)
+                  7009ea08    00000008     --HOLE-- [fill = 0]
+                  7009ea10    00000018     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_isCoreEnabled)
+                  7009ea28    00000008     --HOLE-- [fill = 0]
+                  7009ea30    00000018                                                : sciclient_soc_priv.obj (.text.Sciclient_getDevId)
+                  7009ea48    00000008     --HOLE-- [fill = 0]
+                  7009ea50    00000018     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.pvTaskIncrementMutexHeldCount)
+                  7009ea68    00000008     --HOLE-- [fill = 0]
+                  7009ea70    00000018                                                 : port.obj (.text.xPortStartScheduler)
+                  7009ea88    00000008     --HOLE-- [fill = 0]
+                  7009ea90    00000016                                                 : list.obj (.text.vListInitialise)
+                  7009eaa6    0000000a     --HOLE-- [fill = 0]
+                  7009eab0    00000014                                                 : ClockP_freertos.obj (.text.ClockP_usecToTicks)
+                  7009eac4    00000014     libc.a : sprintf.c.obj (.text._outc)
+                  7009ead8    00000014     libsysbm.a : hostrename.c.obj (.text.strcpy)
+                  7009eaec    00000004     --HOLE-- [fill = 0]
+                  7009eaf0    00000012     freertos.am64x.r5f.ti-arm-clang.release.lib : TimerP.obj (.text.TimerP_clearOverflowInt)
+                  7009eb02    0000000e     --HOLE-- [fill = 0]
+                  7009eb10    00000012     main.obj (.text._Z13freertos_mainPv)
+                  7009eb22    0000000e     --HOLE-- [fill = 0]
+                  7009eb30    00000010     freertos.am64x.r5f.ti-arm-clang.release.lib : ClockP_freertos.obj (.text.ClockP_ticksToUsec)
+                  7009eb40    00000010     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_CreateParams_init)
+                  7009eb50    00000010     libc++abi.a : cxa_handlers.cpp.obj (.text._ZSt15get_new_handlerv)
+                  7009eb60    00000010     freertos.am64x.r5f.ti-arm-clang.release.lib : port.obj (.text.vPortYeildFromISR)
+                  7009eb70    00000010                                                 : tasks.obj (.text.vTaskSuspendAll)
+                  7009eb80    0000000e     ti_power_clock_config.obj (.text.PowerClock_init)
+                  7009eb8e    00000002     --HOLE-- [fill = 0]
+                  7009eb90    0000000e     IPC_Communication.obj (.text._ZN17IPC_Communication5ioctlEv)
+                  7009eb9e    00000002     --HOLE-- [fill = 0]
+                  7009eba0    0000000e     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.vTaskMissedYield)
+                  7009ebae    00000002     --HOLE-- [fill = 0]
+                  7009ebb0    0000000c                                                 : DebugP_uartLogWriter.obj (.text.DebugP_uartSetDrvIndex)
+                  7009ebbc    00000004     --HOLE-- [fill = 0]
+                  7009ebc0    0000000c     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_getSelfCoreId)
+                  7009ebcc    00000004     --HOLE-- [fill = 0]
+                  7009ebd0    0000000c                                                : sciclient.obj (.text.Sciclient_getSelfDevIdCore)
+                  7009ebdc    00000004     --HOLE-- [fill = 0]
+                  7009ebe0    0000000c     IPC_Communication.obj (.text._ZN17IPC_Communication12setMsgObjectEP18RPMessage_Object_s)
+                  7009ebec    00000004     --HOLE-- [fill = 0]
+                  7009ebf0    0000000c     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.text.xTaskGetCurrentTaskHandle)
+                  7009ebfc    00000004     --HOLE-- [fill = 0]
+                  7009ec00    0000000a     drivers.am64x.r5f.ti-arm-clang.release.lib : csl_sec_proxy.obj (.text.CSL_secProxyGetDataAddr)
+                  7009ec0a    00000006     --HOLE-- [fill = 0]
+                  7009ec10    0000000a     freertos.am64x.r5f.ti-arm-clang.release.lib : TimerP.obj (.text.TimerP_start)
+                  7009ec1a    00000006     --HOLE-- [fill = 0]
+                  7009ec20    0000000a                                                 : port.obj (.text.vApplicationIdleHook)
+                  7009ec2a    00000006     --HOLE-- [fill = 0]
+                  7009ec30    00000008                                                 : printf.obj (.text._out_char)
+                  7009ec38    00000008     --HOLE-- [fill = 0]
+                  7009ec40    00000008                                                 : port.obj (.text.uiPortGetRunTimeCounterValue)
+                  7009ec48    00000008     --HOLE-- [fill = 0]
+                  7009ec50    00000006                                                 : SemaphoreP_freertos.obj (.text.SemaphoreP_destruct)
+                  7009ec56    0000000a     --HOLE-- [fill = 0]
+                  7009ec60    00000006                                                 : port.obj (.text.prvTaskExitError)
+                  7009ec66    0000000a     --HOLE-- [fill = 0]
+                  7009ec70    00000006                                                 : list.obj (.text.vListInitialiseItem)
+                  7009ec76    0000000a     --HOLE-- [fill = 0]
+                  7009ec80    00000004     ti_board_open_close.obj (.text.Board_driversOpen)
+                  7009ec84    0000000c     --HOLE-- [fill = 0]
+                  7009ec90    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : ClockP_freertos.obj (.text.ClockP_getTicks)
+                  7009ec94    0000000c     --HOLE-- [fill = 0]
+                  7009eca0    00000004                                                 : ClockP_freertos_r5.obj (.text.ClockP_getTimerCount)
+                  7009eca4    0000000c     --HOLE-- [fill = 0]
+                  7009ecb0    00000004                                                 : ClockP_freertos_r5.obj (.text.ClockP_timerClearOverflowInt)
+                  7009ecb4    0000000c     --HOLE-- [fill = 0]
+                  7009ecc0    00000004     ti_drivers_open_close.obj (.text.Drivers_open)
+                  7009ecc4    0000000c     --HOLE-- [fill = 0]
+                  7009ecd0    00000004     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_getLocalEndPt)
+                  7009ecd4    0000000c     --HOLE-- [fill = 0]
+                  7009ece0    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : TaskP_freertos.obj (.text.TaskP_yield)
+                  7009ece4    0000000c     --HOLE-- [fill = 0]
+                  7009ecf0    00000004                                                 : TimerP.obj (.text.TimerP_getCount)
+                  7009ecf4    0000000c     --HOLE-- [fill = 0]
+                  7009ed00    00000004                                                 : TimerP.obj (.text.TimerP_getReloadCount)
+                  7009ed04    0000000c     --HOLE-- [fill = 0]
+                  7009ed10    00000004     libc++abi.a : stdlib_new_delete.cpp.obj (.text._ZdlPv)
+                  7009ed14    0000000c     --HOLE-- [fill = 0]
+                  7009ed20    00000004     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_idiv0)
+                  7009ed24    0000000c     --HOLE-- [fill = 0]
+                  7009ed30    00000004                            : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
+                  7009ed34    0000000c     --HOLE-- [fill = 0]
+                  7009ed40    00000004     ti_dpl_config.obj (.text.putchar_)
+                  7009ed44    0000000c     --HOLE-- [fill = 0]
+                  7009ed50    00000002     ti_board_open_close.obj (.text.Board_driversClose)
+                  7009ed52    0000000e     --HOLE-- [fill = 0]
+                  7009ed60    00000002     ti_board_config.obj (.text.Board_init)
+                  7009ed62    0000000e     --HOLE-- [fill = 0]
+                  7009ed70    00000002     freertos.am64x.r5f.ti-arm-clang.release.lib : printf.obj (.text._out_null)
+                  7009ed72    0000000e     --HOLE-- [fill = 0]
+                  7009ed80    00000002                                                 : port.obj (.text.vPortConfigTimerForRunTimeStats)
+                  7009ed82    0000000e     --HOLE-- [fill = 0]
+                  7009ed90    00000002                                                 : port.obj (.text.vPortValidateInterruptPriority)
+                  7009ed92    0000000e     --HOLE-- [fill = 0]
+
+.rodata    0    7009eda0    000022d0     
+                  7009eda0    000007b7     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.rodata.str1.1)
+                  7009f557    00000756                                                 : queue.obj (.rodata.str1.1)
+                  7009fcad    0000031a     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.rodata.str1.1)
+                  7009ffc7    000002bc     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.rodata.str1.1)
+                  700a0283    0000017d     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.rodata.str1.1)
+                  700a0400    00000135                                                : uart_v0.obj (.rodata.str1.1)
+                  700a0535    00000003     --HOLE-- [fill = 0]
+                  700a0538    0000012c                                                : sciclient_fmwSecureProxyMap.obj (.rodata.gSciclientMap)
+                  700a0664    0000010d     freertos.am64x.r5f.ti-arm-clang.release.lib : TimerP.obj (.rodata.str1.1)
+                  700a0771    0000010a                                                 : ClockP_freertos_r5.obj (.rodata.str1.1)
+                  700a087b    00000001     --HOLE-- [fill = 0]
+                  700a087c    00000004                                                 : CacheP_armv7r.obj (.rodata.gCacheL1dCacheLineSize)
+                  700a0880    00000101     libc.a : aeabi_ctype.S.obj (.rodata)
+                  700a0981    000000de     IPC_Communication.obj (.rodata.str1.1)
+                  700a0a5f    000000da     freertos.am64x.r5f.ti-arm-clang.release.lib : SemaphoreP_freertos.obj (.rodata.str1.1)
+                  700a0b39    0000008e     SystemManager.obj (.rodata.str1.1)
+                  700a0bc7    00000001     --HOLE-- [fill = 0]
+                  700a0bc8    00000070     ti_dpl_config.obj (.rodata.gMpuRegionConfig)
+                  700a0c38    0000006c     communication.obj (.rodata.str1.1)
+                  700a0ca4    00000063     utils_communication.obj (.rodata.str1.1)
+                  700a0d07    0000005d     freertos.am64x.r5f.ti-arm-clang.release.lib : port.obj (.rodata.str1.1)
+                  700a0d64    00000004                                                 : CacheP_armv7r.obj (.rodata.gCacheL1pCacheLineSize)
+                  700a0d68    00000050                                                 : printf.obj (.rodata._ftoa.pow10)
+                  700a0db8    00000050     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.rodata.str1.1)
+                  700a0e08    0000004b                                                : uart_dma.obj (.rodata.str1.1)
+                  700a0e53    00000046     ti_drivers_open_close.obj (.rodata.str1.1)
+                  700a0e99    00000045     libc.a : aeabi_portable.c.obj (.rodata.str1.1)
+                  700a0ede    00000042     ti_drivers_config.obj (.rodata.str1.1)
+                  700a0f20    0000003f     main.obj (.rodata.str1.1)
+                  700a0f5f    0000002d     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_log.obj (.rodata.str1.1)
+                  700a0f8c    00000024     libc++.a : string.cpp.obj (.rodata.str1.1)
+                  700a0fb0    00000022     libc.a : _printfi.c.obj (.rodata.str1.1)
+                  700a0fd2    00000002     --HOLE-- [fill = 0]
+                  700a0fd4    0000001c     IPC_Communication.obj (.rodata._ZTV17IPC_Communication)
+                  700a0ff0    0000001a     communication.obj (.rodata.str1.8)
+                  700a100a    00000002     --HOLE-- [fill = 0]
+                  700a100c    00000018     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_soc_priv.obj (.rodata..Lswitch.table.Sciclient_getDevId)
+                  700a1024    00000015     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_shmLogReader_freertos.obj (.rodata.str1.1)
+                  700a1039    00000012                                                 : printf.obj (.rodata.str1.1)
+                  700a104b    00000001     --HOLE-- [fill = 0]
+                  700a104c    0000000c     ti_dpl_config.obj (.rodata.gMpuConfig)
+                  700a1058    00000008     ti_dpl_config.obj (.rodata.gCacheConfig)
+                  700a1060    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.rodata.uxTopUsedPriority)
+                  700a1064    0000000c     --HOLE-- [fill = 0]
+
+.text.hwi 
+*          0    700a1070    000008d0     
+                  700a1070    00000452     freertos.am64x.r5f.ti-arm-clang.release.lib : HwiP_armv7r_vim.obj (.text.hwi)
+                  700a14c2    00000002     --HOLE-- [fill = 0]
+                  700a14c4    00000008                                                 : HwiP_armv7r_asm.obj (.tramp.HwiP_enableFIQ.1)
+                  700a14cc    00000004     --HOLE-- [fill = 0]
+                  700a14d0    0000020e                                                 : HwiP_armv7r_handlers_freertos.obj (.text.hwi)
+                  700a16de    00000002     --HOLE-- [fill = 0]
+                  700a16e0    000001ec                                                 : portASM.obj (.text.hwi)
+                  700a18cc    00000070                                                 : HwiP_armv7r_asm.obj (.text.hwi)
+                  700a193c    00000004     --HOLE-- [fill = 0]
+
+.text.cache 
+*          0    700a1940    00000450     
+                  700a1940    00000340     freertos.am64x.r5f.ti-arm-clang.release.lib : CacheP_armv7r_asm.obj (.text.cache)
+                  700a1c80    000000f6                                                 : CacheP_armv7r.obj (.text.cache)
+                  700a1d76    00000002     --HOLE-- [fill = 0]
+                  700a1d78    00000008                                                 : CacheP_armv7r_asm.obj (.tramp.CacheP_invL1d.1)
+                  700a1d80    00000008                                                 : HwiP_armv7r_asm.obj (.tramp.HwiP_restore.1)
+                  700a1d88    00000008                                                 : CacheP_armv7r_asm.obj (.tramp.CacheP_enableL1p.1)
+
+.text.mpu 
+*          0    700a1d90    00000240     
+                  700a1d90    000001b4     freertos.am64x.r5f.ti-arm-clang.release.lib : MpuP_armv7r.obj (.text.mpu)
+                  700a1f44    00000078                                                 : MpuP_armv7r_asm.obj (.text.mpu)
+                  700a1fbc    00000008                                                 : MpuP_armv7r_asm.obj (.tramp.MpuP_isEnableAsm.1)
+                  700a1fc4    00000008                                                 : HwiP_armv7r_asm.obj (.tramp.HwiP_restore.2)
+                  700a1fcc    00000004     --HOLE-- [fill = 0]
+
+.text.boot 
+*          0    700a1fd0    00000130     
+                  700a1fd0    000000fc     freertos.am64x.r5f.ti-arm-clang.release.lib : boot_armv7r_asm.obj (.text.boot)
+                  700a20cc    00000004     --HOLE-- [fill = 0]
+                  700a20d0    0000001e                                                 : DebugP_log.obj (.text.boot)
+                  700a20ee    00000002     --HOLE-- [fill = 0]
+                  700a20f0    0000000e     ti_dpl_config.obj (.text.boot)
+                  700a20fe    00000002     --HOLE-- [fill = 0]
+
+.text:abort 
+*          0    700a2100    00000008     
+                  700a2100    00000008     libc.a : exit.c.obj (.text:abort)
+
+.data      0    700a2108    00000660     
+                  700a2108    000000f0     libc.a : defs.c.obj (.data._ftable)
+                  700a21f8    000000c0     SystemManager.obj (.data._ZL15staticMsgObject)
+                  700a22b8    0000009c     drivers.am64x.r5f.ti-arm-clang.release.lib : uart_v0.obj (.data.gUartDrvObj)
+                  700a2354    00000093                                                : ipc_notify_v0_cfg.obj (.data.gIpcNotifyMailboxConfig)
+                  700a23e7    00000001     SystemManager.obj (.data._ZL11initialized)
+                  700a23e8    0000008c     main.obj (.data.gMainTaskObj)
+                  700a2474    00000078     libsysbm.a : host_device.c.obj (.data._device)
+                  700a24ec    00000060     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0_cfg.obj (.data.gIpcNotifyInterruptConfig_r5fss0_0)
+                  700a254c    00000054     ti_drivers_open_close.obj (.data.gUartParams)
+                  700a25a0    00000050     libsysbm.a : host_device.c.obj (.data._stream)
+                  700a25f0    00000024     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0_cfg.obj (.data.gIpcNotifyMailboxBaseAddr)
+                  700a2614    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : tasks.obj (.data.FreeRTOS_errno)
+                  700a2618    00000020     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient_soc_priv.obj (.data.gSciclientSecProxyCfg)
+                  700a2638    00000018     ti_pinmux_config.obj (.data.gPinMuxMainDomainCfg)
+                  700a2650    00000018     ti_power_clock_config.obj (.data.gSocModulesClockFrequency)
+                  700a2668    00000014     ti_dpl_config.obj (.data.gClockConfig)
+                  700a267c    00000004     libc.a : defs.c.obj (.data.__TI_ft_end)
+                  700a2680    0000000c     freertos.am64x.r5f.ti-arm-clang.release.lib : AddrTranslateP.obj (.data.gAddrTranslateConfig)
+                  700a268c    00000008     libc.a : exit.c.obj (.data..L_MergedGlobals)
+                  700a2694    00000008     ti_pinmux_config.obj (.data.gPinMuxMcuDomainCfg)
+                  700a269c    00000008     ti_power_clock_config.obj (.data.gSocModules)
+                  700a26a4    00000008     ti_drivers_config.obj (.data.gUartAttrs)
+                  700a26ac    00000008     ti_drivers_config.obj (.data.gUartConfig)
+                  700a26b4    00000004     libc.a : aeabi_portable.c.obj (.data.__aeabi_errno)
+                  700a26b8    00000008     freertos.am64x.r5f.ti-arm-clang.release.lib : PmuP_armv7r.obj (.data.pmu)
+                  700a26c0    00000008                                                 : TaskP_freertos.obj (.data.vApplicationLoadHook.lastUpdateTime)
+                  700a26c8    00000004     libc++abi.a : cxa_default_handlers.cpp.obj (.data.__cxa_new_handler)
+                  700a26cc    00000004     libc.a : _lock.c.obj (.data._lock)
+                  700a26d0    00000004            : _lock.c.obj (.data._unlock)
+                  700a26d4    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : DebugP_log.obj (.data.gDebugLogZone)
+                  700a26d8    00000004                                                 : DebugP_uartLogWriter.obj (.data.gDebugP_uartDrvIndex)
+                  700a26dc    00000004     ti_dpl_config.obj (.data.gHwiConfig)
+                  700a26e0    00000004     drivers.am64x.r5f.ti-arm-clang.release.lib : ipc_notify_v0_cfg.obj (.data.gIpcNotifyInterruptConfigNum_r5fss0_0)
+                  700a26e4    00000004                                                : sciclient.obj (.data.gSciclientHandle.0)
+                  700a26e8    00000004                                                : sciclient.obj (.data.gSciclientHandle.2)
+                  700a26ec    00000004                                                : sciclient.obj (.data.gSciclientHandle.3)
+                  700a26f0    00000004                                                : sciclient.obj (.data.gSciclientHandle.4)
+                  700a26f4    00000004                                                : sciclient.obj (.data.gSciclientHandle.5)
+                  700a26f8    00000004     ti_drivers_config.obj (.data.gUartConfigNum)
+                  700a26fc    00000004     ti_drivers_config.obj (.data.gUartDmaConfigNum)
+                  700a2700    00000004     libc.a : strtok.c.obj (.data.last_end)
+                  700a2704    00000004     freertos.am64x.r5f.ti-arm-clang.release.lib : timers.obj (.data.prvSampleTimeNow.xLastTime)
+                  700a2708    00000004                                                 : tasks.obj (.data.pxCurrentTCB)
+                  700a270c    00000004                                                 : port.obj (.data.ulPortInterruptNesting)
+                  700a2710    00000004                                                 : port.obj (.data.ulPortSchedularRunning)
+                  700a2714    00000004                                                 : port.obj (.data.ulPortTaskHasFPUContext)
+                  700a2718    00000004                                                 : port.obj (.data.ulPortYieldRequired)
+                  700a271c    00000004                                                 : tasks.obj (.data.ulTaskSwitchedInTime)
+                  700a2720    00000004                                                 : tasks.obj (.data.ulTotalRunTime)
+                  700a2724    00000004                                                 : tasks.obj (.data.uxCurrentNumberOfTasks)
+                  700a2728    00000004                                                 : tasks.obj (.data.uxDeletedTasksWaitingCleanUp)
+                  700a272c    00000004                                                 : tasks.obj (.data.uxSchedulerSuspended)
+                  700a2730    00000004                                                 : tasks.obj (.data.uxTaskNumber)
+                  700a2734    00000004                                                 : tasks.obj (.data.uxTopReadyPriority)
+                  700a2738    00000004                                                 : tasks.obj (.data.xIdleTaskHandle)
+                  700a273c    00000004                                                 : tasks.obj (.data.xNextTaskUnblockTime)
+                  700a2740    00000004                                                 : tasks.obj (.data.xNumOfOverflows)
+                  700a2744    00000004                                                 : tasks.obj (.data.xPendedTicks)
+                  700a2748    00000004                                                 : tasks.obj (.data.xSchedulerRunning)
+                  700a274c    00000004                                                 : tasks.obj (.data.xTickCount)
+                  700a2750    00000004                                                 : timers.obj (.data.xTimerQueue)
+                  700a2754    00000004                                                 : timers.obj (.data.xTimerTaskHandle)
+                  700a2758    00000004                                                 : tasks.obj (.data.xYieldPending)
+                  700a275c    00000001                                                 : DebugP_freertos.obj (.data.gDebugLogIsInitDone)
+                  700a275d    00000001     drivers.am64x.r5f.ti-arm-clang.release.lib : sciclient.obj (.data.gSecHeaderSizeWords)
+                  700a275e    00000002     --HOLE-- [fill = 0]
+                  700a2760    00000001     libc.a : memory.c.obj (.data.memory_is_initialized)
+                  700a2761    00000007     --HOLE-- [fill = 0]
+
+.irqstack 
+*          0    700a2768    00000100     UNINITIALIZED
+                  700a2768    00000100     --HOLE--
+
+.fiqstack 
+*          0    700a2868    00000100     UNINITIALIZED
+                  700a2868    00000100     --HOLE--
+
+.svcstack 
+*          0    700a2968    00001000     UNINITIALIZED
+                  700a2968    00001000     --HOLE--
+
+.abortstack 
+*          0    700a3968    00000100     UNINITIALIZED
+                  700a3968    00000100     --HOLE--
+
+.undefinedstack 
+*          0    700a3a68    00000100     UNINITIALIZED
+                  700a3a68    00000100     --HOLE--
+
+.bss.log_shared_mem 
+*          0    701d0080    00003800     NOLOAD SECTION
+                  701d0080    00003800     ti_dpl_config.obj (.bss.log_shared_mem)
+
+.bss.ipc_vring_mem 
+*          0    701d4000    000099c0     NOLOAD SECTION
+                  701d4000    000099c0     ti_drivers_config.obj (.bss.ipc_vring_mem)
+
+.ARM.exidx 
+*          0    00000040    00000008     
+                  00000040    00000008     (.ARM.exidx.vectors:freertos.am64x.r5f.ti-arm-clang.release.lib<HwiP_armv7r_vectors_freertos_asm.obj>)
+
+MODULE SUMMARY
+
+       Module                                 code    ro data   rw data
+       ------                                 ----    -------   -------
+    obj/release/
+       ti_drivers_config.obj                  272     66        40024  
+       main.obj                               146     63        16528  
+       ti_dpl_config.obj                      96      132       14360  
+       utils_communication.obj                574     99        0      
+       IPC_Communication.obj                  416     250       0      
+       SystemManager.obj                      164     142       193    
+       communication.obj                      334     134       0      
+       ti_drivers_open_close.obj              104     70        88     
+       ti_power_clock_config.obj              114     0         32     
+       ti_pinmux_config.obj                   34      0         32     
+       ti_board_open_close.obj                6       0         0      
+       ti_board_config.obj                    2       0         0      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 2262    956       71257  
+                                                                       
+    /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/drivers/lib/drivers.am64x.r5f.ti-arm-clang.release.lib
+       ipc_rpmsg.obj                          1740    794       2860   
+       uart_v0.obj                            3460    309       156    
+       ipc_notify_v0.obj                      1434    381       168    
+       sciclient.obj                          1270    0         21     
+       ipc_rpmsg_vring.obj                    1124    80        0      
+       sciclient_pm.obj                       1184    0         0      
+       soc.obj                                544     0         0      
+       uart_dma.obj                           254     75        0      
+       sciclient_fmwSecureProxyMap.obj        0       300       0      
+       ipc_notify_v0_cfg.obj                  0       0         283    
+       pinmux.obj                             188     0         0      
+       sciclient_soc_priv.obj                 104     24        32     
+       csl_sec_proxy.obj                      10      0         0      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 11312   1963      3520   
+                                                                       
+    /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/kernel/freertos/lib/freertos.am64x.r5f.ti-arm-clang.release.lib
+       tasks.obj                              4172    1979      812    
+       port.obj                               356     93        5416   
+       queue.obj                              3124    1878      256    
+       HwiP_armv7r_vim.obj                    1106    0         4108   
+       DebugP_shmLogReader_freertos.obj       80      21        4240   
+       printf.obj                             3952    98        0      
+       timers.obj                             1184    700       396    
+       CacheP_armv7r_asm.obj                  848     0         0      
+       TimerP.obj                             516     269       0      
+       SemaphoreP_freertos.obj                370     218       80     
+       ClockP_freertos_r5.obj                 318     266       0      
+       HwiP_armv7r_handlers_freertos.obj      526     0         4      
+       DebugP_shmLogReader.obj                362     0         148    
+       portASM.obj                            492     0         0      
+       MpuP_armv7r.obj                        436     0         0      
+       TaskP_freertos.obj                     238     0         168    
+       ClockP_freertos.obj                    216     0         56     
+       DebugP_freertos.obj                    118     0         153    
+       CacheP_armv7r.obj                      246     8         0      
+       boot_armv7r_asm.obj                    252     0         0      
+       DebugP_log.obj                         154     45        4      
+       list.obj                               150     0         0      
+       HwiP_armv7r_asm.obj                    144     0         0      
+       MpuP_armv7r_asm.obj                    128     0         0      
+       AddrTranslateP.obj                     104     0         12     
+       PmuP_armv7r.obj                        100     0         8      
+       DebugP_uartLogWriter.obj               70      0         4      
+       HwiP_armv7r_vectors_freertos_asm.obj   64      0         0      
+       PmuP_armv7r_asm.obj                    56      0         0      
+       boot_armv7r.obj                        28      0         0      
+       heap_3.obj                             26      0         0      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 19936   5575      15865  
+                                                                       
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7r-ti-none-eabihf/c/libc.a
+       memory.c.obj                           1172    0         5      
+       _printfi.c.obj                         1024    34        0      
+       strtol.c.obj                           520     0         0      
+       fputs.c.obj                            420     0         0      
+       defs.c.obj                             0       0         404    
+       setvbuf.c.obj                          324     0         0      
+       getdevice.c.obj                        308     0         0      
+       fflush.c.obj                           304     0         0      
+       aeabi_ctype.S.obj                      0       257       0      
+       fputc.c.obj                            232     0         0      
+       aeabi_portable.c.obj                   148     69        4      
+       fseek.c.obj                            184     0         0      
+       fclose.c.obj                           180     0         0      
+       fprintf.c.obj                          160     0         0      
+       _io_perm.c.obj                         156     0         0      
+       sprintf.c.obj                          152     0         0      
+       strtok.c.obj                           120     0         4      
+       exit.c.obj                             92      0         8      
+       fopen.c.obj                            88      0         0      
+       autoinit.c.obj                         80      0         0      
+       memccpy.c.obj                          72      0         0      
+       strcspn.c.obj                          72      0         0      
+       strspn.c.obj                           68      0         0      
+       strdup.c.obj                           64      0         0      
+       assert.c.obj                           32      0         0      
+       strlen.c.obj                           28      0         0      
+       _lock.c.obj                            4       0         8      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 6004    360       433    
+                                                                       
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7r-ti-none-eabihf/c/libsysbm.a
+       trgmsg.c.obj                           176     0         288    
+       memcpy32.S.obj                         384     0         0      
+       hostrename.c.obj                       208     0         0      
+       host_device.c.obj                      0       0         200    
+       memset32.S.obj                         160     0         0      
+       hostopen.c.obj                         148     0         8      
+       hostlseek.c.obj                        152     0         0      
+       close.c.obj                            140     0         0      
+       hostread.c.obj                         132     0         0      
+       hostwrite.c.obj                        132     0         0      
+       hostunlink.c.obj                       108     0         0      
+       hostclose.c.obj                        96      0         0      
+       unlink.c.obj                           72      0         0      
+       lseek.c.obj                            52      0         0      
+       write.c.obj                            52      0         0      
+       remove.c.obj                           4       0         0      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 2016    0         496    
+                                                                       
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7r-ti-none-eabihf/libc++.a
+       string.cpp.obj                         1292    36        0      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 1292    36        0      
+                                                                       
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7r-ti-none-eabihf/libc++abi.a
+       stdlib_new_delete.cpp.obj              84      0         0      
+       cxa_handlers.cpp.obj                   16      0         0      
+       cxa_default_handlers.cpp.obj           0       0         4      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 100     0         4      
+                                                                       
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/clang/14.0.6/lib/armv7r-ti-none-eabihf/libclang_rt.builtins.a
+       udivsi3.S.obj                          464     0         0      
+       udivmoddi4.S.obj                       280     0         0      
+       aeabi_uldivmod.S.obj                   36      0         0      
+       aeabi_memset.S.obj                     28      0         0      
+       aeabi_div0.c.obj                       8       0         0      
+       aeabi_memcpy.S.obj                     4       0         0      
+    +--+--------------------------------------+-------+---------+---------+
+       Total:                                 820     0         0      
+                                                                       
+       Heap:                                  0       0         32768  
+       Stack:                                 0       0         16384  
+       Linker Generated:                      0       8         0      
+    +--+--------------------------------------+-------+---------+---------+
+       Grand Total:                           43742   8898      140727 
+
+VENEERS
+
+callee name               veneer name
+   callee addr  veneer addr  call addr  call info
+--------------  -----------  ---------  ----------------
+HwiP_enableFIQ            $Ven$TA$L$PI$$HwiP_enableFIQ
+   700a18fc     700a14c4     700a14ac   freertos.am64x.r5f.ti-arm-clang.release.lib : HwiP_armv7r_vim.obj (.text.hwi)
+CacheP_invL1d             $Ven$TA$L$PI$$CacheP_invL1d
+   700a19b0     700a1d78     700a1d72   freertos.am64x.r5f.ti-arm-clang.release.lib : CacheP_armv7r.obj (.text.cache)
+HwiP_restore              $Ven$TA$L$PI$$HwiP_restore
+   700a190c     700a1d80     700a1d26   freertos.am64x.r5f.ti-arm-clang.release.lib : CacheP_armv7r.obj (.text.cache)
+CacheP_enableL1p          $Ven$TA$L$PI$$CacheP_enableL1p
+   700a1998     700a1d88     700a1cec   freertos.am64x.r5f.ti-arm-clang.release.lib : CacheP_armv7r.obj (.text.cache)
+                             700a1d4c                                               : CacheP_armv7r.obj (.text.cache)
+MpuP_isEnableAsm          $Ven$TA$L$PI$$MpuP_isEnableAsm
+   700a1f94     700a1fbc     700a1ed0   freertos.am64x.r5f.ti-arm-clang.release.lib : MpuP_armv7r.obj (.text.mpu)
+HwiP_restore              $Ven$TA$L$PI$$HwiP_restore
+   700a190c     700a1fc4     700a1e84   freertos.am64x.r5f.ti-arm-clang.release.lib : MpuP_armv7r.obj (.text.mpu)
+                             700a1ebc                                               : MpuP_armv7r.obj (.text.mpu)
+_ZdlPv                    $Ven$TA$L$PI$$_ZdlPv
+   7009ed10     700982f4     7009e564   IPC_Communication.obj (.text._ZN17IPC_CommunicationD0Ev)
+HwiP_enable               $Ven$TA$L$PI$$HwiP_enable
+   700a18ec     70098604     7009d9ea   ti_dpl_config.obj (.text.Dpl_init)
+PmuP_enableCounters       $Ven$TA$L$PI$$PmuP_enableCounters
+   7009e340     70098c78     7009cdf0   freertos.am64x.r5f.ti-arm-clang.release.lib : PmuP_armv7r.obj (.text.pmu)
+
+[9 trampolines]
+[11 trampoline calls]
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                                          
+-------   ----                                                                          
+00000040  .ARM.exidx$$Base                                                              
+00000048  .ARM.exidx$$Limit                                                             
+7009ca81  AddrTranslateP_getLocalAddr                                                   
+7009ed51  Board_driversClose                                                            
+7009ec81  Board_driversOpen                                                             
+7009ed61  Board_init                                                                    
+700a2100  C$$EXIT                                                                       
+7009d334  C$$IO$$                                                                       
+7009ec01  CSL_secProxyGetDataAddr                                                       
+700a1c50  CacheP_configForceWrThru                                                      
+700a1cf1  CacheP_disable                                                                
+700a1940  CacheP_disableL1d                                                             
+700a1968  CacheP_disableL1p                                                             
+700a1d31  CacheP_enable                                                                 
+700a1980  CacheP_enableL1d                                                              
+700a1998  CacheP_enableL1p                                                              
+700a1c44  CacheP_getCacheLevelInfo                                                      
+700a1c0c  CacheP_getEnabled                                                             
+700a1c81  CacheP_init                                                                   
+700a1d51  CacheP_inv                                                                    
+700a19b0  CacheP_invL1d                                                                 
+700a1a24  CacheP_invL1dAll                                                              
+700a19e8  CacheP_invL1p                                                                 
+700a1a2c  CacheP_invL1pAll                                                              
+700a1c70  CacheP_setDLFO                                                                
+700a1a34  CacheP_wb                                                                     
+700a1aac  CacheP_wbAll                                                                  
+700a1a70  CacheP_wbInv                                                                  
+700a1b54  CacheP_wbInvAll                                                               
+700a1b6c  CacheP_wbInvAllAsm                                                            
+7009ec91  ClockP_getTicks                                                               
+7009da91  ClockP_getTimeUsec                                                            
+7009eca1  ClockP_getTimerCount                                                          
+70098b41  ClockP_init                                                                   
+7009eb31  ClockP_ticksToUsec                                                            
+7009ecb1  ClockP_timerClearOverflowInt                                                  
+7009e391  ClockP_timerTickIsr                                                           
+7009eab1  ClockP_usecToTicks                                                            
+7009e161  ClockP_usleep                                                                 
+7009e330  CycleCounterP_getCount32                                                      
+7009cd91  CycleCounterP_init                                                            
+7009cda1  CycleCounterP_nsToTicks                                                       
+7009cdd1  CycleCounterP_reset                                                           
+7009e741  DebugP_logZoneEnable                                                          
+7009b291  DebugP_shmLogReaderGetString                                                  
+7009e301  DebugP_shmLogReaderInit                                                       
+7009d811  DebugP_shmLogReaderTaskCreate                                                 
+7009b5b1  DebugP_shmLogReaderTaskMain                                                   
+7009e021  DebugP_uartLogWriterPutChar                                                   
+7009ebb1  DebugP_uartSetDrvIndex                                                        
+7009d9a1  Dpl_init                                                                      
+7009e9d1  Drivers_close                                                                 
+7009ecc1  Drivers_open                                                                  
+7009dae1  Drivers_uartOpen                                                              
+700a2614  FreeRTOS_errno                                                                
+7009ced4  HOSTclose                                                                     
+7009b78c  HOSTlseek                                                                     
+7009b9f8  HOSTopen                                                                      
+7009c048  HOSTread                                                                      
+7009b330  HOSTrename                                                                    
+7009c930  HOSTunlink                                                                    
+7009c0cc  HOSTwrite                                                                     
+700a1191  HwiP_Params_init                                                              
+700a1141  HwiP_clearInt                                                                 
+700a11b1  HwiP_construct                                                                
+700a16b1  HwiP_data_abort_handler                                                       
+700a1301  HwiP_destruct                                                                 
+700a18cc  HwiP_disable                                                                  
+700a18dc  HwiP_disableFIQ                                                               
+700a10a1  HwiP_disableInt                                                               
+700a1924  HwiP_disableVIC                                                               
+700a18ec  HwiP_enable                                                                   
+700a18fc  HwiP_enableFIQ                                                                
+700a1071  HwiP_enableInt                                                                
+700a1914  HwiP_enableVIC                                                                
+700a1561  HwiP_fiq_handler                                                              
+700a1934  HwiP_getCPSR                                                                  
+700a14b1  HwiP_inISR                                                                    
+700a13e1  HwiP_init                                                                     
+700a1788  HwiP_irq_handler                                                              
+700a14d1  HwiP_irq_handler_c                                                            
+700a1161  HwiP_post                                                                     
+700a1681  HwiP_prefetch_abort_handler                                                   
+700a1621  HwiP_reserved_handler                                                         
+700a190c  HwiP_restore                                                                  
+700a10e1  HwiP_restoreInt                                                               
+700a1718  HwiP_svc_handler                                                              
+700a1651  HwiP_undefined_handler                                                        
+7009e911  IpcNotify_Params_init                                                         
+7009e9f1  IpcNotify_getConfig                                                           
+7009ebc1  IpcNotify_getSelfCoreId                                                       
+700967f1  IpcNotify_init                                                                
+7009ea11  IpcNotify_isCoreEnabled                                                       
+7009a2b1  IpcNotify_isr                                                                 
+7009df21  IpcNotify_registerClient                                                      
+7009a121  IpcNotify_sendMsg                                                             
+7009e7c1  IpcNotify_syncCallback                                                        
+7009e3c1  Module_clockEnable                                                            
+7009e1a1  Module_clockSetFrequency                                                      
+700a1d91  MpuP_RegionAttrs_init                                                         
+700a1e91  MpuP_disable                                                                  
+700a1f44  MpuP_disableAsm                                                               
+700a1f5c  MpuP_disableBRAsm                                                             
+700a1e51  MpuP_enable                                                                   
+700a1f6c  MpuP_enableAsm                                                                
+700a1f84  MpuP_enableBRAsm                                                              
+700a1ee1  MpuP_init                                                                     
+700a1ed1  MpuP_isEnable                                                                 
+700a1f94  MpuP_isEnableAsm                                                              
+700a1da1  MpuP_setRegion                                                                
+700a1fa8  MpuP_setRegionAsm                                                             
+7009a6a1  Pinmux_config                                                                 
+7009e6b1  Pinmux_init                                                                   
+7009e358  PmuP_clearOverflowStatus                                                      
+7009e348  PmuP_disableCounters                                                          
+7009e340  PmuP_enableCounters                                                           
+7009e350  PmuP_getOverflowStatus                                                        
+7009e338  PmuP_setup                                                                    
+7009eb81  PowerClock_init                                                               
+7009eb41  RPMessage_CreateParams_init                                                   
+7009e511  RPMessage_Params_init                                                         
+7009db31  RPMessage_allocEndPtMsg                                                       
+7009c361  RPMessage_construct                                                           
+7009e451  RPMessage_controlEndPtHandler                                                 
+7009b831  RPMessage_coreInit                                                            
+7009cb61  RPMessage_getEndPtMsg                                                         
+7009ecd1  RPMessage_getLocalEndPt                                                       
+70099db1  RPMessage_init                                                                
+7009e571  RPMessage_isLinuxCore                                                         
+7009d521  RPMessage_notifyCallback                                                      
+70098c81  RPMessage_recv                                                                
+700994c1  RPMessage_recvHandler                                                         
+700996e1  RPMessage_send                                                                
+7009e0e1  RPMessage_vringCheckEmptyTxBuf                                                
+7009bb31  RPMessage_vringGetEmptyTxBuf                                                  
+7009add1  RPMessage_vringGetFullRxBuf                                                   
+7009e931  RPMessage_vringGetRxBufAddr                                                   
+7009e951  RPMessage_vringGetTxBufAddr                                                   
+7009e821  RPMessage_vringGetTxBufLen                                                    
+7009d121  RPMessage_vringIsFullRxBuf                                                    
+7009b471  RPMessage_vringPutEmptyRxBuf                                                  
+7009cfa1  RPMessage_vringPutFullTxBuf                                                   
+7009a5e1  RPMessage_vringReset                                                          
+7009bd91  RPMessage_vringResetInternal                                                  
+7009e4b1  SOC_controlModuleLockMMR                                                      
+7009df61  SOC_controlModuleUnlockMMR                                                    
+7009e761  SOC_getSelfCpuClk                                                             
+7009c851  SOC_moduleClockEnable                                                         
+70098f01  SOC_moduleSetClockFrequency                                                   
+7009d861  Sciclient_getContext                                                          
+7009e121  Sciclient_getCurrentContext                                                   
+7009ea31  Sciclient_getDevId                                                            
+7009ebd1  Sciclient_getSelfDevIdCore                                                    
+7009b651  Sciclient_init                                                                
+7009cbd1  Sciclient_pmGetModuleClkFreq                                                  
+7009c3e1  Sciclient_pmGetModuleClkNumParent                                             
+7009cc41  Sciclient_pmGetModuleClkParent                                                
+7009c8c1  Sciclient_pmGetModuleState                                                    
+7009d001  Sciclient_pmModuleClkRequest                                                  
+7009cd21  Sciclient_pmModuleGetClkStatus                                                
+7009b091  Sciclient_pmQueryModuleClkFreq                                                
+7009bbd1  Sciclient_pmSetModuleClkFreq                                                  
+7009d061  Sciclient_pmSetModuleClkParent                                                
+7009dd91  Sciclient_pmSetModuleRst                                                      
+7009d631  Sciclient_pmSetModuleState                                                    
+70096471  Sciclient_service                                                             
+7009c7e1  SemaphoreP_constructBinary                                                    
+7009d691  SemaphoreP_constructMutex                                                     
+7009ec51  SemaphoreP_destruct                                                           
+7009d181  SemaphoreP_pend                                                               
+7009d6f1  SemaphoreP_post                                                               
+700999e1  System_init                                                                   
+7009ac71  TaskP_loadUpdateAll                                                           
+7009ece1  TaskP_yield                                                                   
+7009e781  TimerP_Params_init                                                            
+7009eaf1  TimerP_clearOverflowInt                                                       
+7009ecf1  TimerP_getCount                                                               
+7009ed01  TimerP_getReloadCount                                                         
+70097a71  TimerP_setup                                                                  
+7009ec11  TimerP_start                                                                  
+70098771  UART_close                                                                    
+7009d581  UART_dmaClose                                                                 
+7009d401  UART_dmaDisableChannel                                                        
+7009e061  UART_dmaOpen                                                                  
+7009aa41  UART_flushTxFifo                                                              
+7009e3f1  UART_getHandle                                                                
+7009ba91  UART_init                                                                     
+70095341  UART_open                                                                     
+700974d1  UART_write                                                                    
+7009e971  UART_writeInterruptDma                                                        
+7008844c  _CIOBUF_                                                                      
+7009d0c1  _DebugP_assert                                                                
+700a20d1  _DebugP_assertNoLog                                                           
+7009c5e1  _DebugP_logZone                                                               
+7009db81  _Z11r5_0_0_codev                                                              
+7009d751  _Z11r5_0_1_codev                                                              
+7009eb11  _Z13freertos_mainPv                                                           
+70099cc1  _Z13str_to_coreIdPc                                                           
+7009e4e1  _Z14str_to_int16_tPc                                                          
+7009d8b1  _Z18communication_mainPv                                                      
+7009cf41  _Z7m4_codev                                                                   
+70099ea1  _Z9str_splitPcc                                                               
+7009ebe1  _ZN17IPC_Communication12setMsgObjectEP18RPMessage_Object_s                    
+7009ccb1  _ZN17IPC_Communication4readEv                                                 
+7009eb91  _ZN17IPC_Communication5ioctlEv                                                
+7009ce71  _ZN17IPC_Communication5writeEPc                                               
+7009c6e1  _ZN17IPC_CommunicationC1EPc                                                   
+7009c6e1  _ZN17IPC_CommunicationC2EPc                                                   
+7009e541  _ZN17IPC_CommunicationD0Ev                                                    
+7009e6e1  _ZN17IPC_CommunicationD2Ev                                                    
+7009d1e1  _ZN20CommunicationFactory28init_RPMessage_communicationEt                     
+7009dbd1  _ZN20CommunicationFactory4openE17CommunicationTypePc                          
+7009d461  _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc     
+7009de20  _ZNSt3__14stoiERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPji
+7009eb50  _ZSt15get_new_handlerv                                                        
+700a0fd4  _ZTV17IPC_Communication                                                       
+7009ed10  _ZdlPv                                                                        
+7009dc20  _Znwj                                                                         
+700a3a68  __ABORT_STACK_END                                                             
+00000100  __ABORT_STACK_SIZE                                                            
+700a3968  __ABORT_STACK_START                                                           
+70088da0  __BSS_END                                                                     
+70080000  __BSS_START                                                                   
+7008844c  __CIOBUF_                                                                     
+700a2968  __FIQ_STACK_END                                                               
+00000100  __FIQ_STACK_SIZE                                                              
+700a2868  __FIQ_STACK_START                                                             
+700a2868  __IRQ_STACK_END                                                               
+00000100  __IRQ_STACK_SIZE                                                              
+700a2768  __IRQ_STACK_START                                                             
+70094da0  __STACK_END                                                                   
+00004000  __STACK_SIZE                                                                  
+700a3968  __SVC_STACK_END                                                               
+00001000  __SVC_STACK_SIZE                                                              
+700a2968  __SVC_STACK_START                                                             
+00008000  __SYSMEM_SIZE                                                                 
+UNDEFED   __TI_CINIT_Base                                                               
+UNDEFED   __TI_CINIT_Limit                                                              
+UNDEFED   __TI_Handler_Table_Base                                                       
+UNDEFED   __TI_Handler_Table_Limit                                                      
+00000048  __TI_UNWIND_TABLE_END                                                         
+00000040  __TI_UNWIND_TABLE_START                                                       
+7009d950  __TI_auto_init_nobinit_nopinit                                                
+7009d238  __TI_cleanup                                                                  
+700a268c  __TI_cleanup_ptr                                                              
+7009a8d8  __TI_closefile                                                                
+7009bf38  __TI_doflush                                                                  
+700a2690  __TI_dtors_ptr                                                                
+700a267c  __TI_ft_end                                                                   
+ffffffff  __TI_pprof_out_hndl                                                           
+70095cfc  __TI_printfi_minimal                                                          
+ffffffff  __TI_prof_data_size                                                           
+ffffffff  __TI_prof_data_start                                                          
+7009d290  __TI_readmsg                                                                  
+00000000  __TI_static_base__                                                            
+70088814  __TI_tmpnams                                                                  
+7009d2e8  __TI_writemsg                                                                 
+7009b510  __TI_wrt_ok                                                                   
+700a3b68  __UNDEFINED_STACK_END                                                         
+00000100  __UNDEFINED_STACK_SIZE                                                        
+700a3a68  __UNDEFINED_STACK_START                                                       
+7009c99c  __aeabi_assert                                                                
+700a0880  __aeabi_ctype_table_                                                          
+700a0880  __aeabi_ctype_table_C                                                         
+700a26b4  __aeabi_errno                                                                 
+70096b64  __aeabi_errno_addr                                                            
+7009ed20  __aeabi_idiv0                                                                 
+7009ed30  __aeabi_ldiv0                                                                 
+7009e8fc  __aeabi_memclr                                                                
+7009e8fc  __aeabi_memclr4                                                               
+7009e8fc  __aeabi_memclr8                                                               
+7009646c  __aeabi_memcpy                                                                
+7009646c  __aeabi_memcpy4                                                               
+7009646c  __aeabi_memcpy8                                                               
+7009e8ec  __aeabi_memset                                                                
+7009e8ec  __aeabi_memset4                                                               
+7009e8ec  __aeabi_memset8                                                               
+700976d0  __aeabi_uidiv                                                                 
+7009e684  __aeabi_uldivmod                                                              
+ffffffff  __binit__                                                                     
+700a26c8  __cxa_new_handler                                                             
+700a20f1  __mpu_init                                                                    
+70090da0  __stack                                                                       
+70099288  __udivmoddi4                                                                  
+700976d0  __udivsi3                                                                     
+7009e7a0  _abort_msg                                                                    
+700a1ff4  _c_int00                                                                      
+700a1fd0  _c_int00_sbl                                                                  
+700a2474  _device                                                                       
+700a2108  _ftable                                                                       
+700a26cc  _lock                                                                         
+70095338  _nop                                                                          
+700a25a0  _stream                                                                       
+70088da0  _sys_memory                                                                   
+UNDEFED   _system_post_cinit                                                            
+7009e841  _system_pre_init                                                              
+700a26d0  _unlock                                                                       
+00000000  _vectors                                                                      
+700a2100  abort                                                                         
+70097c30  aligned_alloc                                                                 
+ffffffff  binit                                                                         
+7009beac  close                                                                         
+7009ab01  eTaskGetState                                                                 
+7009d5d4  exit                                                                          
+7009af2c  fflush                                                                        
+7009ca08  finddevice                                                                    
+7009b8c8  fprintf                                                                       
+70099bd0  fputc                                                                         
+70098150  fputs                                                                         
+70097de8  free                                                                          
+7009582c  fseek                                                                         
+7009a98c  fseeko                                                                        
+700a2680  gAddrTranslateConfig                                                          
+700a1058  gCacheConfig                                                                  
+700a087c  gCacheL1dCacheLineSize                                                        
+700a0d64  gCacheL1pCacheLineSize                                                        
+700a2668  gClockConfig                                                                  
+70088cc8  gClockCtrl                                                                    
+700a26d4  gDebugLogZone                                                                 
+700a26d8  gDebugP_uartDrvIndex                                                          
+701d0080  gDebugShmLog                                                                  
+700889f0  gDebugShmLogReaderCtrl                                                        
+700a26dc  gHwiConfig                                                                    
+70084000  gHwiCtrl                                                                      
+7008876c  gIpcNotifyCtrl                                                                
+700a26e0  gIpcNotifyInterruptConfigNum_r5fss0_0                                         
+700a24ec  gIpcNotifyInterruptConfig_r5fss0_0                                            
+700a25f0  gIpcNotifyMailboxBaseAddr                                                     
+700a2354  gIpcNotifyMailboxConfig                                                       
+70087020  gIpcRpmsgCtrl                                                                 
+700888b4  gMainTask                                                                     
+700a23e8  gMainTaskObj                                                                  
+70080000  gMainTaskStack                                                                
+700a104c  gMpuConfig                                                                    
+700a0bc8  gMpuRegionConfig                                                              
+701d4000  gRPMessageVringMem                                                            
+70088c78  gRovDummyQueue                                                                
+700a0538  gSciclientMap                                                                 
+700a2618  gSciclientSecProxyCfg                                                         
+700a269c  gSocModules                                                                   
+700a2650  gSocModulesClockFrequency                                                     
+700888b8  gTaskP_ctrl                                                                   
+700a26ac  gUartConfig                                                                   
+700a26f8  gUartConfigNum                                                                
+700a2108  gUartDmaConfig                                                                
+700a26fc  gUartDmaConfigNum                                                             
+70088d9c  gUartHandle                                                                   
+700a254c  gUartParams                                                                   
+7009a1e8  getdevice                                                                     
+7009e20c  lseek                                                                         
+7009c1e1  main                                                                          
+700974c4  malloc                                                                        
+70097c30  memalign                                                                      
+7009dc68  memccpy                                                                       
+70098484  memcpy                                                                        
+7009b3d0  memset                                                                        
+70088d78  parmbuf                                                                       
+7009ed41  putchar_                                                                      
+7009ea51  pvTaskIncrementMutexHeldCount                                                 
+700a2708  pxCurrentTCB                                                                  
+7009bd01  pxPortInitialiseStack                                                         
+70096468  remove                                                                        
+700988b8  setvbuf                                                                       
+7009d340  sprintf                                                                       
+7009dcb0  strcspn                                                                       
+7009dee0  strdup                                                                        
+7009e894  strlen                                                                        
+7009ddd4  strspn                                                                        
+7009c55c  strtok                                                                        
+700972bc  strtol                                                                        
+7009ec41  uiPortGetRunTimeCounterValue                                                  
+700a270c  ulPortInterruptNesting                                                        
+700a2710  ulPortSchedularRunning                                                        
+700a2714  ulPortTaskHasFPUContext                                                       
+700a2718  ulPortYieldRequired                                                           
+7009dcf8  unlink                                                                        
+7009e601  uxListRemove                                                                  
+700a1060  uxTopUsedPriority                                                             
+7009e7e1  vApplicationGetIdleTaskMemory                                                 
+7009e801  vApplicationGetTimerTaskMemory                                                
+7009ec21  vApplicationIdleHook                                                          
+7009dfa1  vApplicationLoadHook                                                          
+7009e361  vApplicationStackOverflowHook                                                 
+7009ea91  vListInitialise                                                               
+7009ec71  vListInitialiseItem                                                           
+7009e0a1  vListInsert                                                                   
+7009e8d1  vListInsertEnd                                                                
+7009ed81  vPortConfigTimerForRunTimeStats                                               
+7009e991  vPortFree                                                                     
+700a16e0  vPortRestoreTaskContext                                                       
+7009e5a1  vPortTimerTickHandler                                                         
+7009ed91  vPortValidateInterruptPriority                                                
+7009eb61  vPortYeildFromISR                                                             
+7009e5d1  vQueueAddToRegistry                                                           
+7009ce01  vQueueDelete                                                                  
+7009dd41  vQueueWaitForMessageRestricted                                                
+7009d4c1  vTaskDelay                                                                    
+70099ae1  vTaskDelete                                                                   
+7009e711  vTaskEnterCritical                                                            
+7009e421  vTaskExitCritical                                                             
+7009b961  vTaskGetInfo                                                                  
+7009e9b1  vTaskInternalSetTimeOutState                                                  
+7009eba1  vTaskMissedYield                                                              
+7009d9f1  vTaskPlaceOnEventList                                                         
+7009d3a1  vTaskPlaceOnEventListRestricted                                               
+70099f81  vTaskPriorityDisinheritAfterTimeout                                           
+7009a761  vTaskStartScheduler                                                           
+7009eb71  vTaskSuspendAll                                                               
+70099031  vTaskSwitchContext                                                            
+7009e631  vprintf_                                                                      
+7009e240  write                                                                         
+7009ea71  xPortStartScheduler                                                           
+7009e2c1  xQueueCreateMutexStatic                                                       
+700997e1  xQueueGenericCreateStatic                                                     
+7009c2e1  xQueueGenericReset                                                            
+70097fa1  xQueueGenericSend                                                             
+70099161  xQueueGenericSendFromISR                                                      
+700995d1  xQueueGiveFromISR                                                             
+7009d7b1  xQueueGiveMutexRecursive                                                      
+70098301  xQueueReceive                                                                 
+700998e1  xQueueReceiveFromISR                                                          
+7008866c  xQueueRegistry                                                                
+700978a1  xQueueSemaphoreTake                                                           
+7009da41  xQueueTakeMutexRecursive                                                      
+7009a521  xTaskCheckForTimeOut                                                          
+7009a451  xTaskCreateStatic                                                             
+7009ebf1  xTaskGetCurrentTaskHandle                                                     
+7009dfe1  xTaskGetIdleTaskHandle                                                        
+7009e661  xTaskGetSchedulerState                                                        
+7009e281  xTaskGetTickCount                                                             
+70098611  xTaskIncrementTick                                                            
+7009ad21  xTaskPriorityDisinherit                                                       
+7009bc71  xTaskPriorityInherit                                                          
+7009b1e1  xTaskRemoveFromEventList                                                      
+70098a01  xTaskResumeAll                                                                
+7009bfc1  xTimerCreateTimerTask                                                         
+7009c661  xTimerGenericCommand                                                          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                                          
+-------   ----                                                                          
+00000000  __TI_static_base__                                                            
+00000000  _vectors                                                                      
+00000040  .ARM.exidx$$Base                                                              
+00000040  __TI_UNWIND_TABLE_START                                                       
+00000048  .ARM.exidx$$Limit                                                             
+00000048  __TI_UNWIND_TABLE_END                                                         
+00000100  __ABORT_STACK_SIZE                                                            
+00000100  __FIQ_STACK_SIZE                                                              
+00000100  __IRQ_STACK_SIZE                                                              
+00000100  __UNDEFINED_STACK_SIZE                                                        
+00001000  __SVC_STACK_SIZE                                                              
+00004000  __STACK_SIZE                                                                  
+00008000  __SYSMEM_SIZE                                                                 
+70080000  __BSS_START                                                                   
+70080000  gMainTaskStack                                                                
+70084000  gHwiCtrl                                                                      
+70087020  gIpcRpmsgCtrl                                                                 
+7008844c  _CIOBUF_                                                                      
+7008844c  __CIOBUF_                                                                     
+7008866c  xQueueRegistry                                                                
+7008876c  gIpcNotifyCtrl                                                                
+70088814  __TI_tmpnams                                                                  
+700888b4  gMainTask                                                                     
+700888b8  gTaskP_ctrl                                                                   
+700889f0  gDebugShmLogReaderCtrl                                                        
+70088c78  gRovDummyQueue                                                                
+70088cc8  gClockCtrl                                                                    
+70088d78  parmbuf                                                                       
+70088d9c  gUartHandle                                                                   
+70088da0  __BSS_END                                                                     
+70088da0  _sys_memory                                                                   
+70090da0  __stack                                                                       
+70094da0  __STACK_END                                                                   
+70095338  _nop                                                                          
+70095341  UART_open                                                                     
+7009582c  fseek                                                                         
+70095cfc  __TI_printfi_minimal                                                          
+70096468  remove                                                                        
+7009646c  __aeabi_memcpy                                                                
+7009646c  __aeabi_memcpy4                                                               
+7009646c  __aeabi_memcpy8                                                               
+70096471  Sciclient_service                                                             
+700967f1  IpcNotify_init                                                                
+70096b64  __aeabi_errno_addr                                                            
+700972bc  strtol                                                                        
+700974c4  malloc                                                                        
+700974d1  UART_write                                                                    
+700976d0  __aeabi_uidiv                                                                 
+700976d0  __udivsi3                                                                     
+700978a1  xQueueSemaphoreTake                                                           
+70097a71  TimerP_setup                                                                  
+70097c30  aligned_alloc                                                                 
+70097c30  memalign                                                                      
+70097de8  free                                                                          
+70097fa1  xQueueGenericSend                                                             
+70098150  fputs                                                                         
+70098301  xQueueReceive                                                                 
+70098484  memcpy                                                                        
+70098611  xTaskIncrementTick                                                            
+70098771  UART_close                                                                    
+700988b8  setvbuf                                                                       
+70098a01  xTaskResumeAll                                                                
+70098b41  ClockP_init                                                                   
+70098c81  RPMessage_recv                                                                
+70098f01  SOC_moduleSetClockFrequency                                                   
+70099031  vTaskSwitchContext                                                            
+70099161  xQueueGenericSendFromISR                                                      
+70099288  __udivmoddi4                                                                  
+700994c1  RPMessage_recvHandler                                                         
+700995d1  xQueueGiveFromISR                                                             
+700996e1  RPMessage_send                                                                
+700997e1  xQueueGenericCreateStatic                                                     
+700998e1  xQueueReceiveFromISR                                                          
+700999e1  System_init                                                                   
+70099ae1  vTaskDelete                                                                   
+70099bd0  fputc                                                                         
+70099cc1  _Z13str_to_coreIdPc                                                           
+70099db1  RPMessage_init                                                                
+70099ea1  _Z9str_splitPcc                                                               
+70099f81  vTaskPriorityDisinheritAfterTimeout                                           
+7009a121  IpcNotify_sendMsg                                                             
+7009a1e8  getdevice                                                                     
+7009a2b1  IpcNotify_isr                                                                 
+7009a451  xTaskCreateStatic                                                             
+7009a521  xTaskCheckForTimeOut                                                          
+7009a5e1  RPMessage_vringReset                                                          
+7009a6a1  Pinmux_config                                                                 
+7009a761  vTaskStartScheduler                                                           
+7009a8d8  __TI_closefile                                                                
+7009a98c  fseeko                                                                        
+7009aa41  UART_flushTxFifo                                                              
+7009ab01  eTaskGetState                                                                 
+7009ac71  TaskP_loadUpdateAll                                                           
+7009ad21  xTaskPriorityDisinherit                                                       
+7009add1  RPMessage_vringGetFullRxBuf                                                   
+7009af2c  fflush                                                                        
+7009b091  Sciclient_pmQueryModuleClkFreq                                                
+7009b1e1  xTaskRemoveFromEventList                                                      
+7009b291  DebugP_shmLogReaderGetString                                                  
+7009b330  HOSTrename                                                                    
+7009b3d0  memset                                                                        
+7009b471  RPMessage_vringPutEmptyRxBuf                                                  
+7009b510  __TI_wrt_ok                                                                   
+7009b5b1  DebugP_shmLogReaderTaskMain                                                   
+7009b651  Sciclient_init                                                                
+7009b78c  HOSTlseek                                                                     
+7009b831  RPMessage_coreInit                                                            
+7009b8c8  fprintf                                                                       
+7009b961  vTaskGetInfo                                                                  
+7009b9f8  HOSTopen                                                                      
+7009ba91  UART_init                                                                     
+7009bb31  RPMessage_vringGetEmptyTxBuf                                                  
+7009bbd1  Sciclient_pmSetModuleClkFreq                                                  
+7009bc71  xTaskPriorityInherit                                                          
+7009bd01  pxPortInitialiseStack                                                         
+7009bd91  RPMessage_vringResetInternal                                                  
+7009beac  close                                                                         
+7009bf38  __TI_doflush                                                                  
+7009bfc1  xTimerCreateTimerTask                                                         
+7009c048  HOSTread                                                                      
+7009c0cc  HOSTwrite                                                                     
+7009c1e1  main                                                                          
+7009c2e1  xQueueGenericReset                                                            
+7009c361  RPMessage_construct                                                           
+7009c3e1  Sciclient_pmGetModuleClkNumParent                                             
+7009c55c  strtok                                                                        
+7009c5e1  _DebugP_logZone                                                               
+7009c661  xTimerGenericCommand                                                          
+7009c6e1  _ZN17IPC_CommunicationC1EPc                                                   
+7009c6e1  _ZN17IPC_CommunicationC2EPc                                                   
+7009c7e1  SemaphoreP_constructBinary                                                    
+7009c851  SOC_moduleClockEnable                                                         
+7009c8c1  Sciclient_pmGetModuleState                                                    
+7009c930  HOSTunlink                                                                    
+7009c99c  __aeabi_assert                                                                
+7009ca08  finddevice                                                                    
+7009ca81  AddrTranslateP_getLocalAddr                                                   
+7009cb61  RPMessage_getEndPtMsg                                                         
+7009cbd1  Sciclient_pmGetModuleClkFreq                                                  
+7009cc41  Sciclient_pmGetModuleClkParent                                                
+7009ccb1  _ZN17IPC_Communication4readEv                                                 
+7009cd21  Sciclient_pmModuleGetClkStatus                                                
+7009cd91  CycleCounterP_init                                                            
+7009cda1  CycleCounterP_nsToTicks                                                       
+7009cdd1  CycleCounterP_reset                                                           
+7009ce01  vQueueDelete                                                                  
+7009ce71  _ZN17IPC_Communication5writeEPc                                               
+7009ced4  HOSTclose                                                                     
+7009cf41  _Z7m4_codev                                                                   
+7009cfa1  RPMessage_vringPutFullTxBuf                                                   
+7009d001  Sciclient_pmModuleClkRequest                                                  
+7009d061  Sciclient_pmSetModuleClkParent                                                
+7009d0c1  _DebugP_assert                                                                
+7009d121  RPMessage_vringIsFullRxBuf                                                    
+7009d181  SemaphoreP_pend                                                               
+7009d1e1  _ZN20CommunicationFactory28init_RPMessage_communicationEt                     
+7009d238  __TI_cleanup                                                                  
+7009d290  __TI_readmsg                                                                  
+7009d2e8  __TI_writemsg                                                                 
+7009d334  C$$IO$$                                                                       
+7009d340  sprintf                                                                       
+7009d3a1  vTaskPlaceOnEventListRestricted                                               
+7009d401  UART_dmaDisableChannel                                                        
+7009d461  _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc     
+7009d4c1  vTaskDelay                                                                    
+7009d521  RPMessage_notifyCallback                                                      
+7009d581  UART_dmaClose                                                                 
+7009d5d4  exit                                                                          
+7009d631  Sciclient_pmSetModuleState                                                    
+7009d691  SemaphoreP_constructMutex                                                     
+7009d6f1  SemaphoreP_post                                                               
+7009d751  _Z11r5_0_1_codev                                                              
+7009d7b1  xQueueGiveMutexRecursive                                                      
+7009d811  DebugP_shmLogReaderTaskCreate                                                 
+7009d861  Sciclient_getContext                                                          
+7009d8b1  _Z18communication_mainPv                                                      
+7009d950  __TI_auto_init_nobinit_nopinit                                                
+7009d9a1  Dpl_init                                                                      
+7009d9f1  vTaskPlaceOnEventList                                                         
+7009da41  xQueueTakeMutexRecursive                                                      
+7009da91  ClockP_getTimeUsec                                                            
+7009dae1  Drivers_uartOpen                                                              
+7009db31  RPMessage_allocEndPtMsg                                                       
+7009db81  _Z11r5_0_0_codev                                                              
+7009dbd1  _ZN20CommunicationFactory4openE17CommunicationTypePc                          
+7009dc20  _Znwj                                                                         
+7009dc68  memccpy                                                                       
+7009dcb0  strcspn                                                                       
+7009dcf8  unlink                                                                        
+7009dd41  vQueueWaitForMessageRestricted                                                
+7009dd91  Sciclient_pmSetModuleRst                                                      
+7009ddd4  strspn                                                                        
+7009de20  _ZNSt3__14stoiERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPji
+7009dee0  strdup                                                                        
+7009df21  IpcNotify_registerClient                                                      
+7009df61  SOC_controlModuleUnlockMMR                                                    
+7009dfa1  vApplicationLoadHook                                                          
+7009dfe1  xTaskGetIdleTaskHandle                                                        
+7009e021  DebugP_uartLogWriterPutChar                                                   
+7009e061  UART_dmaOpen                                                                  
+7009e0a1  vListInsert                                                                   
+7009e0e1  RPMessage_vringCheckEmptyTxBuf                                                
+7009e121  Sciclient_getCurrentContext                                                   
+7009e161  ClockP_usleep                                                                 
+7009e1a1  Module_clockSetFrequency                                                      
+7009e20c  lseek                                                                         
+7009e240  write                                                                         
+7009e281  xTaskGetTickCount                                                             
+7009e2c1  xQueueCreateMutexStatic                                                       
+7009e301  DebugP_shmLogReaderInit                                                       
+7009e330  CycleCounterP_getCount32                                                      
+7009e338  PmuP_setup                                                                    
+7009e340  PmuP_enableCounters                                                           
+7009e348  PmuP_disableCounters                                                          
+7009e350  PmuP_getOverflowStatus                                                        
+7009e358  PmuP_clearOverflowStatus                                                      
+7009e361  vApplicationStackOverflowHook                                                 
+7009e391  ClockP_timerTickIsr                                                           
+7009e3c1  Module_clockEnable                                                            
+7009e3f1  UART_getHandle                                                                
+7009e421  vTaskExitCritical                                                             
+7009e451  RPMessage_controlEndPtHandler                                                 
+7009e4b1  SOC_controlModuleLockMMR                                                      
+7009e4e1  _Z14str_to_int16_tPc                                                          
+7009e511  RPMessage_Params_init                                                         
+7009e541  _ZN17IPC_CommunicationD0Ev                                                    
+7009e571  RPMessage_isLinuxCore                                                         
+7009e5a1  vPortTimerTickHandler                                                         
+7009e5d1  vQueueAddToRegistry                                                           
+7009e601  uxListRemove                                                                  
+7009e631  vprintf_                                                                      
+7009e661  xTaskGetSchedulerState                                                        
+7009e684  __aeabi_uldivmod                                                              
+7009e6b1  Pinmux_init                                                                   
+7009e6e1  _ZN17IPC_CommunicationD2Ev                                                    
+7009e711  vTaskEnterCritical                                                            
+7009e741  DebugP_logZoneEnable                                                          
+7009e761  SOC_getSelfCpuClk                                                             
+7009e781  TimerP_Params_init                                                            
+7009e7a0  _abort_msg                                                                    
+7009e7c1  IpcNotify_syncCallback                                                        
+7009e7e1  vApplicationGetIdleTaskMemory                                                 
+7009e801  vApplicationGetTimerTaskMemory                                                
+7009e821  RPMessage_vringGetTxBufLen                                                    
+7009e841  _system_pre_init                                                              
+7009e894  strlen                                                                        
+7009e8d1  vListInsertEnd                                                                
+7009e8ec  __aeabi_memset                                                                
+7009e8ec  __aeabi_memset4                                                               
+7009e8ec  __aeabi_memset8                                                               
+7009e8fc  __aeabi_memclr                                                                
+7009e8fc  __aeabi_memclr4                                                               
+7009e8fc  __aeabi_memclr8                                                               
+7009e911  IpcNotify_Params_init                                                         
+7009e931  RPMessage_vringGetRxBufAddr                                                   
+7009e951  RPMessage_vringGetTxBufAddr                                                   
+7009e971  UART_writeInterruptDma                                                        
+7009e991  vPortFree                                                                     
+7009e9b1  vTaskInternalSetTimeOutState                                                  
+7009e9d1  Drivers_close                                                                 
+7009e9f1  IpcNotify_getConfig                                                           
+7009ea11  IpcNotify_isCoreEnabled                                                       
+7009ea31  Sciclient_getDevId                                                            
+7009ea51  pvTaskIncrementMutexHeldCount                                                 
+7009ea71  xPortStartScheduler                                                           
+7009ea91  vListInitialise                                                               
+7009eab1  ClockP_usecToTicks                                                            
+7009eaf1  TimerP_clearOverflowInt                                                       
+7009eb11  _Z13freertos_mainPv                                                           
+7009eb31  ClockP_ticksToUsec                                                            
+7009eb41  RPMessage_CreateParams_init                                                   
+7009eb50  _ZSt15get_new_handlerv                                                        
+7009eb61  vPortYeildFromISR                                                             
+7009eb71  vTaskSuspendAll                                                               
+7009eb81  PowerClock_init                                                               
+7009eb91  _ZN17IPC_Communication5ioctlEv                                                
+7009eba1  vTaskMissedYield                                                              
+7009ebb1  DebugP_uartSetDrvIndex                                                        
+7009ebc1  IpcNotify_getSelfCoreId                                                       
+7009ebd1  Sciclient_getSelfDevIdCore                                                    
+7009ebe1  _ZN17IPC_Communication12setMsgObjectEP18RPMessage_Object_s                    
+7009ebf1  xTaskGetCurrentTaskHandle                                                     
+7009ec01  CSL_secProxyGetDataAddr                                                       
+7009ec11  TimerP_start                                                                  
+7009ec21  vApplicationIdleHook                                                          
+7009ec41  uiPortGetRunTimeCounterValue                                                  
+7009ec51  SemaphoreP_destruct                                                           
+7009ec71  vListInitialiseItem                                                           
+7009ec81  Board_driversOpen                                                             
+7009ec91  ClockP_getTicks                                                               
+7009eca1  ClockP_getTimerCount                                                          
+7009ecb1  ClockP_timerClearOverflowInt                                                  
+7009ecc1  Drivers_open                                                                  
+7009ecd1  RPMessage_getLocalEndPt                                                       
+7009ece1  TaskP_yield                                                                   
+7009ecf1  TimerP_getCount                                                               
+7009ed01  TimerP_getReloadCount                                                         
+7009ed10  _ZdlPv                                                                        
+7009ed20  __aeabi_idiv0                                                                 
+7009ed30  __aeabi_ldiv0                                                                 
+7009ed41  putchar_                                                                      
+7009ed51  Board_driversClose                                                            
+7009ed61  Board_init                                                                    
+7009ed81  vPortConfigTimerForRunTimeStats                                               
+7009ed91  vPortValidateInterruptPriority                                                
+700a0538  gSciclientMap                                                                 
+700a087c  gCacheL1dCacheLineSize                                                        
+700a0880  __aeabi_ctype_table_                                                          
+700a0880  __aeabi_ctype_table_C                                                         
+700a0bc8  gMpuRegionConfig                                                              
+700a0d64  gCacheL1pCacheLineSize                                                        
+700a0fd4  _ZTV17IPC_Communication                                                       
+700a104c  gMpuConfig                                                                    
+700a1058  gCacheConfig                                                                  
+700a1060  uxTopUsedPriority                                                             
+700a1071  HwiP_enableInt                                                                
+700a10a1  HwiP_disableInt                                                               
+700a10e1  HwiP_restoreInt                                                               
+700a1141  HwiP_clearInt                                                                 
+700a1161  HwiP_post                                                                     
+700a1191  HwiP_Params_init                                                              
+700a11b1  HwiP_construct                                                                
+700a1301  HwiP_destruct                                                                 
+700a13e1  HwiP_init                                                                     
+700a14b1  HwiP_inISR                                                                    
+700a14d1  HwiP_irq_handler_c                                                            
+700a1561  HwiP_fiq_handler                                                              
+700a1621  HwiP_reserved_handler                                                         
+700a1651  HwiP_undefined_handler                                                        
+700a1681  HwiP_prefetch_abort_handler                                                   
+700a16b1  HwiP_data_abort_handler                                                       
+700a16e0  vPortRestoreTaskContext                                                       
+700a1718  HwiP_svc_handler                                                              
+700a1788  HwiP_irq_handler                                                              
+700a18cc  HwiP_disable                                                                  
+700a18dc  HwiP_disableFIQ                                                               
+700a18ec  HwiP_enable                                                                   
+700a18fc  HwiP_enableFIQ                                                                
+700a190c  HwiP_restore                                                                  
+700a1914  HwiP_enableVIC                                                                
+700a1924  HwiP_disableVIC                                                               
+700a1934  HwiP_getCPSR                                                                  
+700a1940  CacheP_disableL1d                                                             
+700a1968  CacheP_disableL1p                                                             
+700a1980  CacheP_enableL1d                                                              
+700a1998  CacheP_enableL1p                                                              
+700a19b0  CacheP_invL1d                                                                 
+700a19e8  CacheP_invL1p                                                                 
+700a1a24  CacheP_invL1dAll                                                              
+700a1a2c  CacheP_invL1pAll                                                              
+700a1a34  CacheP_wb                                                                     
+700a1a70  CacheP_wbInv                                                                  
+700a1aac  CacheP_wbAll                                                                  
+700a1b54  CacheP_wbInvAll                                                               
+700a1b6c  CacheP_wbInvAllAsm                                                            
+700a1c0c  CacheP_getEnabled                                                             
+700a1c44  CacheP_getCacheLevelInfo                                                      
+700a1c50  CacheP_configForceWrThru                                                      
+700a1c70  CacheP_setDLFO                                                                
+700a1c81  CacheP_init                                                                   
+700a1cf1  CacheP_disable                                                                
+700a1d31  CacheP_enable                                                                 
+700a1d51  CacheP_inv                                                                    
+700a1d91  MpuP_RegionAttrs_init                                                         
+700a1da1  MpuP_setRegion                                                                
+700a1e51  MpuP_enable                                                                   
+700a1e91  MpuP_disable                                                                  
+700a1ed1  MpuP_isEnable                                                                 
+700a1ee1  MpuP_init                                                                     
+700a1f44  MpuP_disableAsm                                                               
+700a1f5c  MpuP_disableBRAsm                                                             
+700a1f6c  MpuP_enableAsm                                                                
+700a1f84  MpuP_enableBRAsm                                                              
+700a1f94  MpuP_isEnableAsm                                                              
+700a1fa8  MpuP_setRegionAsm                                                             
+700a1fd0  _c_int00_sbl                                                                  
+700a1ff4  _c_int00                                                                      
+700a20d1  _DebugP_assertNoLog                                                           
+700a20f1  __mpu_init                                                                    
+700a2100  C$$EXIT                                                                       
+700a2100  abort                                                                         
+700a2108  _ftable                                                                       
+700a2108  gUartDmaConfig                                                                
+700a2354  gIpcNotifyMailboxConfig                                                       
+700a23e8  gMainTaskObj                                                                  
+700a2474  _device                                                                       
+700a24ec  gIpcNotifyInterruptConfig_r5fss0_0                                            
+700a254c  gUartParams                                                                   
+700a25a0  _stream                                                                       
+700a25f0  gIpcNotifyMailboxBaseAddr                                                     
+700a2614  FreeRTOS_errno                                                                
+700a2618  gSciclientSecProxyCfg                                                         
+700a2650  gSocModulesClockFrequency                                                     
+700a2668  gClockConfig                                                                  
+700a267c  __TI_ft_end                                                                   
+700a2680  gAddrTranslateConfig                                                          
+700a268c  __TI_cleanup_ptr                                                              
+700a2690  __TI_dtors_ptr                                                                
+700a269c  gSocModules                                                                   
+700a26ac  gUartConfig                                                                   
+700a26b4  __aeabi_errno                                                                 
+700a26c8  __cxa_new_handler                                                             
+700a26cc  _lock                                                                         
+700a26d0  _unlock                                                                       
+700a26d4  gDebugLogZone                                                                 
+700a26d8  gDebugP_uartDrvIndex                                                          
+700a26dc  gHwiConfig                                                                    
+700a26e0  gIpcNotifyInterruptConfigNum_r5fss0_0                                         
+700a26f8  gUartConfigNum                                                                
+700a26fc  gUartDmaConfigNum                                                             
+700a2708  pxCurrentTCB                                                                  
+700a270c  ulPortInterruptNesting                                                        
+700a2710  ulPortSchedularRunning                                                        
+700a2714  ulPortTaskHasFPUContext                                                       
+700a2718  ulPortYieldRequired                                                           
+700a2768  __IRQ_STACK_START                                                             
+700a2868  __FIQ_STACK_START                                                             
+700a2868  __IRQ_STACK_END                                                               
+700a2968  __FIQ_STACK_END                                                               
+700a2968  __SVC_STACK_START                                                             
+700a3968  __ABORT_STACK_START                                                           
+700a3968  __SVC_STACK_END                                                               
+700a3a68  __ABORT_STACK_END                                                             
+700a3a68  __UNDEFINED_STACK_START                                                       
+700a3b68  __UNDEFINED_STACK_END                                                         
+701d0080  gDebugShmLog                                                                  
+701d4000  gRPMessageVringMem                                                            
+ffffffff  __TI_pprof_out_hndl                                                           
+ffffffff  __TI_prof_data_size                                                           
+ffffffff  __TI_prof_data_start                                                          
+ffffffff  __binit__                                                                     
+ffffffff  binit                                                                         
+UNDEFED   __TI_CINIT_Base                                                               
+UNDEFED   __TI_CINIT_Limit                                                              
+UNDEFED   __TI_Handler_Table_Base                                                       
+UNDEFED   __TI_Handler_Table_Limit                                                      
+UNDEFED   _system_post_cinit                                                            
+
+[437 symbols]
