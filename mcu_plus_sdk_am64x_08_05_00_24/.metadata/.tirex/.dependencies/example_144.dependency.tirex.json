@@ -1,0 +1,13 @@
+[
+    {
+        "files": [
+            "+../../../pcie_msi_irq_ep.c -> pcie_msi_irq_ep.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../../docs/api_guide_am64x/EXAMPLES_DRIVERS_PCIE_MSI_IRQ_EP.html -> EXAMPLES_DRIVERS_PCIE_MSI_IRQ_EP.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

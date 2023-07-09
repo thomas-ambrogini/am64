@@ -1,0 +1,13 @@
+[
+    {
+        "files": [
+            "+../../../uart_echo_low_latency_interrupt.c -> uart_echo_low_latency_interrupt.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_DRIVERS_UART_ECHO_LOW_LATENCY_INTERRUPT.html -> EXAMPLES_DRIVERS_UART_ECHO_LOW_LATENCY_INTERRUPT.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

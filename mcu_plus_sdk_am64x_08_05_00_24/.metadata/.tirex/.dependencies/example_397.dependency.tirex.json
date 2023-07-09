@@ -1,0 +1,8 @@
+[
+    {
+        "files": [
+            "+../../../main.asm -> main.asm",
+            "+linker.cmd -> linker.cmd"
+        ]
+    }
+]

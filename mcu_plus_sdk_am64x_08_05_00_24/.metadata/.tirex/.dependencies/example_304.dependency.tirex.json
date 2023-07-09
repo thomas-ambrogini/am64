@@ -1,0 +1,25 @@
+[
+    {
+        "files": [
+            "+../../../../common/board/am64gpevm/freertos/ESL_BOARD_OS_config.c -> ESL_BOARD_OS_config.c",
+            "+../../../../common/os/freertos/ESL_eeprom.c -> ESL_eeprom.c",
+            "+../../../../common/os/freertos/ESL_fileHandling.c -> ESL_fileHandling.c",
+            "+../../../../common/os/freertos/ESL_foeDemo.c -> ESL_foeDemo.c",
+            "+../../../../common/os/freertos/ESL_gpioHelper.c -> ESL_gpioHelper.c",
+            "+../../../../common/os/freertos/ESL_OS_os.c -> ESL_OS_os.c",
+            "+../../../../common/os/freertos/ESL_soeDemo.c -> ESL_soeDemo.c",
+            "+../../../ecSlvCiA402.c -> ecSlvCiA402.c",
+            "+../../../ESL_cia402Demo.c -> ESL_cia402Demo.c",
+            "+../../../ESL_cia402Obd.c -> ESL_cia402Obd.c",
+            "+../../../EtherCAT_Slave_CiA402.c -> EtherCAT_Slave_CiA402.c",
+            "+../../../../common/ESL_version.c -> ESL_version.c",
+            "+../../../../customPhy/src/CUST_PHY_base.c -> CUST_PHY_base.c",
+            "+../../../../customPhy/src/CUST_PHY_dp83869.c -> CUST_PHY_dp83869.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_INDUSTRIAL_COMMS_ETHERCAT_SLAVE_DEMOS.html -> EXAMPLES_INDUSTRIAL_COMMS_ETHERCAT_SLAVE_DEMOS.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

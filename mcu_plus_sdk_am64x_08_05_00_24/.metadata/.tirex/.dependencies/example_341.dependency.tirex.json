@@ -1,0 +1,13 @@
+[
+    {
+        "files": [
+            "+../../../dhrystone_benchmark.c -> dhrystone_benchmark.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_KERNEL_FREERTOS_DHRYSTONE_BENCHMARK.html -> EXAMPLES_KERNEL_FREERTOS_DHRYSTONE_BENCHMARK.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

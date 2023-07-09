@@ -1,0 +1,31 @@
+{
+    "name": "MCU_PLUS_IND_COMMS_LIBS",
+    "displayName": "MCU+ SDK Industrial Communcation Libraries",
+    "version": "01.00.00.00",
+    "devices": [
+        "AM64x_beta",
+        "AM243x_ALV_beta",
+        "AM243x_ALX_beta"
+    ],
+    "includePaths": [],
+    "contexts": {
+        "AM64x_beta": [
+            "r5fss0-0",
+            "r5fss0-1",
+            "r5fss1-0",
+            "r5fss1-1"
+        ],
+        "AM243x_ALV_beta": [
+            "r5fss0-0",
+            "r5fss0-1",
+            "r5fss1-0",
+            "r5fss1-1"
+        ],
+        "AM243x_ALX_beta": [
+            "r5fss0-0",
+            "r5fss0-1",
+            "r5fss1-0",
+            "r5fss1-1"
+        ]
+    }
+}

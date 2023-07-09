@@ -1,0 +1,23 @@
+obj/am64x/ti-arm-clang/release/r5f/freertos_fat//ff_file.obj: \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/ff_file.c \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_headers.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/portable/nortos/FreeRTOS.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/kernel/dpl/DebugP.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/portable/nortos/task.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/portable/nortos/semphr.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/config/FreeRTOSFATConfig.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/FreeRTOSFATConfigDefaults.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/FreeRTOS_errno_FAT.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_error.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_string.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_ioman.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_fat.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_fatdef.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_memory.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_time.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_crc.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_file.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_dir.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_format.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_locking.h \
+  /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/fs/freertos_fat/FreeRTOS-FAT/include/ff_old_config_defines.h

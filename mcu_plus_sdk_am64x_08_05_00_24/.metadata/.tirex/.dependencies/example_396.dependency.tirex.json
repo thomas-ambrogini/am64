@@ -1,0 +1,9 @@
+[
+    {
+        "files": [
+            "+../../../main.asm -> main.asm",
+            "+linker.cmd -> linker.cmd",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_PRU_EMPTY.html -> EXAMPLES_PRU_EMPTY.html"
+        ]
+    }
+]

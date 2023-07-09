@@ -1,0 +1,18 @@
+[
+    {
+        "files": [
+            "+../../IOLinkPort/IOLM_Port_LEDTask.c -> IOLM_Port_LEDTask.c",
+            "+../../IOLinkPort/IOLM_Port_Sitara_soc.c -> IOLM_Port_Sitara_soc.c",
+            "+../../IOLinkPort/IOLM_Port_SMI.c -> IOLM_Port_SMI.c",
+            "+../../IOLinkPort/IOLM_Port_spi.c -> IOLM_Port_spi.c",
+            "+../../../IOLM_Port_smiExample.c -> IOLM_Port_smiExample.c",
+            "+../../../IOLM_Port_Utils.c -> IOLM_Port_Utils.c",
+            "+../../../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../docs/api_guide_am64x/EXAMPLES_INDUSTRIAL_COMMS_IOLINK_MASTER_DEMO.html -> EXAMPLES_INDUSTRIAL_COMMS_IOLINK_MASTER_DEMO.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

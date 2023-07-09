@@ -1,0 +1,21 @@
+[
+    {
+        "files": [
+            "+../main.c -> main.c",
+            "+../../../cmsis_foc/foc.c -> foc.c",
+            "+../../../cmsis_foc/foc_main.c -> foc_main.c",
+            "+../../../cmsis_foc/foc_profile_data.c -> foc_profile_data.c",
+            "+../../../cmsis_foc/foc_test_data.c -> foc_test_data.c",
+            "+../../../common/ti_r5fmath_trig.c -> ti_r5fmath_trig.c",
+            "+../../../common/math_helper.c -> math_helper.c",
+            "+../../../common/benchmarkdemo_stats_with_linux.c -> benchmarkdemo_stats_with_linux.c",
+            "+../../../common/benchmarkdemo_timer.c -> benchmarkdemo_timer.c",
+            "+../../../common/benchmarkdemo_ipc_with_linux.c -> benchmarkdemo_ipc_with_linux.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../docs/api_guide_am64x/EXAMPLE_MOTORCONTROL_BENCHMARKDEMO.html -> EXAMPLE_MOTORCONTROL_BENCHMARKDEMO.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

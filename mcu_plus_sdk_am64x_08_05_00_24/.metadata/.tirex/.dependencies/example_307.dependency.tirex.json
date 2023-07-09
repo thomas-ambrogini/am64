@@ -1,0 +1,29 @@
+[
+    {
+        "files": [
+            "+../../../../app.c -> app.c",
+            "+../../../../appClass71.c -> appClass71.c",
+            "+../../../../appPerm.c -> appPerm.c",
+            "+../../../../appProduct.c -> appProduct.c",
+            "+../../../../appWebServer.c -> appWebServer.c",
+            "+../../../../appPhyReset.c -> appPhyReset.c",
+            "+../../../../board/am64x-evm/freertos/drivers/CUST_drivers.c -> CUST_drivers.c",
+            "+../../../../board/am64x-evm/freertos/drivers/eeprom/CUST_eeprom.c -> CUST_eeprom.c",
+            "+../../../../board/am64x-evm/freertos/drivers/ethphy/CUST_phy.c -> CUST_phy.c",
+            "+../../../../board/am64x-evm/freertos/drivers/flash/CUST_flash.c -> CUST_flash.c",
+            "+../../../../board/am64x-evm/freertos/drivers/led/CUST_led.c -> CUST_led.c",
+            "+../../../../board/am64x-evm/freertos/drivers/uart/CUST_uart.c -> CUST_uart.c",
+            "+../../../../customPhy/src/CUST_PHY_base.c -> CUST_PHY_base.c",
+            "+../../../../customPhy/src/CUST_PHY_dp83869.c -> CUST_PHY_dp83869.c",
+            "+../../../../os/freertos/CMN_CPU_main.c -> CMN_CPU_main.c",
+            "+../../../../os/freertos/CMN_app.c -> CMN_app.c",
+            "+../../../../os/freertos/CMN_board.c -> CMN_board.c",
+            "+../../../../os/freertos/CMN_os.c -> CMN_os.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_INDUSTRIAL_COMMS_ETHERNETIP_ADAPTER_DEMOS.html -> EXAMPLES_INDUSTRIAL_COMMS_ETHERNETIP_ADAPTER_DEMOS.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

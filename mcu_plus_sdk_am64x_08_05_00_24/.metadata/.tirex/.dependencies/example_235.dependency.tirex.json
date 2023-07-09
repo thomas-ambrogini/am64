@@ -1,0 +1,13 @@
+[
+    {
+        "files": [
+            "+../../../udma_memcpy_polling.c -> udma_memcpy_polling.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_DRIVERS_UDMA_MEMCPY_POLLING.html -> EXAMPLES_DRIVERS_UDMA_MEMCPY_POLLING.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

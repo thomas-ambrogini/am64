@@ -1,0 +1,9 @@
+[
+    {
+        "files": [
+            "+../../../../docs/api_guide_am64x/EXAMPLES_EMPTY.html -> EXAMPLES_EMPTY.html",
+            "+system.xml -> system.xml",
+            "+makefile_system_ccs_bootimage_gen -> makefile_system_ccs_bootimage_gen"
+        ]
+    }
+]

@@ -1,0 +1,13 @@
+[
+    {
+        "files": [
+            "+../../../mmcsd_file_io.c -> mmcsd_file_io.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_DRIVERS_MMCSD_RAW_IO.html -> EXAMPLES_DRIVERS_MMCSD_RAW_IO.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

@@ -1,0 +1,14 @@
+[
+    {
+        "files": [
+            "+../../../mcrc_full_cpu.c -> mcrc_full_cpu.c",
+            "+../../../../../dpl/dpl_interface.c -> dpl_interface.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../docs/api_guide_am64x/EXAMPLES_SDL_MCRC_FULL_CPU.html -> EXAMPLES_SDL_MCRC_FULL_CPU.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

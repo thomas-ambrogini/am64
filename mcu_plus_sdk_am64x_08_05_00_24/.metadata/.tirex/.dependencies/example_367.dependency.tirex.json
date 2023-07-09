@@ -1,0 +1,14 @@
+[
+    {
+        "files": [
+            "+../../../hdsl_diagnostic.c -> hdsl_diagnostic.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../docs/api_guide_am64x/EXAMPLE_MOTORCONTROL_HDSL.html -> EXAMPLE_MOTORCONTROL_HDSL.html",
+            "+../../../hdsl_diagnostic.h -> hdsl_diagnostic.h",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

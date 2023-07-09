@@ -1,0 +1,1200 @@
+******************************************************************************
+            TI ARM Clang Linker Unix v2.1.2                    
+******************************************************************************
+>> Linked Mon Jun  5 14:44:29 2023
+
+OUTPUT FILE NAME:   <communication.cpp.release.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000d345
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  M4F_VECS              00000000   00000200  00000140  000000c0  RWIX
+  M4F_IRAM              00000200   0002fe00  000124a8  0001d958  RWIX
+  M4F_DRAM              00030000   00010000  00002238  0000ddc8  RWIX
+  USER_SHM_MEM          701d0000   00000080  00000000  00000080  RWIX
+  LOG_SHM_MEM           701d0080   00003f80  00003800  00000780  RWIX
+  IPC_VRING_MEM         701d4000   0000c000  000099c0  00002640  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000140   00000140    rw-
+  00000000    00000000    00000140   00000140    rw- .vectors
+00000200    00000200    00008000   00000000    rw-
+  00000200    00000200    00008000   00000000    rw- .sysmem
+00008200    00008200    000064a0   000064a0    r-x
+  00008200    00008200    000064a0   000064a0    r-x .text
+0000e6a0    0000e6a0    00004000   00000000    rw-
+  0000e6a0    0000e6a0    00004000   00000000    rw- .stack
+000126a0    000126a0    00000008   00000008    r--
+  000126a0    000126a0    00000008   00000008    r-- .ARM.exidx
+00030000    00030000    000010d8   00000000    rw-
+  00030000    00030000    000010d8   00000000    rw- .bss
+000310e0    000310e0    00000dd0   00000dd0    r--
+  000310e0    000310e0    00000dd0   00000dd0    r-- .rodata
+00031eb0    00031eb0    00000390   00000390    rw-
+  00031eb0    00031eb0    00000390   00000390    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.vectors   0    00000000    00000140     
+                  00000000    00000140     nortos.am64x.m4f.ti-arm-clang.release.lib : HwiP_armv7m_handlers_nortos.obj (.vectors)
+
+.sysmem    0    00000200    00008000     UNINITIALIZED
+                  00000200    00000010     libc.a : memory.c.obj (.sysmem)
+                  00000210    00007ff0     --HOLE--
+
+.text      0    00008200    000064a0     
+                  00008200    00000570     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.text._vsnprintf)
+                  00008770    000004a8                                               : printf.obj (.text._etoa)
+                  00008c18    00000438                                               : printf.obj (.text._ftoa)
+                  00009050    000003a4                                               : HwiP_armv7m.obj (.text.hwi)
+                  000093f4    00000384     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_init)
+                  00009778    0000035a                                                : sciclient.obj (.text.Sciclient_service)
+                  00009ad2    00000002     ti_board_config.obj (.text.Board_deinit)
+                  00009ad4    00000350     libc++.a : string.cpp.obj (.text._ZNSt3__112_GLOBAL__N_117as_integer_helperIlNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPFlPKcPPciEEET_RKS7_RKT0_PjiT1_)
+                  00009e24    00000268     libc.a : _printfi.c.obj (.text:__TI_printfi_minimal)
+                  0000a08c    000001be     nortos.am64x.m4f.ti-arm-clang.release.lib : MpuP_armv7m.obj (.text.mpu)
+                  0000a24a    00000002     ti_board_open_close.obj (.text.Board_driversClose)
+                  0000a24c    000001b6     libclang_rt.builtins.a : adddf3.S.obj (.text)
+                  0000a402    00000002     ti_board_config.obj (.text.Board_init)
+                  0000a404    00000148     libc.a : strtol.c.obj (.text.strtol)
+                  0000a54c    00000136     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_recv)
+                  0000a682    00000002     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_timerClearOverflowInt)
+                  0000a684    00000136     libclang_rt.builtins.a : divdf3.S.obj (.text)
+                  0000a7ba    00000002     ti_dpl_config.obj (.text.Dpl_deinit)
+                  0000a7bc    00000134     drivers.am64x.m4f.ti-arm-clang.release.lib : soc.obj (.text.SOC_moduleSetClockFrequency)
+                  0000a8f0    00000120     libc.a : memory.c.obj (.text.aligned_alloc)
+                  0000aa10    0000011c     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_format)
+                  0000ab2c    0000010c     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_recvHandler)
+                  0000ac38    00000108     nortos.am64x.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_setup)
+                  0000ad40    000000fc     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_send)
+                  0000ae3c    000000fc     libclang_rt.builtins.a : muldf3.S.obj (.text)
+                  0000af38    000000f8     libc.a : memory.c.obj (.text.free)
+                  0000b030    000000f6     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_init)
+                  0000b126    000000f4     ti_drivers_config.obj (.text.System_init)
+                  0000b21a    00000002     ti_drivers_open_close.obj (.text.Drivers_close)
+                  0000b21c    000000f0     libc.a : fputs.c.obj (.text.fputs)
+                  0000b30c    000000ee     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_init)
+                  0000b3fa    00000002     ti_drivers_open_close.obj (.text.Drivers_open)
+                  0000b3fc    000000e8     utils_communication.obj (.text._Z13str_to_coreIdPc)
+                  0000b4e4    000000e6     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_deInit)
+                  0000b5ca    00000002     nortos.am64x.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_destruct)
+                  0000b5cc    000000d8     utils_communication.obj (.text._Z9str_splitPcc)
+                  0000b6a4    000000d8     libc.a : setvbuf.c.obj (.text.setvbuf)
+                  0000b77c    000000cc     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_isr)
+                  0000b848    000000ca                                                : ipc_notify_v0.obj (.text.IpcNotify_sendMsg)
+                  0000b912    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
+                  0000b914    000000c6     nortos.am64x.m4f.ti-arm-clang.release.lib : HwiP_armv7m_handlers_nortos.obj (.text.hwi)
+                  0000b9da    00000002     libc.a : _lock.c.obj (.text._nop)
+                  0000b9dc    000000be     drivers.am64x.m4f.ti-arm-clang.release.lib : pinmux.obj (.text.Pinmux_config)
+                  0000ba9a    000000b8                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringReset)
+                  0000bb52    00000002     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.text._out_null)
+                  0000bb54    000000b0                                               : AddrTranslateP.obj (.text.AddrTranslateP_init)
+                  0000bc04    000000b0                                               : DebugP_shmLogWriter.obj (.text.DebugP_shmLogWriterPutChar)
+                  0000bcb4    000000b0     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  0000bd64    000000a4     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetFullRxBuf)
+                  0000be08    000000a4     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_long_long)
+                  0000beac    000000a4                                               : printf.obj (.text._out_rev)
+                  0000bf50    0000009e     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringPutEmptyRxBuf)
+                  0000bfee    0000009e                                                : sciclient_pm.obj (.text.Sciclient_pmQueryModuleClkFreq)
+                  0000c08c    0000009a                                                : sciclient.obj (.text.Sciclient_init)
+                  0000c126    00000002     --HOLE-- [fill = 0]
+                  0000c128    0000009a                                                : sciclient.obj (.text.Sciclient_sendMessage)
+                  0000c1c2    00000002     --HOLE-- [fill = 0]
+                  0000c1c4    00000098                                                : ipc_rpmsg.obj (.text.RPMessage_coreInit)
+                  0000c25c    00000098     nortos.am64x.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_pend)
+                  0000c2f4    00000094                                               : printf.obj (.text._ntoa_long)
+                  0000c388    00000092     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetEmptyTxBuf)
+                  0000c41a    00000002     --HOLE-- [fill = 0]
+                  0000c41c    00000090                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringResetInternal)
+                  0000c4ac    0000008c                                                : sciclient_pm.obj (.text.Sciclient_pmSetModuleClkFreq)
+                  0000c538    0000008a     IPC_Communication.obj (.text._ZN17IPC_CommunicationC2EPc)
+                  0000c5c2    00000002     --HOLE-- [fill = 0]
+                  0000c5c4    00000088     libc.a : fputc.c.obj (.text.fputc)
+                  0000c64c    00000086     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_shmLogWriter.obj (.text.DebugP_shmLogWriterPutLine)
+                  0000c6d2    0000007a     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmGetModuleClkNumParent)
+                  0000c74c    00000078                                                : ipc_rpmsg.obj (.text.RPMessage_construct)
+                  0000c7c4    00000074     libc.a : fclose.c.obj (.text.__TI_closefile)
+                  0000c838    00000074            : fflush.c.obj (.text.fflush)
+                  0000c8ac    00000072     drivers.am64x.m4f.ti-arm-clang.release.lib : soc.obj (.text.SOC_moduleClockEnable)
+                  0000c91e    00000002     --HOLE-- [fill = 0]
+                  0000c920    0000006e                                                : ipc_rpmsg.obj (.text.RPMessage_getEndPtMsg)
+                  0000c98e    0000006e                                                : sciclient_pm.obj (.text.Sciclient_pmGetModuleState)
+                  0000c9fc    0000006e     libclang_rt.builtins.a : comparedf2.c.obj (.text.__gedf2)
+                  0000ca6a    00000002     --HOLE-- [fill = 0]
+                  0000ca6c    0000006e                            : comparedf2.c.obj (.text.__ledf2)
+                  0000cada    00000002     --HOLE-- [fill = 0]
+                  0000cadc    0000006c     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_timerTickIsr)
+                  0000cb48    0000006c     libc.a : memory.c.obj (.text.split)
+                  0000cbb4    0000006a     nortos.am64x.m4f.ti-arm-clang.release.lib : AddrTranslateP.obj (.text.AddrTranslateP_getLocalAddr)
+                  0000cc1e    0000006a     IPC_Communication.obj (.text._ZN17IPC_Communication4readEv)
+                  0000cc88    00000068     libc.a : fseek.c.obj (.text.fseeko)
+                  0000ccf0    00000068            : getdevice.c.obj (.text.getdevice)
+                  0000cd58    00000066     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmGetModuleClkParent)
+                  0000cdbe    00000002     --HOLE-- [fill = 0]
+                  0000cdc0    00000064     libsysbm.a : hostrename.c.obj (.text.HOSTrename)
+                  0000ce24    00000064     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmModuleGetClkStatus)
+                  0000ce88    00000062     libclang_rt.builtins.a : aeabi_dcmp.S.obj (.text)
+                  0000ceea    00000060     libc.a : _io_perm.c.obj (.text.__TI_wrt_ok)
+                  0000cf4a    00000002     --HOLE-- [fill = 0]
+                  0000cf4c    00000060     libsysbm.a : close.c.obj (.text.close)
+                  0000cfac    0000005e     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringPutFullTxBuf)
+                  0000d00a    0000005e                                                : sciclient_pm.obj (.text.Sciclient_pmSetModuleClkParent)
+                  0000d068    0000005e     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.text._DebugP_assert)
+                  0000d0c6    00000002     --HOLE-- [fill = 0]
+                  0000d0c8    0000005e     IPC_Communication.obj (.text._ZN17IPC_Communication5writeEPc)
+                  0000d126    0000005c     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmModuleClkRequest)
+                  0000d182    00000002     --HOLE-- [fill = 0]
+                  0000d184    0000005c     libc.a : fprintf.c.obj (.text.fprintf)
+                  0000d1e0    0000005a     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringIsFullRxBuf)
+                  0000d23a    00000002     --HOLE-- [fill = 0]
+                  0000d23c    00000058     libsysbm.a : hostlseek.c.obj (.text.HOSTlseek)
+                  0000d294    00000058                : hostopen.c.obj (.text.HOSTopen)
+                  0000d2ec    00000058     communication.obj (.text._Z11r5_0_0_codev)
+                  0000d344    00000058     nortos.am64x.m4f.ti-arm-clang.release.lib : boot_armv7m.obj (.text:_c_int00)
+                  0000d39c    00000054     libsysbm.a : hostread.c.obj (.text.HOSTread)
+                  0000d3f0    00000054                : hostwrite.c.obj (.text.HOSTwrite)
+                  0000d444    00000054     IPC_Communication.obj (.text._ZN17IPC_Communication15create_endpointEt)
+                  0000d498    00000054     utils_communication.obj (.text._ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc)
+                  0000d4ec    00000052     ti_dpl_config.obj (.text.Dpl_init)
+                  0000d53e    00000052     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmSetModuleState)
+                  0000d590    00000052     communication.obj (.text._Z11r5_0_1_codev)
+                  0000d5e2    00000052     communication.obj (.text._Z7m4_codev)
+                  0000d634    00000050     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_notifyCallback)
+                  0000d684    00000050                                                : sciclient_soc_priv.obj (.text.Sciclient_getContext)
+                  0000d6d4    00000050     communication.obj (.text._Z18communication_mainPv)
+                  0000d724    0000004e     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_addToList)
+                  0000d772    0000004e     libc.a : fflush.c.obj (.text.__TI_doflush)
+                  0000d7c0    0000004c     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_getTimeUsec)
+                  0000d80c    0000004c     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_allocEndPtMsg)
+                  0000d858    0000004a     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_construct)
+                  0000d8a2    00000002     --HOLE-- [fill = 0]
+                  0000d8a4    00000048     libc.a : aeabi_portable.c.obj (.text.__aeabi_assert)
+                  0000d8ec    00000048     libclang_rt.builtins.a : fixdfsi.S.obj (.text)
+                  0000d934    00000044     libsysbm.a : hostunlink.c.obj (.text.HOSTunlink)
+                  0000d978    00000044     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_pm.obj (.text.Sciclient_pmSetModuleRst)
+                  0000d9bc    00000044     libclang_rt.builtins.a : fixunsdfsi.S.obj (.text)
+                  0000da00    00000040     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_stop)
+                  0000da40    00000040     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_destruct)
+                  0000da80    00000040     libc.a : strtok.c.obj (.text.strtok)
+                  0000dac0    0000003e     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_registerClient)
+                  0000dafe    0000003e     nortos.am64x.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_constructBinary)
+                  0000db3c    0000003c     libsysbm.a : hostclose.c.obj (.text.HOSTclose)
+                  0000db78    0000003a     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_destruct)
+                  0000dbb2    00000002     --HOLE-- [fill = 0]
+                  0000dbb4    00000038     ti_power_clock_config.obj (.text.Module_clockSetFrequency)
+                  0000dbec    00000038     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_deInit)
+                  0000dc24    00000038                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringCheckEmptyTxBuf)
+                  0000dc5c    00000038                                                : sciclient.obj (.text.Sciclient_getCurrentContext)
+                  0000dc94    00000038     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_nortos.obj (.text._DebugP_logZone)
+                  0000dccc    00000038     libc.a : sprintf.c.obj (.text.sprintf)
+                  0000dd04    00000038            : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  0000dd3c    00000034     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_start)
+                  0000dd70    00000034     libc.a : fopen.c.obj (.text.__TI_cleanup)
+                  0000dda4    00000034     libsysbm.a : trgmsg.c.obj (.text.__TI_writemsg)
+                  0000ddd8    00000034     libc.a : getdevice.c.obj (.text.finddevice)
+                  0000de0c    00000032     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_usleep)
+                  0000de3e    00000032                                               : SemaphoreP_nortos.obj (.text.SemaphoreP_post)
+                  0000de70    00000032                                               : printf.obj (.text.snprintf_)
+                  0000dea2    00000030                                               : DebugP_shmLogWriter.obj (.text.DebugP_shmLogWriterInit)
+                  0000ded2    00000002     --HOLE-- [fill = 0]
+                  0000ded4    00000030     libsysbm.a : trgmsg.c.obj (.text.__TI_readmsg)
+                  0000df04    00000030     libclang_rt.builtins.a : comparedf2.c.obj (.text.__unorddf2)
+                  0000df34    00000030     libc.a : exit.c.obj (.text.exit)
+                  0000df64    0000002e     ti_power_clock_config.obj (.text.Module_clockDisable)
+                  0000df92    00000002     --HOLE-- [fill = 0]
+                  0000df94    0000002e     ti_power_clock_config.obj (.text.Module_clockEnable)
+                  0000dfc2    00000002     --HOLE-- [fill = 0]
+                  0000dfc4    0000002e     libclang_rt.builtins.a : floatsidf.S.obj (.text)
+                  0000dff2    0000002c     libc++.a : string.cpp.obj (.text._ZNSt3__14stoiERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPji)
+                  0000e01e    00000002     --HOLE-- [fill = 0]
+                  0000e020    0000002c     libsysbm.a : lseek.c.obj (.text.lseek)
+                  0000e04c    0000002c                : unlink.c.obj (.text.unlink)
+                  0000e078    0000002c                : write.c.obj (.text.write)
+                  0000e0a4    0000002a     utils_communication.obj (.text._Z14str_to_int16_tPc)
+                  0000e0ce    00000028     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_sleepTicks)
+                  0000e0f6    00000028     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_Params_init)
+                  0000e11e    00000028     IPC_Communication.obj (.text._ZN17IPC_CommunicationD0Ev)
+                  0000e146    00000002     --HOLE-- [fill = 0]
+                  0000e148    00000028     libc.a : memory.c.obj (.text.free_list_insert)
+                  0000e170    00000026     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_unregisterClient)
+                  0000e196    00000026                                                : ipc_rpmsg.obj (.text.RPMessage_controlEndPtHandler)
+                  0000e1bc    00000024     ti_drivers_config.obj (.text.System_deinit)
+                  0000e1e0    00000024     libc++abi.a : stdlib_new_delete.cpp.obj (.text._Znwj)
+                  0000e204    00000024     libc.a : strdup.c.obj (.text.strdup)
+                  0000e228    00000024     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.text.vprintf_)
+                  0000e24c    00000022     ti_pinmux_config.obj (.text.Pinmux_init)
+                  0000e26e    00000022     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_isLinuxCore)
+                  0000e290    00000022     IPC_Communication.obj (.text._ZN17IPC_CommunicationD2Ev)
+                  0000e2b2    00000022     libc.a : strspn.c.obj (.text.strspn)
+                  0000e2d4    00000020     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.text.DebugP_logZoneEnable)
+                  0000e2f4    00000020     libc.a : strcspn.c.obj (.text.strcspn)
+                  0000e314    00000020     libclang_rt.builtins.a : floatunsidf.S.obj (.text)
+                  0000e334    0000001e     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_syncCallback)
+                  0000e352    0000001e     nortos.am64x.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_Params_init)
+                  0000e370    0000001e                                               : DebugP_log.obj (.text._DebugP_assertNoLog)
+                  0000e38e    0000001e     libc.a : memccpy.c.obj (.text.memccpy)
+                  0000e3ac    0000001c     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetTxBufLen)
+                  0000e3c8    0000001c                                                : soc.obj (.text.SOC_getCoreName)
+                  0000e3e4    0000001c     libc.a : assert.c.obj (.text._abort_msg)
+                  0000e400    0000001c            : memory.c.obj (.text.free_list_remove)
+                  0000e41c    0000001c     main.obj (.text.main)
+                  0000e438    0000001a     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_Params_init)
+                  0000e452    0000001a                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetRxBufAddr)
+                  0000e46c    0000001a                                                : ipc_rpmsg_vring.obj (.text.RPMessage_vringGetTxBufAddr)
+                  0000e486    0000001a     SystemManager.obj (.text._ZN20CommunicationFactory4openE17CommunicationTypePc)
+                  0000e4a0    00000018     ti_drivers_config.obj (.text.IpcNotify_getConfig)
+                  0000e4b8    00000018     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_isCoreEnabled)
+                  0000e4d0    00000018     libc.a : sprintf.c.obj (.text._outs)
+                  0000e4e8    00000016     nortos.am64x.m4f.ti-arm-clang.release.lib : HwiP_armv7m.obj (.text.HwiP_inISR)
+                  0000e4fe    00000016     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_soc_priv.obj (.text.Sciclient_getDevId)
+                  0000e514    00000014     libclang_rt.builtins.a : aeabi_memset.S.obj (.text)
+                  0000e528    00000014                            : aeabi_uldivmod.S.obj (.text)
+                  0000e53c    00000012     nortos.am64x.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_start)
+                  0000e54e    00000012     libc.a : memcpy_t2.S.obj (.text:TI_memcpy_small)
+                  0000e560    00000010     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_CreateParams_init)
+                  0000e570    0000000e     ti_power_clock_config.obj (.text.PowerClock_init)
+                  0000e57e    0000000e     nortos.am64x.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_getCount)
+                  0000e58c    0000000e                                               : SysTickTimerP.obj (.text.SysTickTimerP_getReloadCount)
+                  0000e59a    0000000e     IPC_Communication.obj (.text._ZN17IPC_Communication5ioctlEv)
+                  0000e5a8    0000000e     libsysbm.a : hostrename.c.obj (.text.strcpy)
+                  0000e5b6    0000000e     libc.a : _printfi.c.obj (.text.strlen)
+                  0000e5c4    0000000e            : aeabi_portable.c.obj (.text.strlen)
+                  0000e5d2    0000000e            : strlen.c.obj (.text.strlen)
+                  0000e5e0    0000000e     libsysbm.a : hostrename.c.obj (.text.strlen)
+                  0000e5ee    0000000e     libc.a : memset_t2.S.obj (.text:TI_memset_small)
+                  0000e5fc    0000000c     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0.obj (.text.IpcNotify_getSelfCoreId)
+                  0000e608    0000000c     libc++abi.a : cxa_handlers.cpp.obj (.text._ZSt15get_new_handlerv)
+                  0000e614    0000000a     nortos.am64x.m4f.ti-arm-clang.release.lib : AddrTranslateP.obj (.text.AddrTranslateP_Params_init)
+                  0000e61e    0000000a     drivers.am64x.m4f.ti-arm-clang.release.lib : csl_sec_proxy.obj (.text.CSL_secProxyGetDataAddr)
+                  0000e628    0000000a     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_Params_init)
+                  0000e632    0000000a                                               : ClockP_nortos.obj (.text.ClockP_isActive)
+                  0000e63c    0000000a                                               : printf.obj (.text._out_char)
+                  0000e646    0000000a     libc.a : sprintf.c.obj (.text._outc)
+                  0000e650    00000008            : aeabi_portable.c.obj (.text.__aeabi_errno_addr)
+                  0000e658    00000008     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.text._out_buffer)
+                  0000e660    00000008     libc.a : memory.c.obj (.text.malloc)
+                  0000e668    00000004     ti_board_open_close.obj (.text.Board_driversOpen)
+                  0000e66c    00000004     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_getTimerCount)
+                  0000e670    00000004     ti_power_clock_config.obj (.text.PowerClock_deinit)
+                  0000e674    00000004     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.text.RPMessage_getLocalEndPt)
+                  0000e678    00000004                                                : sciclient.obj (.text.Sciclient_deinit)
+                  0000e67c    00000004     libc++abi.a : stdlib_new_delete.cpp.obj (.text._ZdlPv)
+                  0000e680    00000004     libc.a : fprintf.c.obj (.text._outc)
+                  0000e684    00000004            : fprintf.c.obj (.text._outs)
+                  0000e688    00000004     ti_dpl_config.obj (.text.boot)
+                  0000e68c    00000004     libc.a : fseek.c.obj (.text.fseek)
+                  0000e690    00000004     ti_dpl_config.obj (.text.putchar_)
+                  0000e694    00000004     libsysbm.a : remove.c.obj (.text.remove)
+                  0000e698    00000004     libc.a : exit.c.obj (.text:abort)
+                  0000e69c    00000004     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text)
+
+.stack     0    0000e6a0    00004000     UNINITIALIZED
+                  0000e6a0    00000004     nortos.am64x.m4f.ti-arm-clang.release.lib : boot_armv7m.obj (.stack)
+                  0000e6a4    00003ffc     --HOLE--
+
+.bss       0    00030000    000010d8     UNINITIALIZED
+                  00030000    00000b2c     (.common:gIpcRpmsgCtrl)
+                  00030b2c    00000280     (.common:gHwiCtrl)
+                  00030dac    00000120     libsysbm.a : trgmsg.c.obj (.bss:_CIOBUF_)
+                  00030ecc    000000a8     (.common:gIpcNotifyCtrl)
+                  00030f74    000000a0     (.common:__TI_tmpnams)
+                  00031014    0000007a     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_shmLogWriter.obj (.bss.DebugP_shmLogWriterPutChar.lineBuf)
+                  0003108e    00000002     --HOLE--
+                  00031090    00000038     (.common:gClockCtrl)
+                  000310c8    00000008     (.common:parmbuf)
+                  000310d0    00000004     libc.a : memory.c.obj (.bss.sys_free)
+                  000310d4    00000004     --HOLE--
+
+.rodata    0    000310e0    00000dd0     
+                  000310e0    0000031a     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg.obj (.rodata.str1.1)
+                  000313fa    0000017d                                                : ipc_notify_v0.obj (.rodata.str1.1)
+                  00031577    00000131     IPC_Communication.obj (.rodata.str1.1)
+                  000316a8    0000012c     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_fmwSecureProxyMap.obj (.rodata.gSciclientMap)
+                  000317d4    0000000c     ti_dpl_config.obj (.rodata.gMpuConfig)
+                  000317e0    00000101     libc.a : aeabi_ctype.S.obj (.rodata)
+                  000318e1    000000ac     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.rodata.str1.1)
+                  0003198d    0000009f                                               : SysTickTimerP.obj (.rodata.str1.1)
+                  00031a2c    00000089     communication.obj (.rodata.str1.1)
+                  00031ab5    0000007b     drivers.am64x.m4f.ti-arm-clang.release.lib : soc.obj (.rodata.str1.1)
+                  00031b30    0000006b     nortos.am64x.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.rodata.str1.1)
+                  00031b9b    00000063     utils_communication.obj (.rodata.str1.1)
+                  00031bfe    0000005a     nortos.am64x.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.rodata.str1.1)
+                  00031c58    00000050                                               : printf.obj (.rodata._ftoa.pow10)
+                  00031ca8    00000050     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_rpmsg_vring.obj (.rodata.str1.1)
+                  00031cf8    00000045     libc.a : aeabi_portable.c.obj (.rodata.str1.1)
+                  00031d3d    00000042     ti_drivers_config.obj (.rodata.str1.1)
+                  00031d7f    0000002d     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.rodata.str1.1)
+                  00031dac    00000024     libc++.a : string.cpp.obj (.rodata.str1.1)
+                  00031dd0    00000022     libc.a : _printfi.c.obj (.rodata.str1.1)
+                  00031df2    00000002     --HOLE-- [fill = 0]
+                  00031df4    00000020     drivers.am64x.m4f.ti-arm-clang.release.lib : soc.obj (.rodata.SOC_getCoreName.coreIdNames)
+                  00031e14    00000020     ti_dpl_config.obj (.rodata.gMpuRegionConfig)
+                  00031e34    0000001c     IPC_Communication.obj (.rodata._ZTV17IPC_Communication)
+                  00031e50    0000001b     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_shmLogWriter.obj (.rodata.str1.1)
+                  00031e6b    00000001     --HOLE-- [fill = 0]
+                  00031e6c    00000018     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_soc_priv.obj (.rodata..Lswitch.table.Sciclient_getDevId)
+                  00031e84    00000012     nortos.am64x.m4f.ti-arm-clang.release.lib : printf.obj (.rodata.str1.1)
+                  00031e96    00000002     --HOLE-- [fill = 0]
+                  00031e98    0000000a     communication.obj (.rodata.str1.4)
+                  00031ea2    0000000e     --HOLE-- [fill = 0]
+
+.data      0    00031eb0    00000390     
+                  00031eb0    000000f0     libc.a : defs.c.obj (.data._ftable)
+                  00031fa0    00000093     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0_cfg.obj (.data.gIpcNotifyMailboxConfig)
+                  00032033    00000001                                                : sciclient.obj (.data.gSecHeaderSizeWords)
+                  00032034    00000078     libsysbm.a : host_device.c.obj (.data._device)
+                  000320ac    00000050                : host_device.c.obj (.data._stream)
+                  000320fc    00000004     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_shmLogWriter.obj (.data.DebugP_shmLogWriterPutChar.lineBufIndex)
+                  00032100    00000040     ti_dpl_config.obj (.data.gAddrTranslateRegionConfig)
+                  00032140    00000030     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0_cfg.obj (.data.gIpcNotifyInterruptConfig_m4fss0_0)
+                  00032170    00000024                                                : ipc_notify_v0_cfg.obj (.data.gIpcNotifyMailboxBaseAddr)
+                  00032194    00000004     libc.a : defs.c.obj (.data.__TI_ft_end)
+                  00032198    00000020     drivers.am64x.m4f.ti-arm-clang.release.lib : sciclient_soc_priv.obj (.data.gSciclientSecProxyCfg)
+                  000321b8    00000014     ti_dpl_config.obj (.data.gClockConfig)
+                  000321cc    0000000c     nortos.am64x.m4f.ti-arm-clang.release.lib : AddrTranslateP.obj (.data.gAddrTranslateConfig)
+                  000321d8    0000000c     ti_power_clock_config.obj (.data.gSocModulesClockFrequency)
+                  000321e4    00000008     libc.a : exit.c.obj (.data..L_MergedGlobals)
+                  000321ec    00000008     ti_pinmux_config.obj (.data.gPinMuxMainDomainCfg)
+                  000321f4    00000008     ti_pinmux_config.obj (.data.gPinMuxMcuDomainCfg)
+                  000321fc    00000004     libc.a : aeabi_portable.c.obj (.data.__aeabi_errno)
+                  00032200    00000004     libc++abi.a : cxa_default_handlers.cpp.obj (.data.__cxa_new_handler)
+                  00032204    00000004     libc.a : _lock.c.obj (.data._lock)
+                  00032208    00000004            : _lock.c.obj (.data._unlock)
+                  0003220c    00000004     nortos.am64x.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.data.gDebugLogZone)
+                  00032210    00000004                                               : DebugP_shmLogWriter.obj (.data.gDebugShmLogWriter)
+                  00032214    00000004                                               : DebugP_shmLogWriter.obj (.data.gDebugShmLogWriterSelfCoreName)
+                  00032218    00000004     drivers.am64x.m4f.ti-arm-clang.release.lib : ipc_notify_v0_cfg.obj (.data.gIpcNotifyInterruptConfigNum_m4fss0_0)
+                  0003221c    00000004                                                : sciclient.obj (.data.gSciclientHandle.0)
+                  00032220    00000004                                                : sciclient.obj (.data.gSciclientHandle.2)
+                  00032224    00000004                                                : sciclient.obj (.data.gSciclientHandle.3)
+                  00032228    00000004                                                : sciclient.obj (.data.gSciclientHandle.4)
+                  0003222c    00000004                                                : sciclient.obj (.data.gSciclientHandle.5)
+                  00032230    00000004     ti_power_clock_config.obj (.data.gSocModules)
+                  00032234    00000004     libc.a : strtok.c.obj (.data.last_end)
+                  00032238    00000001            : memory.c.obj (.data.memory_is_initialized)
+                  00032239    00000007     --HOLE-- [fill = 0]
+
+.init_array 
+*          0    00000200    00000000     UNINITIALIZED
+
+.bss.log_shared_mem 
+*          0    701d0080    00003800     NOLOAD SECTION
+                  701d0080    00003800     ti_dpl_config.obj (.bss.log_shared_mem)
+
+.bss.ipc_vring_mem 
+*          0    701d4000    000099c0     NOLOAD SECTION
+                  701d4000    000099c0     ti_drivers_config.obj (.bss.ipc_vring_mem)
+
+__llvm_prf_cnts 
+*          0    00030000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    00030000    00000000     UNINITIALIZED
+
+.ARM.exidx 
+*          0    000126a0    00000008     
+                  000126a0    00000008     (.ARM.exidx.text._vsnprintf:nortos.am64x.m4f.ti-arm-clang.release.lib<printf.obj>)
+
+MODULE SUMMARY
+
+       Module                            code    ro data   rw data
+       ------                            ----    -------   -------
+    obj/release/
+       ti_drivers_config.obj             304     66        39360  
+       ti_dpl_config.obj                 92      44        14420  
+       IPC_Communication.obj             510     333       0      
+       utils_communication.obj           574     99        0      
+       communication.obj                 332     147       0      
+       ti_power_clock_config.obj         166     0         16     
+       ti_pinmux_config.obj              34      0         16     
+       main.obj                          28      0         0      
+       SystemManager.obj                 26      0         0      
+       ti_board_open_close.obj           6       0         0      
+       ti_board_config.obj               4       0         0      
+       ti_drivers_open_close.obj         4       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            2080    689       53812  
+                                                                  
+    /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/drivers/lib/drivers.am64x.m4f.ti-arm-clang.release.lib
+       ipc_rpmsg.obj                     1858    794       2860   
+       ipc_notify_v0.obj                 1728    381       168    
+       sciclient.obj                     1226    0         21     
+       ipc_rpmsg_vring.obj               1116    80        0      
+       sciclient_pm.obj                  1068    0         0      
+       soc.obj                           450     155       0      
+       sciclient_fmwSecureProxyMap.obj   0       300       0      
+       ipc_notify_v0_cfg.obj             0       0         235    
+       pinmux.obj                        190     0         0      
+       sciclient_soc_priv.obj            102     24        32     
+       csl_sec_proxy.obj                 10      0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            7748    1734      3316   
+                                                                  
+    /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/kernel/nortos/lib/nortos.am64x.m4f.ti-arm-clang.release.lib
+       printf.obj                        4530    98        0      
+       HwiP_armv7m.obj                   954     0         640    
+       ClockP_nortos.obj                 620     90        56     
+       DebugP_shmLogWriter.obj           358     27        134    
+       HwiP_armv7m_handlers_nortos.obj   198     0         320    
+       SysTickTimerP.obj                 340     159       0      
+       MpuP_armv7m.obj                   446     0         0      
+       ClockP_nortos_m4.obj              252     172       0      
+       SemaphoreP_nortos.obj             266     107       0      
+       AddrTranslateP.obj                292     0         12     
+       DebugP_log.obj                    156     45        4      
+       boot_armv7m.obj                   88      0         0      
+       DebugP_nortos.obj                 56      0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            8556    698       1166   
+                                                                  
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7em-ti-none-eabihf/c/libc.a
+       memory.c.obj                      720     0         5      
+       _printfi.c.obj                    630     34        0      
+       defs.c.obj                        0       0         404    
+       strtol.c.obj                      328     0         0      
+       aeabi_ctype.S.obj                 0       257       0      
+       fputs.c.obj                       240     0         0      
+       setvbuf.c.obj                     216     0         0      
+       fflush.c.obj                      194     0         0      
+       aeabi_portable.c.obj              94      69        4      
+       getdevice.c.obj                   156     0         0      
+       fputc.c.obj                       136     0         0      
+       fclose.c.obj                      116     0         0      
+       fseek.c.obj                       108     0         0      
+       fprintf.c.obj                     100     0         0      
+       _io_perm.c.obj                    96      0         0      
+       sprintf.c.obj                     90      0         0      
+       strtok.c.obj                      64      0         4      
+       exit.c.obj                        52      0         8      
+       autoinit.c.obj                    56      0         0      
+       fopen.c.obj                       52      0         0      
+       strdup.c.obj                      36      0         0      
+       strspn.c.obj                      34      0         0      
+       strcspn.c.obj                     32      0         0      
+       memccpy.c.obj                     30      0         0      
+       assert.c.obj                      28      0         0      
+       memcpy_t2.S.obj                   18      0         0      
+       memset_t2.S.obj                   14      0         0      
+       strlen.c.obj                      14      0         0      
+       _lock.c.obj                       2       0         8      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            3656    360       433    
+                                                                  
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7em-ti-none-eabihf/c/libsysbm.a
+       trgmsg.c.obj                      100     0         288    
+       host_device.c.obj                 0       0         200    
+       hostrename.c.obj                  128     0         0      
+       close.c.obj                       96      0         0      
+       hostopen.c.obj                    88      0         8      
+       hostlseek.c.obj                   88      0         0      
+       hostread.c.obj                    84      0         0      
+       hostwrite.c.obj                   84      0         0      
+       hostunlink.c.obj                  68      0         0      
+       hostclose.c.obj                   60      0         0      
+       lseek.c.obj                       44      0         0      
+       unlink.c.obj                      44      0         0      
+       write.c.obj                       44      0         0      
+       remove.c.obj                      4       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            932     0         496    
+                                                                  
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7em-ti-none-eabihf/libc++.a
+       string.cpp.obj                    892     36        0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            892     36        0      
+                                                                  
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/armv7em-ti-none-eabihf/libc++abi.a
+       stdlib_new_delete.cpp.obj         40      0         0      
+       cxa_handlers.cpp.obj              12      0         0      
+       cxa_default_handlers.cpp.obj      0       0         4      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            52      0         4      
+                                                                  
+    /home/thomas/ti/ti-cgt-armllvm_2.1.2.LTS/lib/clang/14.0.6/lib/armv7em-ti-none-eabihf/libclang_rt.builtins.a
+       adddf3.S.obj                      438     0         0      
+       divdf3.S.obj                      310     0         0      
+       comparedf2.c.obj                  268     0         0      
+       muldf3.S.obj                      252     0         0      
+       udivmoddi4.S.obj                  176     0         0      
+       aeabi_dcmp.S.obj                  98      0         0      
+       fixdfsi.S.obj                     72      0         0      
+       fixunsdfsi.S.obj                  68      0         0      
+       floatsidf.S.obj                   46      0         0      
+       floatunsidf.S.obj                 32      0         0      
+       aeabi_memset.S.obj                20      0         0      
+       aeabi_uldivmod.S.obj              20      0         0      
+       aeabi_memcpy.S.obj                4       0         0      
+       aeabi_div0.c.obj                  2       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            1806    0         0      
+                                                                  
+       Heap:                             0       0         32768  
+       Stack:                            0       0         16384  
+       Linker Generated:                 0       8         0      
+    +--+---------------------------------+-------+---------+---------+
+       Grand Total:                      25722   3525      108379 
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                                                          
+-------   ----                                                                          
+000126a0  .ARM.exidx$$Base                                                              
+000126a8  .ARM.exidx$$Limit                                                             
+0000e615  AddrTranslateP_Params_init                                                    
+0000cbb5  AddrTranslateP_getLocalAddr                                                   
+0000bb55  AddrTranslateP_init                                                           
+00009ad3  Board_deinit                                                                  
+0000a24b  Board_driversClose                                                            
+0000e669  Board_driversOpen                                                             
+0000a403  Board_init                                                                    
+0000e698  C$$EXIT                                                                       
+0000ddcf  C$$IO$$                                                                       
+0000e61f  CSL_secProxyGetDataAddr                                                       
+0000e629  ClockP_Params_init                                                            
+0000d859  ClockP_construct                                                              
+0000db79  ClockP_destruct                                                               
+0000d7c1  ClockP_getTimeUsec                                                            
+0000e66d  ClockP_getTimerCount                                                          
+0000b031  ClockP_init                                                                   
+0000e633  ClockP_isActive                                                               
+0000dd3d  ClockP_start                                                                  
+0000da01  ClockP_stop                                                                   
+0000a683  ClockP_timerClearOverflowInt                                                  
+0000cadd  ClockP_timerTickIsr                                                           
+0000de0d  ClockP_usleep                                                                 
+0000e2d5  DebugP_logZoneEnable                                                          
+0000dea3  DebugP_shmLogWriterInit                                                       
+0000bc05  DebugP_shmLogWriterPutChar                                                    
+0000c64d  DebugP_shmLogWriterPutLine                                                    
+0000a7bb  Dpl_deinit                                                                    
+0000d4ed  Dpl_init                                                                      
+0000b21b  Drivers_close                                                                 
+0000b3fb  Drivers_open                                                                  
+0000db3d  HOSTclose                                                                     
+0000d23d  HOSTlseek                                                                     
+0000d295  HOSTopen                                                                      
+0000d39d  HOSTread                                                                      
+0000cdc1  HOSTrename                                                                    
+0000d935  HOSTunlink                                                                    
+0000d3f1  HOSTwrite                                                                     
+000091d1  HwiP_Params_init                                                              
+0000b97b  HwiP_busFault_handler                                                         
+00009161  HwiP_clearInt                                                                 
+000091e3  HwiP_construct                                                                
+0000b9bb  HwiP_debugMon_handler                                                         
+00009281  HwiP_destruct                                                                 
+0000930f  HwiP_disable                                                                  
+000090a9  HwiP_disableInt                                                               
+0000931b  HwiP_enable                                                                   
+00009051  HwiP_enableInt                                                                
+0000b95b  HwiP_hardFault_handler                                                        
+0000e4e9  HwiP_inISR                                                                    
+00009327  HwiP_init                                                                     
+0000b915  HwiP_interrupt_handler                                                        
+0000b96b  HwiP_memFault_handler                                                         
+0000b949  HwiP_nmi_handler                                                              
+0000b9cb  HwiP_pendSV_handler                                                           
+000092fb  HwiP_post                                                                     
+0000b99b  HwiP_reserved_handler                                                         
+0000909f  HwiP_restore                                                                  
+00009105  HwiP_restoreInt                                                               
+00009183  HwiP_setPri                                                                   
+0000b9ab  HwiP_svc_handler                                                              
+0000b98b  HwiP_usageFault_handler                                                       
+0000e439  IpcNotify_Params_init                                                         
+0000b4e5  IpcNotify_deInit                                                              
+0000e4a1  IpcNotify_getConfig                                                           
+0000e5fd  IpcNotify_getSelfCoreId                                                       
+000093f5  IpcNotify_init                                                                
+0000e4b9  IpcNotify_isCoreEnabled                                                       
+0000b77d  IpcNotify_isr                                                                 
+0000dac1  IpcNotify_registerClient                                                      
+0000b849  IpcNotify_sendMsg                                                             
+0000e335  IpcNotify_syncCallback                                                        
+0000e171  IpcNotify_unregisterClient                                                    
+0000df65  Module_clockDisable                                                           
+0000df95  Module_clockEnable                                                            
+0000dbb5  Module_clockSetFrequency                                                      
+0000a08d  MpuP_RegionAttrs_init                                                         
+0000a19d  MpuP_disable                                                                  
+0000a163  MpuP_enable                                                                   
+0000a1d3  MpuP_init                                                                     
+0000a1c3  MpuP_isEnable                                                                 
+0000a09b  MpuP_setRegion                                                                
+0000b9dd  Pinmux_config                                                                 
+0000e24d  Pinmux_init                                                                   
+0000e671  PowerClock_deinit                                                             
+0000e571  PowerClock_init                                                               
+0000e561  RPMessage_CreateParams_init                                                   
+0000e0f7  RPMessage_Params_init                                                         
+0000d80d  RPMessage_allocEndPtMsg                                                       
+0000c74d  RPMessage_construct                                                           
+0000e197  RPMessage_controlEndPtHandler                                                 
+0000c1c5  RPMessage_coreInit                                                            
+0000dbed  RPMessage_deInit                                                              
+0000da41  RPMessage_destruct                                                            
+0000c921  RPMessage_getEndPtMsg                                                         
+0000e675  RPMessage_getLocalEndPt                                                       
+0000b30d  RPMessage_init                                                                
+0000e26f  RPMessage_isLinuxCore                                                         
+0000d635  RPMessage_notifyCallback                                                      
+0000a54d  RPMessage_recv                                                                
+0000ab2d  RPMessage_recvHandler                                                         
+0000ad41  RPMessage_send                                                                
+0000dc25  RPMessage_vringCheckEmptyTxBuf                                                
+0000c389  RPMessage_vringGetEmptyTxBuf                                                  
+0000bd65  RPMessage_vringGetFullRxBuf                                                   
+0000e453  RPMessage_vringGetRxBufAddr                                                   
+0000e46d  RPMessage_vringGetTxBufAddr                                                   
+0000e3ad  RPMessage_vringGetTxBufLen                                                    
+0000d1e1  RPMessage_vringIsFullRxBuf                                                    
+0000bf51  RPMessage_vringPutEmptyRxBuf                                                  
+0000cfad  RPMessage_vringPutFullTxBuf                                                   
+0000ba9b  RPMessage_vringReset                                                          
+0000c41d  RPMessage_vringResetInternal                                                  
+0000e3c9  SOC_getCoreName                                                               
+0000c8ad  SOC_moduleClockEnable                                                         
+0000a7bd  SOC_moduleSetClockFrequency                                                   
+0000e679  Sciclient_deinit                                                              
+0000d685  Sciclient_getContext                                                          
+0000dc5d  Sciclient_getCurrentContext                                                   
+0000e4ff  Sciclient_getDevId                                                            
+0000c08d  Sciclient_init                                                                
+0000c6d3  Sciclient_pmGetModuleClkNumParent                                             
+0000cd59  Sciclient_pmGetModuleClkParent                                                
+0000c98f  Sciclient_pmGetModuleState                                                    
+0000d127  Sciclient_pmModuleClkRequest                                                  
+0000ce25  Sciclient_pmModuleGetClkStatus                                                
+0000bfef  Sciclient_pmQueryModuleClkFreq                                                
+0000c4ad  Sciclient_pmSetModuleClkFreq                                                  
+0000d00b  Sciclient_pmSetModuleClkParent                                                
+0000d979  Sciclient_pmSetModuleRst                                                      
+0000d53f  Sciclient_pmSetModuleState                                                    
+00009779  Sciclient_service                                                             
+0000daff  SemaphoreP_constructBinary                                                    
+0000b5cb  SemaphoreP_destruct                                                           
+0000c25d  SemaphoreP_pend                                                               
+0000de3f  SemaphoreP_post                                                               
+0000e353  SysTickTimerP_Params_init                                                     
+0000e57f  SysTickTimerP_getCount                                                        
+0000e58d  SysTickTimerP_getReloadCount                                                  
+0000ac39  SysTickTimerP_setup                                                           
+0000e53d  SysTickTimerP_start                                                           
+0000e1bd  System_deinit                                                                 
+0000b127  System_init                                                                   
+0000e54f  TI_memcpy_small                                                               
+0000e5ef  TI_memset_small                                                               
+00030dac  _CIOBUF_                                                                      
+0000d069  _DebugP_assert                                                                
+0000e371  _DebugP_assertNoLog                                                           
+0000dc95  _DebugP_logZone                                                               
+0000d2ed  _Z11r5_0_0_codev                                                              
+0000d591  _Z11r5_0_1_codev                                                              
+0000b3fd  _Z13str_to_coreIdPc                                                           
+0000e0a5  _Z14str_to_int16_tPc                                                          
+0000d6d5  _Z18communication_mainPv                                                      
+0000d5e3  _Z7m4_codev                                                                   
+0000b5cd  _Z9str_splitPcc                                                               
+0000d445  _ZN17IPC_Communication15create_endpointEt                                     
+0000cc1f  _ZN17IPC_Communication4readEv                                                 
+0000e59b  _ZN17IPC_Communication5ioctlEv                                                
+0000d0c9  _ZN17IPC_Communication5writeEPc                                               
+0000c539  _ZN17IPC_CommunicationC1EPc                                                   
+0000c539  _ZN17IPC_CommunicationC2EPc                                                   
+0000e11f  _ZN17IPC_CommunicationD0Ev                                                    
+0000e291  _ZN17IPC_CommunicationD2Ev                                                    
+0000e487  _ZN20CommunicationFactory4openE17CommunicationTypePc                          
+0000d499  _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc     
+0000dff3  _ZNSt3__14stoiERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPji
+0000e609  _ZSt15get_new_handlerv                                                        
+00031e34  _ZTV17IPC_Communication                                                       
+0000e67d  _ZdlPv                                                                        
+0000e1e1  _Znwj                                                                         
+000310d8  __BSS_END                                                                     
+00030000  __BSS_START                                                                   
+00030dac  __CIOBUF_                                                                     
+000126a0  __STACK_END                                                                   
+00004000  __STACK_SIZE                                                                  
+00008000  __SYSMEM_SIZE                                                                 
+UNDEFED   __TI_CINIT_Base                                                               
+UNDEFED   __TI_CINIT_Limit                                                              
+UNDEFED   __TI_Handler_Table_Base                                                       
+UNDEFED   __TI_Handler_Table_Limit                                                      
+000126a8  __TI_UNWIND_TABLE_END                                                         
+000126a0  __TI_UNWIND_TABLE_START                                                       
+0000dd05  __TI_auto_init_nobinit_nopinit                                                
+0000dd71  __TI_cleanup                                                                  
+000321e4  __TI_cleanup_ptr                                                              
+0000c7c5  __TI_closefile                                                                
+0000d773  __TI_doflush                                                                  
+000321e8  __TI_dtors_ptr                                                                
+00032194  __TI_ft_end                                                                   
+ffffffff  __TI_pprof_out_hndl                                                           
+00009e25  __TI_printfi_minimal                                                          
+ffffffff  __TI_prof_data_size                                                           
+ffffffff  __TI_prof_data_start                                                          
+0000ded5  __TI_readmsg                                                                  
+00000000  __TI_static_base__                                                            
+00030f74  __TI_tmpnams                                                                  
+0000dda5  __TI_writemsg                                                                 
+0000ceeb  __TI_wrt_ok                                                                   
+0000a257  __adddf3                                                                      
+0000d8a5  __aeabi_assert                                                                
+000317e0  __aeabi_ctype_table_                                                          
+000317e0  __aeabi_ctype_table_C                                                         
+0000d8ed  __aeabi_d2iz                                                                  
+0000d9bd  __aeabi_d2uiz                                                                 
+0000a257  __aeabi_dadd                                                                  
+0000ce89  __aeabi_dcmpeq                                                                
+0000cec5  __aeabi_dcmpge                                                                
+0000ced9  __aeabi_dcmpgt                                                                
+0000ceb1  __aeabi_dcmple                                                                
+0000ce9d  __aeabi_dcmplt                                                                
+0000df05  __aeabi_dcmpun                                                                
+0000a685  __aeabi_ddiv                                                                  
+0000ae3d  __aeabi_dmul                                                                  
+0000a24d  __aeabi_dsub                                                                  
+000321fc  __aeabi_errno                                                                 
+0000e651  __aeabi_errno_addr                                                            
+0000dfc5  __aeabi_i2d                                                                   
+0000b913  __aeabi_ldiv0                                                                 
+0000e521  __aeabi_memclr                                                                
+0000e521  __aeabi_memclr4                                                               
+0000e521  __aeabi_memclr8                                                               
+0000e69d  __aeabi_memcpy                                                                
+0000e69d  __aeabi_memcpy4                                                               
+0000e69d  __aeabi_memcpy8                                                               
+0000e515  __aeabi_memset                                                                
+0000e515  __aeabi_memset4                                                               
+0000e515  __aeabi_memset8                                                               
+0000e315  __aeabi_ui2d                                                                  
+0000e529  __aeabi_uldivmod                                                              
+ffffffff  __binit__                                                                     
+0000ca6d  __cmpdf2                                                                      
+00032200  __cxa_new_handler                                                             
+0000a685  __divdf3                                                                      
+0000ca6d  __eqdf2                                                                       
+0000d8ed  __fixdfsi                                                                     
+0000d9bd  __fixunsdfsi                                                                  
+0000dfc5  __floatsidf                                                                   
+0000e315  __floatunsidf                                                                 
+0000c9fd  __gedf2                                                                       
+0000c9fd  __gtdf2                                                                       
+0000ca6d  __ledf2                                                                       
+0000ca6d  __ltdf2                                                                       
+0000e689  __mpu_init                                                                    
+0000ae3d  __muldf3                                                                      
+0000ca6d  __nedf2                                                                       
+0000e6a0  __stack                                                                       
+00030000  __start___llvm_prf_bits                                                       
+00030000  __start___llvm_prf_cnts                                                       
+00030000  __stop___llvm_prf_bits                                                        
+00030000  __stop___llvm_prf_cnts                                                        
+0000a24d  __subdf3                                                                      
+0000bcb5  __udivmoddi4                                                                  
+0000df05  __unorddf2                                                                    
+0000e3e5  _abort_msg                                                                    
+0000d345  _c_int00                                                                      
+00032034  _device                                                                       
+00031eb0  _ftable                                                                       
+00032204  _lock                                                                         
+0000b9db  _nop                                                                          
+000320ac  _stream                                                                       
+00000200  _sys_memory                                                                   
+UNDEFED   _system_post_cinit                                                            
+00032208  _unlock                                                                       
+0000e699  abort                                                                         
+0000a8f1  aligned_alloc                                                                 
+ffffffff  binit                                                                         
+0000cf4d  close                                                                         
+0000df35  exit                                                                          
+0000c839  fflush                                                                        
+0000ddd9  finddevice                                                                    
+0000d185  fprintf                                                                       
+0000c5c5  fputc                                                                         
+0000b21d  fputs                                                                         
+0000af39  free                                                                          
+0000e68d  fseek                                                                         
+0000cc89  fseeko                                                                        
+000321cc  gAddrTranslateConfig                                                          
+00032100  gAddrTranslateRegionConfig                                                    
+000321b8  gClockConfig                                                                  
+00031090  gClockCtrl                                                                    
+0003220c  gDebugLogZone                                                                 
+701d0080  gDebugShmLog                                                                  
+00030b2c  gHwiCtrl                                                                      
+00000000  gHwiP_vectorTable                                                             
+00030ecc  gIpcNotifyCtrl                                                                
+00032218  gIpcNotifyInterruptConfigNum_m4fss0_0                                         
+00032140  gIpcNotifyInterruptConfig_m4fss0_0                                            
+00032170  gIpcNotifyMailboxBaseAddr                                                     
+00031fa0  gIpcNotifyMailboxConfig                                                       
+00030000  gIpcRpmsgCtrl                                                                 
+000317d4  gMpuConfig                                                                    
+00031e14  gMpuRegionConfig                                                              
+701d4000  gRPMessageVringMem                                                            
+000316a8  gSciclientMap                                                                 
+00032198  gSciclientSecProxyCfg                                                         
+00032230  gSocModules                                                                   
+000321d8  gSocModulesClockFrequency                                                     
+0000ccf1  getdevice                                                                     
+0000e021  lseek                                                                         
+0000e41d  main                                                                          
+0000e661  malloc                                                                        
+0000a8f1  memalign                                                                      
+0000e38f  memccpy                                                                       
+000310c8  parmbuf                                                                       
+0000e691  putchar_                                                                      
+0000e695  remove                                                                        
+0000b6a5  setvbuf                                                                       
+0000de71  snprintf_                                                                     
+0000dccd  sprintf                                                                       
+0000e2f5  strcspn                                                                       
+0000e205  strdup                                                                        
+0000e5d3  strlen                                                                        
+0000e2b3  strspn                                                                        
+0000da81  strtok                                                                        
+0000a405  strtol                                                                        
+0000e04d  unlink                                                                        
+0000e229  vprintf_                                                                      
+0000e079  write                                                                         
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                                                          
+-------   ----                                                                          
+00000000  __TI_static_base__                                                            
+00000000  gHwiP_vectorTable                                                             
+00000200  _sys_memory                                                                   
+00004000  __STACK_SIZE                                                                  
+00008000  __SYSMEM_SIZE                                                                 
+00009051  HwiP_enableInt                                                                
+0000909f  HwiP_restore                                                                  
+000090a9  HwiP_disableInt                                                               
+00009105  HwiP_restoreInt                                                               
+00009161  HwiP_clearInt                                                                 
+00009183  HwiP_setPri                                                                   
+000091d1  HwiP_Params_init                                                              
+000091e3  HwiP_construct                                                                
+00009281  HwiP_destruct                                                                 
+000092fb  HwiP_post                                                                     
+0000930f  HwiP_disable                                                                  
+0000931b  HwiP_enable                                                                   
+00009327  HwiP_init                                                                     
+000093f5  IpcNotify_init                                                                
+00009779  Sciclient_service                                                             
+00009ad3  Board_deinit                                                                  
+00009e25  __TI_printfi_minimal                                                          
+0000a08d  MpuP_RegionAttrs_init                                                         
+0000a09b  MpuP_setRegion                                                                
+0000a163  MpuP_enable                                                                   
+0000a19d  MpuP_disable                                                                  
+0000a1c3  MpuP_isEnable                                                                 
+0000a1d3  MpuP_init                                                                     
+0000a24b  Board_driversClose                                                            
+0000a24d  __aeabi_dsub                                                                  
+0000a24d  __subdf3                                                                      
+0000a257  __adddf3                                                                      
+0000a257  __aeabi_dadd                                                                  
+0000a403  Board_init                                                                    
+0000a405  strtol                                                                        
+0000a54d  RPMessage_recv                                                                
+0000a683  ClockP_timerClearOverflowInt                                                  
+0000a685  __aeabi_ddiv                                                                  
+0000a685  __divdf3                                                                      
+0000a7bb  Dpl_deinit                                                                    
+0000a7bd  SOC_moduleSetClockFrequency                                                   
+0000a8f1  aligned_alloc                                                                 
+0000a8f1  memalign                                                                      
+0000ab2d  RPMessage_recvHandler                                                         
+0000ac39  SysTickTimerP_setup                                                           
+0000ad41  RPMessage_send                                                                
+0000ae3d  __aeabi_dmul                                                                  
+0000ae3d  __muldf3                                                                      
+0000af39  free                                                                          
+0000b031  ClockP_init                                                                   
+0000b127  System_init                                                                   
+0000b21b  Drivers_close                                                                 
+0000b21d  fputs                                                                         
+0000b30d  RPMessage_init                                                                
+0000b3fb  Drivers_open                                                                  
+0000b3fd  _Z13str_to_coreIdPc                                                           
+0000b4e5  IpcNotify_deInit                                                              
+0000b5cb  SemaphoreP_destruct                                                           
+0000b5cd  _Z9str_splitPcc                                                               
+0000b6a5  setvbuf                                                                       
+0000b77d  IpcNotify_isr                                                                 
+0000b849  IpcNotify_sendMsg                                                             
+0000b913  __aeabi_ldiv0                                                                 
+0000b915  HwiP_interrupt_handler                                                        
+0000b949  HwiP_nmi_handler                                                              
+0000b95b  HwiP_hardFault_handler                                                        
+0000b96b  HwiP_memFault_handler                                                         
+0000b97b  HwiP_busFault_handler                                                         
+0000b98b  HwiP_usageFault_handler                                                       
+0000b99b  HwiP_reserved_handler                                                         
+0000b9ab  HwiP_svc_handler                                                              
+0000b9bb  HwiP_debugMon_handler                                                         
+0000b9cb  HwiP_pendSV_handler                                                           
+0000b9db  _nop                                                                          
+0000b9dd  Pinmux_config                                                                 
+0000ba9b  RPMessage_vringReset                                                          
+0000bb55  AddrTranslateP_init                                                           
+0000bc05  DebugP_shmLogWriterPutChar                                                    
+0000bcb5  __udivmoddi4                                                                  
+0000bd65  RPMessage_vringGetFullRxBuf                                                   
+0000bf51  RPMessage_vringPutEmptyRxBuf                                                  
+0000bfef  Sciclient_pmQueryModuleClkFreq                                                
+0000c08d  Sciclient_init                                                                
+0000c1c5  RPMessage_coreInit                                                            
+0000c25d  SemaphoreP_pend                                                               
+0000c389  RPMessage_vringGetEmptyTxBuf                                                  
+0000c41d  RPMessage_vringResetInternal                                                  
+0000c4ad  Sciclient_pmSetModuleClkFreq                                                  
+0000c539  _ZN17IPC_CommunicationC1EPc                                                   
+0000c539  _ZN17IPC_CommunicationC2EPc                                                   
+0000c5c5  fputc                                                                         
+0000c64d  DebugP_shmLogWriterPutLine                                                    
+0000c6d3  Sciclient_pmGetModuleClkNumParent                                             
+0000c74d  RPMessage_construct                                                           
+0000c7c5  __TI_closefile                                                                
+0000c839  fflush                                                                        
+0000c8ad  SOC_moduleClockEnable                                                         
+0000c921  RPMessage_getEndPtMsg                                                         
+0000c98f  Sciclient_pmGetModuleState                                                    
+0000c9fd  __gedf2                                                                       
+0000c9fd  __gtdf2                                                                       
+0000ca6d  __cmpdf2                                                                      
+0000ca6d  __eqdf2                                                                       
+0000ca6d  __ledf2                                                                       
+0000ca6d  __ltdf2                                                                       
+0000ca6d  __nedf2                                                                       
+0000cadd  ClockP_timerTickIsr                                                           
+0000cbb5  AddrTranslateP_getLocalAddr                                                   
+0000cc1f  _ZN17IPC_Communication4readEv                                                 
+0000cc89  fseeko                                                                        
+0000ccf1  getdevice                                                                     
+0000cd59  Sciclient_pmGetModuleClkParent                                                
+0000cdc1  HOSTrename                                                                    
+0000ce25  Sciclient_pmModuleGetClkStatus                                                
+0000ce89  __aeabi_dcmpeq                                                                
+0000ce9d  __aeabi_dcmplt                                                                
+0000ceb1  __aeabi_dcmple                                                                
+0000cec5  __aeabi_dcmpge                                                                
+0000ced9  __aeabi_dcmpgt                                                                
+0000ceeb  __TI_wrt_ok                                                                   
+0000cf4d  close                                                                         
+0000cfad  RPMessage_vringPutFullTxBuf                                                   
+0000d00b  Sciclient_pmSetModuleClkParent                                                
+0000d069  _DebugP_assert                                                                
+0000d0c9  _ZN17IPC_Communication5writeEPc                                               
+0000d127  Sciclient_pmModuleClkRequest                                                  
+0000d185  fprintf                                                                       
+0000d1e1  RPMessage_vringIsFullRxBuf                                                    
+0000d23d  HOSTlseek                                                                     
+0000d295  HOSTopen                                                                      
+0000d2ed  _Z11r5_0_0_codev                                                              
+0000d345  _c_int00                                                                      
+0000d39d  HOSTread                                                                      
+0000d3f1  HOSTwrite                                                                     
+0000d445  _ZN17IPC_Communication15create_endpointEt                                     
+0000d499  _ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC2IDnEEPKc     
+0000d4ed  Dpl_init                                                                      
+0000d53f  Sciclient_pmSetModuleState                                                    
+0000d591  _Z11r5_0_1_codev                                                              
+0000d5e3  _Z7m4_codev                                                                   
+0000d635  RPMessage_notifyCallback                                                      
+0000d685  Sciclient_getContext                                                          
+0000d6d5  _Z18communication_mainPv                                                      
+0000d773  __TI_doflush                                                                  
+0000d7c1  ClockP_getTimeUsec                                                            
+0000d80d  RPMessage_allocEndPtMsg                                                       
+0000d859  ClockP_construct                                                              
+0000d8a5  __aeabi_assert                                                                
+0000d8ed  __aeabi_d2iz                                                                  
+0000d8ed  __fixdfsi                                                                     
+0000d935  HOSTunlink                                                                    
+0000d979  Sciclient_pmSetModuleRst                                                      
+0000d9bd  __aeabi_d2uiz                                                                 
+0000d9bd  __fixunsdfsi                                                                  
+0000da01  ClockP_stop                                                                   
+0000da41  RPMessage_destruct                                                            
+0000da81  strtok                                                                        
+0000dac1  IpcNotify_registerClient                                                      
+0000daff  SemaphoreP_constructBinary                                                    
+0000db3d  HOSTclose                                                                     
+0000db79  ClockP_destruct                                                               
+0000dbb5  Module_clockSetFrequency                                                      
+0000dbed  RPMessage_deInit                                                              
+0000dc25  RPMessage_vringCheckEmptyTxBuf                                                
+0000dc5d  Sciclient_getCurrentContext                                                   
+0000dc95  _DebugP_logZone                                                               
+0000dccd  sprintf                                                                       
+0000dd05  __TI_auto_init_nobinit_nopinit                                                
+0000dd3d  ClockP_start                                                                  
+0000dd71  __TI_cleanup                                                                  
+0000dda5  __TI_writemsg                                                                 
+0000ddcf  C$$IO$$                                                                       
+0000ddd9  finddevice                                                                    
+0000de0d  ClockP_usleep                                                                 
+0000de3f  SemaphoreP_post                                                               
+0000de71  snprintf_                                                                     
+0000dea3  DebugP_shmLogWriterInit                                                       
+0000ded5  __TI_readmsg                                                                  
+0000df05  __aeabi_dcmpun                                                                
+0000df05  __unorddf2                                                                    
+0000df35  exit                                                                          
+0000df65  Module_clockDisable                                                           
+0000df95  Module_clockEnable                                                            
+0000dfc5  __aeabi_i2d                                                                   
+0000dfc5  __floatsidf                                                                   
+0000dff3  _ZNSt3__14stoiERKNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEPji
+0000e021  lseek                                                                         
+0000e04d  unlink                                                                        
+0000e079  write                                                                         
+0000e0a5  _Z14str_to_int16_tPc                                                          
+0000e0f7  RPMessage_Params_init                                                         
+0000e11f  _ZN17IPC_CommunicationD0Ev                                                    
+0000e171  IpcNotify_unregisterClient                                                    
+0000e197  RPMessage_controlEndPtHandler                                                 
+0000e1bd  System_deinit                                                                 
+0000e1e1  _Znwj                                                                         
+0000e205  strdup                                                                        
+0000e229  vprintf_                                                                      
+0000e24d  Pinmux_init                                                                   
+0000e26f  RPMessage_isLinuxCore                                                         
+0000e291  _ZN17IPC_CommunicationD2Ev                                                    
+0000e2b3  strspn                                                                        
+0000e2d5  DebugP_logZoneEnable                                                          
+0000e2f5  strcspn                                                                       
+0000e315  __aeabi_ui2d                                                                  
+0000e315  __floatunsidf                                                                 
+0000e335  IpcNotify_syncCallback                                                        
+0000e353  SysTickTimerP_Params_init                                                     
+0000e371  _DebugP_assertNoLog                                                           
+0000e38f  memccpy                                                                       
+0000e3ad  RPMessage_vringGetTxBufLen                                                    
+0000e3c9  SOC_getCoreName                                                               
+0000e3e5  _abort_msg                                                                    
+0000e41d  main                                                                          
+0000e439  IpcNotify_Params_init                                                         
+0000e453  RPMessage_vringGetRxBufAddr                                                   
+0000e46d  RPMessage_vringGetTxBufAddr                                                   
+0000e487  _ZN20CommunicationFactory4openE17CommunicationTypePc                          
+0000e4a1  IpcNotify_getConfig                                                           
+0000e4b9  IpcNotify_isCoreEnabled                                                       
+0000e4e9  HwiP_inISR                                                                    
+0000e4ff  Sciclient_getDevId                                                            
+0000e515  __aeabi_memset                                                                
+0000e515  __aeabi_memset4                                                               
+0000e515  __aeabi_memset8                                                               
+0000e521  __aeabi_memclr                                                                
+0000e521  __aeabi_memclr4                                                               
+0000e521  __aeabi_memclr8                                                               
+0000e529  __aeabi_uldivmod                                                              
+0000e53d  SysTickTimerP_start                                                           
+0000e54f  TI_memcpy_small                                                               
+0000e561  RPMessage_CreateParams_init                                                   
+0000e571  PowerClock_init                                                               
+0000e57f  SysTickTimerP_getCount                                                        
+0000e58d  SysTickTimerP_getReloadCount                                                  
+0000e59b  _ZN17IPC_Communication5ioctlEv                                                
+0000e5d3  strlen                                                                        
+0000e5ef  TI_memset_small                                                               
+0000e5fd  IpcNotify_getSelfCoreId                                                       
+0000e609  _ZSt15get_new_handlerv                                                        
+0000e615  AddrTranslateP_Params_init                                                    
+0000e61f  CSL_secProxyGetDataAddr                                                       
+0000e629  ClockP_Params_init                                                            
+0000e633  ClockP_isActive                                                               
+0000e651  __aeabi_errno_addr                                                            
+0000e661  malloc                                                                        
+0000e669  Board_driversOpen                                                             
+0000e66d  ClockP_getTimerCount                                                          
+0000e671  PowerClock_deinit                                                             
+0000e675  RPMessage_getLocalEndPt                                                       
+0000e679  Sciclient_deinit                                                              
+0000e67d  _ZdlPv                                                                        
+0000e689  __mpu_init                                                                    
+0000e68d  fseek                                                                         
+0000e691  putchar_                                                                      
+0000e695  remove                                                                        
+0000e698  C$$EXIT                                                                       
+0000e699  abort                                                                         
+0000e69d  __aeabi_memcpy                                                                
+0000e69d  __aeabi_memcpy4                                                               
+0000e69d  __aeabi_memcpy8                                                               
+0000e6a0  __stack                                                                       
+000126a0  .ARM.exidx$$Base                                                              
+000126a0  __STACK_END                                                                   
+000126a0  __TI_UNWIND_TABLE_START                                                       
+000126a8  .ARM.exidx$$Limit                                                             
+000126a8  __TI_UNWIND_TABLE_END                                                         
+00030000  __BSS_START                                                                   
+00030000  __start___llvm_prf_bits                                                       
+00030000  __start___llvm_prf_cnts                                                       
+00030000  __stop___llvm_prf_bits                                                        
+00030000  __stop___llvm_prf_cnts                                                        
+00030000  gIpcRpmsgCtrl                                                                 
+00030b2c  gHwiCtrl                                                                      
+00030dac  _CIOBUF_                                                                      
+00030dac  __CIOBUF_                                                                     
+00030ecc  gIpcNotifyCtrl                                                                
+00030f74  __TI_tmpnams                                                                  
+00031090  gClockCtrl                                                                    
+000310c8  parmbuf                                                                       
+000310d8  __BSS_END                                                                     
+000316a8  gSciclientMap                                                                 
+000317d4  gMpuConfig                                                                    
+000317e0  __aeabi_ctype_table_                                                          
+000317e0  __aeabi_ctype_table_C                                                         
+00031e14  gMpuRegionConfig                                                              
+00031e34  _ZTV17IPC_Communication                                                       
+00031eb0  _ftable                                                                       
+00031fa0  gIpcNotifyMailboxConfig                                                       
+00032034  _device                                                                       
+000320ac  _stream                                                                       
+00032100  gAddrTranslateRegionConfig                                                    
+00032140  gIpcNotifyInterruptConfig_m4fss0_0                                            
+00032170  gIpcNotifyMailboxBaseAddr                                                     
+00032194  __TI_ft_end                                                                   
+00032198  gSciclientSecProxyCfg                                                         
+000321b8  gClockConfig                                                                  
+000321cc  gAddrTranslateConfig                                                          
+000321d8  gSocModulesClockFrequency                                                     
+000321e4  __TI_cleanup_ptr                                                              
+000321e8  __TI_dtors_ptr                                                                
+000321fc  __aeabi_errno                                                                 
+00032200  __cxa_new_handler                                                             
+00032204  _lock                                                                         
+00032208  _unlock                                                                       
+0003220c  gDebugLogZone                                                                 
+00032218  gIpcNotifyInterruptConfigNum_m4fss0_0                                         
+00032230  gSocModules                                                                   
+701d0080  gDebugShmLog                                                                  
+701d4000  gRPMessageVringMem                                                            
+ffffffff  __TI_pprof_out_hndl                                                           
+ffffffff  __TI_prof_data_size                                                           
+ffffffff  __TI_prof_data_start                                                          
+ffffffff  __binit__                                                                     
+ffffffff  binit                                                                         
+UNDEFED   __TI_CINIT_Base                                                               
+UNDEFED   __TI_CINIT_Limit                                                              
+UNDEFED   __TI_Handler_Table_Base                                                       
+UNDEFED   __TI_Handler_Table_Limit                                                      
+UNDEFED   _system_post_cinit                                                            
+
+[320 symbols]

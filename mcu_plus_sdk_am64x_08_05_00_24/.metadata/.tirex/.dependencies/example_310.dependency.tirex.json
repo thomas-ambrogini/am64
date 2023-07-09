@@ -1,0 +1,16 @@
+[
+    {
+        "files": [
+            "+../../../../hsr_prp_menu.c -> hsr_prp_menu.c",
+            "+../../../../hsr_prp_main.c -> hsr_prp_main.c",
+            "+../../../../common/am64evm/hsr_prp_soc.c -> hsr_prp_soc.c",
+            "+../main.c -> main.c",
+            "+../../../../hsr_prp_prvmib.c -> hsr_prp_prvmib.c",
+            "+../../../../udp_iperf.c -> udp_iperf.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

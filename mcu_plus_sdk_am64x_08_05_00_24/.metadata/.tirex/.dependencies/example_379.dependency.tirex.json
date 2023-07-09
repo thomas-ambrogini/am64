@@ -1,0 +1,15 @@
+[
+    {
+        "files": [
+            "+../../../V0/loopback_cfg.c -> loopback_cfg.c",
+            "+../../../V0/loopback_test.c -> loopback_test.c",
+            "+../../../V0/loopback_main.c -> loopback_main.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../docs/api_guide_am64x/EXAMPLES_ENET_LOOPBACK.html -> EXAMPLES_ENET_LOOPBACK.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]

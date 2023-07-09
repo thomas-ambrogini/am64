@@ -1,0 +1,13 @@
+[
+    {
+        "files": [
+            "+../../../rsa_signing_verification.c -> rsa_signing_verification.c",
+            "+../main.c -> main.c",
+            "+linker.cmd -> linker.cmd",
+            "+../example.syscfg -> example.syscfg",
+            "+../../../../../../../../docs/api_guide_am64x/EXAMPLES_DRIVERS_SA2UL_PKA_RSA_SIGN_VERIFY.html -> EXAMPLES_DRIVERS_SA2UL_PKA_RSA_SIGN_VERIFY.html",
+            "+syscfg_c.rov.xs -> syscfg_c.rov.xs",
+            "+makefile_ccs_bootimage_gen -> makefile_ccs_bootimage_gen"
+        ]
+    }
+]
