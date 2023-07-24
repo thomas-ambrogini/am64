@@ -1,0 +1,6 @@
+add_subdirectory(utils)
+add_subdirectory(Domain)
+add_subdirectory(Communication)
+add_subdirectory(TopicManager)
+add_subdirectory(Diagnostic)
+add_subdirectory(Application)
