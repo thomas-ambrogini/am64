@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("tx_",["Constant"],[["TX_PRU_SPAD_B0_XID",,[[,,,,0,"File:firmware/common/icss_xfer_defines.inc:TX_PRU_SPAD_B0_XID"]]]]);

@@ -1,1 +1,0 @@
-﻿NDSearch.OnPrefixDataLoaded("par",["File"],[["parallel_interface_macros",,[[,"parallel_interface_macros.inc",,,0,"File:firmware/common/parallel_interface_macros.inc:parallel_interface_macros.inc"]]]]);
