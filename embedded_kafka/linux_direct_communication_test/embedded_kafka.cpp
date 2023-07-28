@@ -69,37 +69,26 @@ uint32_t gRemoteCoreId[] = {
 };
 #endif
 
-/* This is used to run the echo test with linux kernel */
-#define IPC_RPMESSAGE_SERVICE_PING        "ti.ipc4.ping-pong"
-#define IPC_RPMESSAGE_ENDPT_PING          (13U)
-
 /* This is used to run the echo test with user space kernel */
 #define IPC_RPMESSAGE_SERVICE_CHRDEV      "rpmsg_chrdev"
 #define IPC_RPMESSAGE_ENDPT_CHRDEV_PING   (14U)
 
-/* number of iterations of message exchange to do */
-uint32_t gMsgEchoCount = 100000u;
-
 /* maximum size that message can have */
-#define MAX_MSG_SIZE        (128u)
+#define MAX_MSG_SIZE        (1024u)
 
-void fillBuffer(char * buffer, int bufferSize) 
-{
-    memset(buffer, 'c', bufferSize - 1);
-    buffer[bufferSize - 1] = '\0';
+void announce() {
+    int32_t status;S
+
+    status = RPMessage_announce(CSL_CORE_ID_A53SS0_0, IPC_RPMESSAGE_ENDPT_CHRDEV_PING, IPC_RPMESSAGE_SERVICE_CHRDEV);
+    DebugP_assert(status==SystemP_SUCCESS);
 }
 
 void receiver(int localCoreId, int localServiceEndpoint) {
     char recvMsg[MAX_MSG_SIZE];
     uint16_t recvMsgSize;
-    int32_t status;
     TI_DebugLogger logger;
 
-    status = RPMessage_announce(CSL_CORE_ID_A53SS0_0, IPC_RPMESSAGE_ENDPT_PING, IPC_RPMESSAGE_SERVICE_PING);
-    DebugP_assert(status==SystemP_SUCCESS);
-
-    status = RPMessage_announce(CSL_CORE_ID_A53SS0_0, IPC_RPMESSAGE_ENDPT_CHRDEV_PING, IPC_RPMESSAGE_SERVICE_CHRDEV);
-    DebugP_assert(status==SystemP_SUCCESS);
+    announce();
 
     Endpoint * sourceEndpoint = EndpointFactory::createEndpoint(CommunicationType::RPMessage);
     static_cast<RPMessageEndpoint *>(sourceEndpoint)->setCoreId(localCoreId);
@@ -123,17 +112,11 @@ void communication_main(void *args)
     Drivers_open();
     Board_driversOpen();
 
-        /* This API MUST be called by applications when its ready to talk to Linux */
+    /* This API MUST be called by applications when its ready to talk to Linux */
     status = RPMessage_waitForLinuxReady(SystemP_WAIT_FOREVER);
     DebugP_assert(status==SystemP_SUCCESS);
 
-
-
-    DebugP_log("Started executing, i AM %d \r\n", IpcNotify_getSelfCoreId());
-
-    if(IpcNotify_getSelfCoreId() == CSL_CORE_ID_R5FSS0_0) {
-        receiver(CSL_CORE_ID_R5FSS0_0, endpoint);
-    }
+    receiver(IpcNotify_getSelfCoreId(), endpoint);
 
     Board_driversClose();
     //Drivers_close();

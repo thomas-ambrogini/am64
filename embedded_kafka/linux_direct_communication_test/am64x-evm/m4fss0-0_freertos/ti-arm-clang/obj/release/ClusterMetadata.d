@@ -6,4 +6,6 @@ obj/release//ClusterMetadata.obj: \
   ../../../lib/external/json/json.hpp \
   ../../../lib/include/Domain/Endpoint.hpp \
   ../../../lib/include/utils/Logger.hpp \
-  ../../../lib/include/Domain/UDPEndpoint.hpp
+  ../../../lib/include/Domain/UDPEndpoint.hpp \
+  ../../../lib/include/Domain/RPMessageEndpoint.hpp \
+  ../../../lib/include/Domain/Processor.hpp

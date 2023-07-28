@@ -31,6 +31,10 @@ SECTIONS
     .sysmem: {} palign(8) > M4F_IRAM     /* This is where the malloc heap goes */
     .stack:  {} palign(8) > M4F_IRAM     /* This is where the main() stack goes */
 
+    GROUP {
+        /* This is the resource table used by linux to know where the IPC "VRINGs" are located */
+        .resource_table: {} palign(4096)
+    } > DDR_0
 
     /* Sections needed for C++ projects */
     .ARM.exidx:     {} palign(8) > M4F_IRAM  /* Needed for C++ exception handling */
@@ -52,13 +56,16 @@ MEMORY
     M4F_IRAM : ORIGIN = 0x00000200 , LENGTH = 0x0002FE00
     M4F_DRAM : ORIGIN = 0x00030000 , LENGTH = 0x00010000
 
+    DDR_0       : ORIGIN = 0xA4100000 , LENGTH = 0x1000
+
+
     /* shared memories that are used by all cores */
     /* On M4F,
      * - By default MSMC RAM is not accessible to M4F, a RAT entry is needed to make it
      *   accessible on M4F
      * - So make sure there is a RAT entry which has a 1:1 mapping from 0x70000000 to 0x70200000
      */
-    USER_SHM_MEM : ORIGIN = 0x701D0000, LENGTH = 0x80
-    LOG_SHM_MEM  : ORIGIN = 0x701D0000 + 0x80, LENGTH = 0x00004000 - 0x80
-    IPC_VRING_MEM: ORIGIN = 0x701D4000, LENGTH = 0x0000C000
+    USER_SHM_MEM    : ORIGIN = 0xA5000000, LENGTH = 0x80
+    LOG_SHM_MEM     : ORIGIN = 0xA5000000 + 0x80, LENGTH = 0x00004000 - 0x80
+    IPC_VRING_MEM   : ORIGIN = 0xA5004000, LENGTH = 0x0000C000
 }

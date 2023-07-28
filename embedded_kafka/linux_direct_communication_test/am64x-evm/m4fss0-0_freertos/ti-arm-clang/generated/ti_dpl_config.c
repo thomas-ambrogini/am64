@@ -53,44 +53,63 @@ ClockP_Config gClockConfig = {
 /* ----------- DebugP ----------- */
 void putchar_(char character)
 {
-    /* Output to shared memory */
-    DebugP_shmLogWriterPutChar(character);
+    /* Output to memory trace buffer */
+    DebugP_memLogWriterPutChar(character);
 }
 
-/* Shared memory log base address, logs of each CPUs are put one after other in the below region.
- *
- * IMPORTANT: Make sure of below,
- * - The section defined below should be placed at the exact same location in memory for all the CPUs
- * - The memory should be marked as non-cached for all the CPUs
- * - The section should be marked as NOLOAD in all the CPUs linker command file
+/* DebugP log buffer memory and size
+ * - This log can be viewed via ROV in CCS
+ * - When linux is enabled, this log can also be viewed via linux debugfs
  */
-DebugP_ShmLog gDebugShmLog[CSL_CORE_ID_MAX] __attribute__((aligned(128), section(".bss.log_shared_mem")));
+char gDebugMemLog[DebugP_MEM_LOG_SIZE] __attribute__ ((section (".bss.debug_mem_trace_buf"), aligned (128)));
+uint32_t gDebugMemLogSize = DebugP_MEM_LOG_SIZE;
+
 
 /* ----------- AddrTranslateP ----------- */
 #define CONFIG_ADDR_TRANSLATE_RAT_BASE_ADDR  (0x044200000u)
-#define CONFIG_ADDR_TRANSLATE_REGIONS  (4u)
+#define CONFIG_ADDR_TRANSLATE_REGIONS  (8u)
 
 AddrTranslateP_RegionConfig gAddrTranslateRegionConfig[CONFIG_ADDR_TRANSLATE_REGIONS] = 
 {
     {
         .localAddr = 0x80000000u,
         .systemAddr = 0x0u,
-        .size = AddrTranslateP_RegionSize_512M,
+        .size = AddrTranslateP_RegionSize_256M,
+    },
+    {
+        .localAddr = 0x90000000u,
+        .systemAddr = 0x10000000u,
+        .size = AddrTranslateP_RegionSize_256M,
     },
     {
         .localAddr = 0xA0000000u,
+        .systemAddr = 0xA0000000u,
+        .size = AddrTranslateP_RegionSize_256M,
+    },
+    {
+        .localAddr = 0xB0000000u,
         .systemAddr = 0x20000000u,
-        .size = AddrTranslateP_RegionSize_512M,
+        .size = AddrTranslateP_RegionSize_256M,
     },
     {
         .localAddr = 0xC0000000u,
+        .systemAddr = 0x30000000u,
+        .size = AddrTranslateP_RegionSize_256M,
+    },
+    {
+        .localAddr = 0xD0000000u,
         .systemAddr = 0x40000000u,
-        .size = AddrTranslateP_RegionSize_512M,
+        .size = AddrTranslateP_RegionSize_256M,
     },
     {
         .localAddr = 0x60000000u,
         .systemAddr = 0x60000000u,
-        .size = AddrTranslateP_RegionSize_512M,
+        .size = AddrTranslateP_RegionSize_256M,
+    },
+    {
+        .localAddr = 0x70000000u,
+        .systemAddr = 0x70000000u,
+        .size = AddrTranslateP_RegionSize_256M,
     },
 };
 
@@ -168,8 +187,8 @@ void Dpl_init(void)
     /* Debug log init */
     DebugP_logZoneEnable(DebugP_LOG_ZONE_ERROR);
     DebugP_logZoneEnable(DebugP_LOG_ZONE_WARN);
-    /* Initialize shared memory writer on this CPU */
-    DebugP_shmLogWriterInit(&gDebugShmLog[CSL_CORE_ID_M4FSS0_0], CSL_CORE_ID_M4FSS0_0);
+    /* Initialize linux trace log writer */
+    DebugP_memLogWriterInit(CSL_CORE_ID_M4FSS0_0);
 
 
     /* initialize Clock */

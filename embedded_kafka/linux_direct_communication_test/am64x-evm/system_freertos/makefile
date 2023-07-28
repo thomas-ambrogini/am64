@@ -23,23 +23,14 @@ MULTI_CORE_BOOTIMAGE_NAME_XIP:=$(NAME).$(PROFILE).appimage_xip
 MULTI_CORE_BOOTIMAGE_NAME_HS:=$(MULTI_CORE_BOOTIMAGE_NAME).hs
 
 CORE_0=--script ../r5fss0-0_freertos/example.syscfg --context r5fss0-0 --output ../r5fss0-0_freertos/ti-arm-clang/generated
-CORE_1=--script ../r5fss0-1_freertos/example.syscfg --context r5fss0-1 --output ../r5fss0-1_freertos/ti-arm-clang/generated
-CORE_2=--script ../r5fss1-0_freertos/example.syscfg --context r5fss1-0 --output ../r5fss1-0_freertos/ti-arm-clang/generated
-CORE_3=--script ../r5fss1-1_freertos/example.syscfg --context r5fss1-1 --output ../r5fss1-1_freertos/ti-arm-clang/generated
-CORE_4=--script ../m4fss0-0_freertos/example.syscfg --context m4fss0-0 --output ../m4fss0-0_freertos/ti-arm-clang/generated
+CORE_1=--script ../m4fss0-0_freertos/example.syscfg --context m4fss0-0 --output ../m4fss0-0_freertos/ti-arm-clang/generated
 
 CORES = \
-    $(CORE_4) \
-	$(CORE_3) \
-	$(CORE_2) \
 	$(CORE_1) \
     $(CORE_0) \
 
 all: syscfg
 	$(MAKE) -C ../r5fss0-0_freertos/ti-arm-clang/ all
-	$(MAKE) -C ../r5fss0-1_freertos/ti-arm-clang/ all
-	$(MAKE) -C ../r5fss1-0_freertos/ti-arm-clang/ all
-	$(MAKE) -C ../r5fss1-1_freertos/ti-arm-clang/ all
 	$(MAKE) -C ../m4fss0-0_freertos/ti-arm-clang/ all
 	$(MAKE) $(MULTI_CORE_BOOTIMAGE_NAME)
 ifeq ($(DEVICE_TYPE), HS)
@@ -48,9 +39,6 @@ endif
 
 clean:
 	$(MAKE) -C ../r5fss0-0_freertos/ti-arm-clang/ clean
-	$(MAKE) -C ../r5fss0-1_freertos/ti-arm-clang/ clean
-	$(MAKE) -C ../r5fss1-0_freertos/ti-arm-clang/ clean
-	$(MAKE) -C ../r5fss1-1_freertos/ti-arm-clang/ clean
 	$(MAKE) -C ../m4fss0-0_freertos/ti-arm-clang/ clean
 	$(RM) $(MULTI_CORE_BOOTIMAGE_NAME)
 	$(RM) $(MULTI_CORE_BOOTIMAGE_NAME_SIGNED)
@@ -58,9 +46,6 @@ clean:
 
 scrub:
 	$(MAKE) -C ../r5fss0-0_freertos/ti-arm-clang/ scrub
-	$(MAKE) -C ../r5fss0-1_freertos/ti-arm-clang/ scrub
-	$(MAKE) -C ../r5fss1-0_freertos/ti-arm-clang/ scrub
-	$(MAKE) -C ../r5fss1-1_freertos/ti-arm-clang/ scrub
 	$(MAKE) -C ../m4fss0-0_freertos/ti-arm-clang/ scrub
 ifeq ($(OS),Windows_NT)
 	$(RM) \*.appimage
@@ -89,11 +74,7 @@ EXE_EXT=.exe
 endif
 BOOTIMAGE_TEMP_OUT_FILE=temp_stdout_$(PROFILE).txt
 
-BOOTIMAGE_CORE_ID_a53ss0-0 = 0
 BOOTIMAGE_CORE_ID_r5fss0-0 = 4
-BOOTIMAGE_CORE_ID_r5fss0-1 = 5
-BOOTIMAGE_CORE_ID_r5fss1-0 = 6
-BOOTIMAGE_CORE_ID_r5fss1-1 = 7
 BOOTIMAGE_CORE_ID_m4fss0-0 = 14
 SBL_RUN_ADDRESS=0x70000000
 SBL_DEV_ID=55
@@ -104,23 +85,14 @@ APP_IMAGE_SIGN_CMD = $(MCU_PLUS_SDK_PATH)/tools/boot/signing/appimage_x509_cert_
 
 MULTI_CORE_APP_PARAMS = \
     ../r5fss0-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc@$(BOOTIMAGE_CORE_ID_r5fss0-0) \
-    ../r5fss0-1_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc@$(BOOTIMAGE_CORE_ID_r5fss0-1) \
-	../r5fss1-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc@$(BOOTIMAGE_CORE_ID_r5fss0-1) \
-    ../r5fss1-1_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc@$(BOOTIMAGE_CORE_ID_r5fss0-1) \
 	../m4fss0-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc@$(BOOTIMAGE_CORE_ID_m4fss0-0) \
 
 MULTI_CORE_APP_PARAMS_XIP = \
     ../r5fss0-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc_xip@$(BOOTIMAGE_CORE_ID_r5fss0-0) \
-    ../r5fss0-1_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc_xip@$(BOOTIMAGE_CORE_ID_r5fss0-1) \
-	../r5fss1-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc_xip@$(BOOTIMAGE_CORE_ID_r5fss0-0) \
-    ../r5fss1-1_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc_xip@$(BOOTIMAGE_CORE_ID_r5fss0-0) \
 	../m4fss0-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc_xip@$(BOOTIMAGE_CORE_ID_m4fss0-0) \
 
 MULTI_CORE_BOOTIMAGE_DEPENDENCY = \
     ../r5fss0-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc \
-	../r5fss0-1_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc \
-	../r5fss1-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc \
-    ../r5fss1-1_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc \
     ../m4fss0-0_freertos/ti-arm-clang/$(NAME).$(PROFILE).rprc \
 
 $(MULTI_CORE_BOOTIMAGE_DEPENDENCY):

@@ -14,6 +14,8 @@ obj/release//LatencyDiagnostic.obj: \
   ../../../lib/include/Domain/ProducerMetadata.hpp \
   ../../../lib/include/TopicManager/TopicProxy.hpp \
   ../../../lib/include/Domain/BrokerMetadata.hpp \
+  ../../../lib/include/Domain/RPMessageEndpoint.hpp \
+  ../../../lib/include/Domain/Processor.hpp \
   ../../../lib/include/Communication/Communication.hpp \
   ../../../lib/include/Communication/CommunicationFactory.hpp \
   ../../../lib/include/Domain/CommunicationType.hpp \
@@ -114,8 +116,6 @@ obj/release//LatencyDiagnostic.obj: \
   /home/thomas/ti/mcu_plus_sdk_am64x_08_05_00_24/source/kernel/dpl/CycleCounterP.h \
   generated/ti_drivers_open_close.h generated/ti_board_open_close.h \
   generated/ti_board_config.h \
-  ../../../lib/include/Domain/RPMessageEndpoint.hpp \
-  ../../../lib/include/Domain/Processor.hpp \
   ../../../lib/include/Communication/UDPSocketCommunication.hpp \
   ../../../lib/include/Domain/EndpointFactory.hpp \
   ../../../lib/include/TopicManager/SystemManager.hpp \
