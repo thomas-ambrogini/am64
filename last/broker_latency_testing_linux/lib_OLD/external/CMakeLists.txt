@@ -1,0 +1,2 @@
+add_subdirectory(ti_rpmsg_char)
+add_subdirectory(json)
